@@ -128,19 +128,19 @@
         k.onclick= function(){
             var mail = document.getElementById("user");
             var pwd = document.getElementById("pwd");
-            alert(mail.value);
                 $.ajax({
                     type:"post",
                     url:'${APP_PATH}' + '/common/login',
                     contentType:'application/json',
                     data:JSON.stringify({
-                        email:mail.value,
-                        password:pwd.value
-                        //email:"9307a1@163.com",
-                        //password:"9307a1"
+                        email:"90af80@163.com",
+                        password:"90af80"
                     }),
                     success:function(result){
-                        alert(result.status+result.message);
+                        if (result.status==200)
+                            alert(result.data.userName);
+                        else
+                            alert(result.message);
                     }});
             };
     </script>

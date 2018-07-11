@@ -80,6 +80,11 @@
     from user
     where email = #{email}
   </select>
+  <select id="selectByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id,user_name
+    from user
+    where user_name = #{user_name}
+  </select>
   <select id="selectByExample" parameterType="com.qasite.bean.UserExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -113,11 +118,11 @@
   <insert id="insert" parameterType="com.qasite.bean.User">
     insert into user (Id, user_name, password, 
       gender, email, type, 
-      reg_time, credit, states, 
+      reg_time, credit, states,
       rank)
     values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{gender,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
-      #{regTime,jdbcType=TIMESTAMP}, #{credit,jdbcType=INTEGER}, #{states,jdbcType=TIMESTAMP}, 
+      #{regTime,jdbcType=TIMESTAMP}, #{credit,jdbcType=INTEGER}, #{states,jdbcType=TIMESTAMP},
       #{rank,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.qasite.bean.User">

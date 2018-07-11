@@ -1,8 +1,5 @@
 package com.qasite.test;
 
-import com.crud.bean.Employee;
-import com.crud.dao.DepartmentMapper;
-import com.crud.dao.EmployeeMapper;
 import com.qasite.bean.User;
 import com.qasite.dao.UserMapper;
 import org.apache.ibatis.session.SqlSession;
@@ -12,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -24,8 +23,7 @@ import java.util.UUID;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"classpath:applicationContext.xml"})
 public class MapperTest {
-	@Autowired
-	private UserMapper userMapperp;
+
 	@Autowired
 	SqlSession sqlSession;
 	/**
@@ -33,19 +31,49 @@ public class MapperTest {
 	 */
 	@Test
 	public void testprepareData() {
-		//System.out.println(dept);
-		//1. 插入部门
-		//dept.insertSelective(new Department(null,"开发部"));
-		//dept.insertSelective(new Department(null,"测试部"));
-		//2. 生成一个员工数据
-		//emp.insertSelective(new Employee(null,"jack","M","jack@126.com",1));
-		//3. 批量插入员工，使用可以执行批量操作的sqlSession操作
 
+        //SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+        //df.format(Math.random()*3<2?new Date():new Date());
 		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-		for(int i = 0;i<50;i++) {
+		for(int i = 0;i<10;i++) {
 			String name = UUID.randomUUID().toString().substring(0, 5) + i;
-			mapper.insert(new User( name, name,name+"@163.com"));
+            Date status = null,reg_time = getDateBefore(new Date(),10);
+            if (Math.random()*5<2){
+                status = getDateAfter(new Date(),10);
+            }else {
+                status = getDateBefore(new Date(),5);
+            }
+			mapper.insert(new User( name, name,name+"@163.com",reg_time,status));
 		}
 
 	}
+
+    /**
+     * 得到几天后的时间
+     * @param d
+     * @param day
+     * @return
+     */
+    public static Date getDateAfter(Date d,int day){
+        Calendar now =Calendar.getInstance();
+        now.setTime(d);
+        now.set(Calendar.DATE,now.get(Calendar.DATE)+day);
+        return now.getTime();
+    }
+
+
+    /**
+     * 得到几天前的时间
+     * @param d
+     * @param day
+     * @return
+     */
+    public static Date getDateBefore(Date d,int day){
+        Calendar now =Calendar.getInstance();
+        now.setTime(d);
+        now.set(Calendar.DATE,now.get(Calendar.DATE)-day);
+        return now.getTime();
+    }
+
+
 }

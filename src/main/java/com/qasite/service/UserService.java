@@ -11,12 +11,17 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
-    public boolean login(String email, String password) {
+    public User login(String email, String password) {
         User user = userMapper.selectByEmail(email);
         if (user == null)
-            return false;
+            return null;
         if (user.getPassword() == null || !password.equals(user.getPassword()))
-            return false;
-        return true;
+            return null;
+        return user;
+    }
+
+    public User getUserInfo(Integer id){
+        User user = userMapper.selectByPrimaryKey(id);
+        return user;
     }
 }

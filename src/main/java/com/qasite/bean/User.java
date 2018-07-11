@@ -1,14 +1,23 @@
 package com.qasite.bean;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class User {
+
+    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+    //df.format(Math.random()*3<2?new Date():new Date());
+
     public User(){};
-    public User(String userName,String password,String email){
+    public User(String userName,String password,String email,Date reg_date,Date status){
         this.userName = userName;
         this.password = password;
         this.email = email;
-        this.gender = "MALE";
+        this.gender = Math.random()*1.0<0.5?"MALE":"FEMALE";
+        this.type = Math.random()*2.0<1.5?"STUDENT":"TEACHER";
+        this.credit = 20;
+        this.states = status;
+        this.regTime = reg_date;
     }
 
     private Integer id;
@@ -24,6 +33,7 @@ public class User {
     private String type;
 
     private Date regTime;
+    private String reg_time;
 
     private Integer credit;
 
@@ -79,14 +89,6 @@ public class User {
         this.type = type == null ? null : type.trim();
     }
 
-    public Date getRegTime() {
-        return regTime;
-    }
-
-    public void setRegTime(Date regTime) {
-        this.regTime = regTime;
-    }
-
     public Integer getCredit() {
         return credit;
     }
@@ -109,5 +111,22 @@ public class User {
 
     public void setRank(Integer rank) {
         this.rank = rank;
+    }
+
+    public String getReg_time() {
+        reg_time = df.format(regTime);
+        return reg_time;
+    }
+
+    public void setReg_time(String reg_time) {
+        this.reg_time = reg_time;
+    }
+
+    public Date getRegTime() {
+        return regTime;
+    }
+
+    public void setRegTime(Date regTime) {
+        this.regTime = regTime;
     }
 }
