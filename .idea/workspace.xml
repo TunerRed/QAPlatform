@@ -295,8 +295,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.qasite.service" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\webapp\JS" />
+      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\java" />
+      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform" />
+      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\resources" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\java\com\qasite\dao" />
@@ -308,11 +311,8 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.qasite.test" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\webapp\JS" />
-      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\java" />
-      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform" />
-      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.qasite.service" />
     </key>
   </component>
   <component name="RunDashboard">
