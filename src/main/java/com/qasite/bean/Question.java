@@ -3,6 +3,18 @@ package com.qasite.bean;
 import java.util.Date;
 
 public class Question {
+
+    public Question(){}
+    public Question(Date arise_time,String title,String description,Integer ariserId,Integer points,Integer states,Integer answers){
+        this.title = title;
+        this.description = description;
+        this.points = points;
+        this.states = states;
+        this.ariserId = ariserId;
+        this.answers = answers;
+        this.time1 = arise_time;
+    }
+
     private Integer id;
 
     private Date time1;

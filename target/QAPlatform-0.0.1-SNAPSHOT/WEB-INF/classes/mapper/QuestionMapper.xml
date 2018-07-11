@@ -90,6 +90,11 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="selectAriserid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT Id,title,time1,states,answers
+    from  question
+    where ariser_id=#{ariser_id}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

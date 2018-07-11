@@ -27,4 +27,6 @@ public interface QuestionMapper {
     int updateByPrimaryKeySelective(Question record);
 
     int updateByPrimaryKey(Question record);
+
+    List<Question> selectAriserid(Integer user_id);
 }

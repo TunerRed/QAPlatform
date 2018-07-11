@@ -1,6 +1,15 @@
 package com.qasite.bean;
 
 public class Answer {
+
+    public Answer(){}
+    public Answer(String content,Integer replierId,Integer questionId,Integer state){
+        this.content = content;
+        this.replierId = replierId;
+        this.questionId = questionId;
+        this.state = state;
+    }
+
     private Integer id;
 
     private String content;

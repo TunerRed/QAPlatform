@@ -1,10 +1,11 @@
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
     <title>
         智能问答平台
     </title>
+
     <%
         pageContext.setAttribute("APP_PATH", "http://localhost:8080/webapp");
     %>
@@ -116,6 +117,9 @@
     <div style="position:relative; height:10%; width:100%; margin-left:5%; color:#5f9fc9; font-size:1.3em; text-align:left;">
         密码
     </div>
+
+
+
     <div class="pwddiv">
         <input id="pwd" class="signinput" type="password" name="pwd">
     </div>
@@ -126,29 +130,23 @@
     <script type="text/javascript">
         var k = document.getElementById("sign_in_btn");
         k.onclick= function(){
-            var mail = document.getElementById("user");
-            var pwd = document.getElementById("pwd");
                 $.ajax({
                     type:"post",
-                    url:'${APP_PATH}' + '/user/change',
+                    url:'${APP_PATH}' + '/user/questions',
                     contentType:'application/json',
                     data:JSON.stringify({
-                        id:101,
-                        userName:"bba",
-                        email:"66666@163.com",
-                        password:"90af80",
-                        gender:"MALE",
-                        type:"teacher"
+                        Id:180 ,
+                        pages:1
                     }),
-                    success:function(result){
-                        if (result.status==200)
-                            alert(result.message);
-                        else
-                            alert(result.message);
-                    }});
-            };
-    </script>
+                    success:function(value){
+                        for(var key in value.data){
+                            alert(value.data[key].title);
+                        }
 
+                    }
+                })
+        };
+    </script>
     <br>
 </div>
 </body>
