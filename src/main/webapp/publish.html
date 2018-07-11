@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置文档编码 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!-- 响应式布局设置-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <title>publish</title>
+    <!--引入css样式表-->
+    <link href="css/publish.css" rel="stylesheet" type="text/css">
+    <!--引入JavaScript-->
+    <script src="js/publish.js"></script>
+</head>
+<body>
+<img id="title" src="picsInHomepage/publish_title.png">
+<form role="form">
+    <div class="form-group">
+        <img src="picsInHomepage/question.png" id="questionImg">
+        <input type="text" class="form-control" id="question" placeholder="请输入问题">
+    </div>
+    <div class="form-group">
+        <img src="picsInHomepage/description.png" id="descriptionImg">
+        <textarea  class="form-control" id="description" rows="10" placeholder="请输入具体描述"></textarea>
+    </div>
+    <div class="form-group" id="uploaddiv">
+        <img src="picsInHomepage/upload.png" id="upload"><br>
+        <img src="picsInHomepage/resource_unclicked.png" id="resourse_isclick">
+        <input type="file" id="inputfile">
+    </div>
+    <div class="form-group">
+        <img src="picsInHomepage/wanted.png" id="wantedImg">
+        <input type="text" class="form-control" id="wanted" placeholder="请输入悬赏积分">
+    </div>
+    <img src="picsInHomepage/publish.png" id="publish">
+</form>
+<script>
+    $(document).ready(function () {
+        change();
+        isChooseFile();
+    });
+</script>
+</body>
+</html>

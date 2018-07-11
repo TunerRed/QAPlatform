@@ -1,0 +1,68 @@
+/*
+    发布问题
+ */
+#title{
+    width: 100%;
+    height: 50px;
+}
+
+form{
+    margin-top: 20px;
+    margin-left: 30%;
+}
+
+#questionImg{
+    width: 80px;
+    height: 20px;
+    margin-bottom: 14px;
+}
+
+#question{
+    width:500px;
+    height: 35px;
+    margin-bottom: 14px;
+}
+
+#descriptionImg,#wantedImg{
+    width: 72px;
+    height: 18px;
+    margin-bottom: 14px;
+}
+
+#description{
+    width: 600px;
+    height: 300px;
+    margin-bottom: 14px;
+}
+
+#wanted{
+    width: 130px;
+    height: 30px;
+    margin-bottom: 35px;
+}
+
+#publish{
+    width:100px;
+    height: 35px;
+    margin-bottom: 50px;
+}
+
+#uploaddiv{
+    display: none;
+}
+
+#upload{
+    width: 72px;
+    height: 18px;
+    margin-bottom: 12px;
+}
+
+#resourse_isclick{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+#inputfile{
+    display: inline-block;
+}
