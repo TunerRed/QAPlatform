@@ -1,0 +1,103 @@
+# Host: localhost  (Version 8.0.11)
+# Date: 2018-07-09 16:18:31
+# Generator: MySQL-Front 6.0  (Build 2.20)
+
+
+#
+# Structure for table "answer"
+#
+
+CREATE TABLE `answer` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '回答的编号',
+  `content` varchar(1000) DEFAULT NULL COMMENT '回答的内容',
+  `replier_id` int(11) DEFAULT NULL COMMENT '回答者id',
+  `question_id` int(11) DEFAULT NULL COMMENT '所属问题的id',
+  `state` int(11) DEFAULT NULL COMMENT '回答状态',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "answer"
+#
+
+
+#
+# Structure for table "laberl"
+#
+
+CREATE TABLE `laberl` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '标签的编号',
+  `name` varchar(255) DEFAULT NULL COMMENT '标签名称（例如文学类）',
+  `fa_label` varchar(255) DEFAULT NULL COMMENT '父标签',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "laberl"
+#
+
+
+#
+# Structure for table "question"
+#
+
+CREATE TABLE `question` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '问题编号',
+  `time1` datetime DEFAULT '0000-00-00 00:00:00' COMMENT '提问时间',
+  `description` varchar(1000) DEFAULT '' COMMENT '问题描述',
+  `title` varchar(255) DEFAULT NULL COMMENT '问题标题',
+  `ariser_id` int(11) DEFAULT NULL COMMENT '提问者ID',
+  `points` int(10) DEFAULT '0' COMMENT '悬赏分数',
+  `answers` int(11) DEFAULT NULL COMMENT '回答数目',
+  `states` int(2) DEFAULT NULL COMMENT '问题状态',
+  `label1` varchar(255) DEFAULT NULL COMMENT '标签1（可空）',
+  `label2` varchar(255) DEFAULT NULL COMMENT '标签2（可空）',
+  `label3` varchar(255) DEFAULT NULL COMMENT '标签3（可空）',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "question"
+#
+
+
+#
+# Structure for table "resource"
+#
+
+CREATE TABLE `resource` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '资源编号',
+  `type` int(11) DEFAULT NULL COMMENT '资源种类',
+  `address` varchar(255) DEFAULT NULL COMMENT '资源在服务器上的地址',
+  `provider_id` int(11) DEFAULT NULL COMMENT '资源提供者id',
+  `description` varchar(1000) DEFAULT NULL COMMENT '资源描述',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "resource"
+#
+
+
+#
+# Structure for table "user"
+#
+
+CREATE TABLE `user` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户编号',
+  `user_name` varchar(40) DEFAULT NULL COMMENT '用户名（不超过20个汉字）',
+  `password` varchar(50) NOT NULL DEFAULT '123456' COMMENT '用户密码（6—24位）',
+  `gender` varchar(255) NOT NULL DEFAULT 'MALE' COMMENT '性别',
+  `email` varchar(50) DEFAULT NULL COMMENT '用户邮箱',
+  `type` varchar(10) DEFAULT 'STUDENT' COMMENT '用户身份（学生或老师）',
+  `reg_time` datetime DEFAULT '0000-00-00 00:00:00' COMMENT '注册时间',
+  `credit` int(10) DEFAULT '0' COMMENT '用户积分数',
+  `states` datetime DEFAULT NULL COMMENT '用户禁言时间',
+  `rank` int(2) DEFAULT NULL COMMENT '用户权限（是不是管理员）',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "user"
+#
+

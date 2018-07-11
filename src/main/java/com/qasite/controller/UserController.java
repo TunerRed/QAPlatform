@@ -22,10 +22,23 @@ public class UserController {
     @RequestMapping(value = "/user/info",method =RequestMethod.POST)
     @ResponseBody
     public Result userInfo(@RequestBody Map<String,String> map){
-        Integer id = Integer.parseInt(map.get("Id"));
+        Integer id = Integer.parseInt(map.get("id"));
         User user = userService.getUserInfo(id);
         if (user==null)
             return  ResultCache.getFailureDetail("错误的ID，找不到该用户！");
         return ResultCache.getDataOk(user);
+    }
+
+    @RequestMapping(value = "/user/change",method =RequestMethod.POST)
+    @ResponseBody
+    public Result changeInfo(@RequestBody User user){
+        User targetUser = userService.getUserInfo(user.getId());
+        if (targetUser==null)
+            return  ResultCache.getFailureDetail("错误的ID，找不到该用户！");//除非修改cookie否则基本不会出现的错误
+        if (userService.checkUserInfo(user)){
+            userService.updateUserInfo(user);
+            return ResultCache.getDataOk(null);
+        }
+        return ResultCache.getFailureDetail("该邮箱已被注册");
     }
 }

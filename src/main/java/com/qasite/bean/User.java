@@ -66,11 +66,11 @@ public class User {
     }
 
     public String getGender() {
-        return gender;
+        return gender.toUpperCase();
     }
 
     public void setGender(String gender) {
-        this.gender = gender == null ? null : gender.trim();
+        this.gender = gender == null ? null : gender.trim().toUpperCase();
     }
 
     public String getEmail() {
@@ -82,11 +82,11 @@ public class User {
     }
 
     public String getType() {
-        return type;
+        return type.toUpperCase();
     }
 
     public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+        this.type = type == null ? null : type.trim().toUpperCase();
     }
 
     public Integer getCredit() {

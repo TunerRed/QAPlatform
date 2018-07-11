@@ -130,15 +130,19 @@
             var pwd = document.getElementById("pwd");
                 $.ajax({
                     type:"post",
-                    url:'${APP_PATH}' + '/common/login',
+                    url:'${APP_PATH}' + '/user/change',
                     contentType:'application/json',
                     data:JSON.stringify({
-                        email:"90af80@163.com",
-                        password:"90af80"
+                        id:101,
+                        userName:"bba",
+                        email:"66666@163.com",
+                        password:"90af80",
+                        gender:"MALE",
+                        type:"teacher"
                     }),
                     success:function(result){
                         if (result.status==200)
-                            alert(result.data.userName);
+                            alert(result.message);
                         else
                             alert(result.message);
                     }});

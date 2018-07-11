@@ -24,4 +24,17 @@ public class UserService {
         User user = userMapper.selectByPrimaryKey(id);
         return user;
     }
+
+    public void updateUserInfo(User user) {
+        userMapper.updateByPrimaryKeySelective(user);
+    }
+
+    public boolean checkUserInfo(User user) {
+        User emailUser = userMapper.selectByEmail(user.getEmail());
+        if (emailUser == null)
+            return true;
+        if (emailUser.getId()==user.getId())
+            return true;
+        return false;
+    }
 }
