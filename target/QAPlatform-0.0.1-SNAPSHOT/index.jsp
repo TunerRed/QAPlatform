@@ -5,7 +5,6 @@
     <title>
         智能问答平台
     </title>
-
     <%
         pageContext.setAttribute("APP_PATH", "http://localhost:8080/webapp");
     %>
@@ -40,30 +39,24 @@
         }
 
     </style>
-    <link rel="stylesheet" type="text/css" href="CSS\sign.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS\sign.css" />
     <script type="text/javascript" src="JS\signformchange.js"></script>
     <script type="text/javascript" src="JS\jquery-1.11.0.min.js"></script>
-    <script>
-        function changePic(){
-            var imgObj = document.getElementById("show");
-            if(imgObj.getAttribute("src",2)=="picsInHomepage\\r_s2.png"){
-                imgObj.src="picsInHomepage\\r_s1.png";
-            }else{
-                imgObj.src="picsInHomepage\\r_s2.png";
-            }
-        }
-    </script>
-
 </head>
 <body background="picsInHomepage\bg.jpg" style=" background-repeat:no-repeat ;background-size:100% 100%; background-attachment: fixed;" >
 <div style="position:relative; height:5%; width:100%">
 </div>
-<div style="position:relative; float:left; width:85%; height:10%; text-align:right;">
+<div id="nameId">
+    <p id="getName">
+        宇宙大帝
+    </p>
+</div>
+<div id="signUpDiv" style="position:relative; float:left; width:85%; height:10%; text-align:right;">
     <a onclick="start()" style="color:white; font-size:1.2em; cursor:pointer">
         登 录
     </a>
 </div>
-<div style="position:relative; float:right; width:13%; height:10%; text-align:left;">
+<div id="signInDiv" style="position:relative; float:right; width:13%; height:10%; text-align:left;">
     <a style="color:white; font-size:1.2em; cursor:pointer">
         注 册
     </a>
@@ -80,7 +73,7 @@
 <div style="position:relative; height:15%;float:left; width:20%">
 </div>
 <div style="position:relative; float:left; height:15%; width:10%;">
-    <img id="show" src="picsInHomepage\r_s1.png" onclick="changePic()" style="cursor:pointer; width:100%;"/>
+    <img id="show" src="picsInHomepage\r_s1.png" onclick="changePic()" style="cursor:pointer; width:100%;" />
 </div>
 <div style="position:relative; float:left; width:47%;border-bottom:.1em solid #fff;margin-left:1em">
     <input style="display:inline-block;margin-left:0%; width:85%;border:none; BACKGROUND-COLOR: transparent;  outline:none; color:white; font-size:1.3em;">
@@ -91,11 +84,9 @@
     </div>
     <div style="display:inline-block">
         <a style="cursor:pointer;">
-            <img src="picsInHomepage\question_icon.png" style="width:60%"/>
+            <img src="picsInHomepage\question_icon.png" style="width:60%" onclick="searchOrResource()"/>
         </a>
     </div>
-
-
 </div>
 
 
@@ -117,36 +108,12 @@
     <div style="position:relative; height:10%; width:100%; margin-left:5%; color:#5f9fc9; font-size:1.3em; text-align:left;">
         密码
     </div>
-
-
-
     <div class="pwddiv">
         <input id="pwd" class="signinput" type="password" name="pwd">
     </div>
-    <div class="postdiv" id="sign_in_btn">
-        <img src="picsInHomepage\signup.png"  style="width:75%;"/>
+    <div class="postdiv" >
+        <img src="picsInHomepage\login_btn.png" style="width:75%; cursor:pointer;" onclick="sign_in()"/>
     </div>
-
-    <script type="text/javascript">
-        var k = document.getElementById("sign_in_btn");
-        k.onclick= function(){
-                $.ajax({
-                    type:"post",
-                    url:'${APP_PATH}' + '/user/questions',
-                    contentType:'application/json',
-                    data:JSON.stringify({
-                        Id:180 ,
-                        pages:1
-                    }),
-                    success:function(value){
-                        for(var key in value.data){
-                            alert(value.data[key].title);
-                        }
-
-                    }
-                })
-        };
-    </script>
     <br>
 </div>
 </body>

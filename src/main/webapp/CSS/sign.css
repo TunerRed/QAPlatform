@@ -73,3 +73,13 @@ body {
     height: 45px;
     background-color:#4CAF50;
 }
+#nameId{
+    display:none;
+    font-size:1.3em;
+    float:left;
+    text-align:right;
+    margin-right:10%;
+    color:white;
+    height:10%;
+    width:90%;
+}

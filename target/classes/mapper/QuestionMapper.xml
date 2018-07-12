@@ -308,4 +308,18 @@
       label3 = #{label3,jdbcType=VARCHAR}
     where Id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByKeywords" parameterType="java.util.ArrayList" resultMap="BaseResultMap">
+    select * from question
+    <if test="array != null">
+      <where>
+        1
+        <foreach collection="array" index="index" item="key" open="(" separator="," close=")">
+          <if test="key != null and key != ''">
+            AND description LIKE '%${key}%'
+          </if>
+        </foreach>
+      </where>
+    </if>
+  </select>
 </mapper>

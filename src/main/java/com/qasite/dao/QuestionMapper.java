@@ -3,6 +3,8 @@ package com.qasite.dao;
 import com.qasite.bean.Question;
 import com.qasite.bean.QuestionExample;
 import java.util.List;
+
+import com.qasite.bean.SearchResult;
 import org.apache.ibatis.annotations.Param;
 
 public interface QuestionMapper {
@@ -29,4 +31,6 @@ public interface QuestionMapper {
     int updateByPrimaryKey(Question record);
 
     List<Question> selectAriserid(Integer user_id);
+
+    List<SearchResult> selectByKeywords(String[] keys);
 }
