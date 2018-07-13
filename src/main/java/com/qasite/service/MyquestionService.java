@@ -21,7 +21,7 @@ public class MyquestionService {
     public String[] splitQuestion(String description) {
         String[] result = new String[2];
         result[0] = "为什么";
-        result[1] = "为什么";
+        result[1] = "喝水";
         return result;
     }
 
@@ -33,7 +33,10 @@ public class MyquestionService {
         ArrayList<SearchResult> questions = null;
         /*for (int i = 0; i < keys.length; i++)
             System.out.println(keys[i]);*/
-        questions = (ArrayList<SearchResult>) questionMapper.selectByKeywords(keys);
+        System.out.println("search result");
+        List<SearchResult> selectResult = questionMapper.selectByKeywords(keys);
+        System.out.println("get select result");
+        questions = (ArrayList<SearchResult>) selectResult;
 
         /*questions = new ArrayList<SearchResult>();
         for (int i = 0; questions.size() < 5; i++){

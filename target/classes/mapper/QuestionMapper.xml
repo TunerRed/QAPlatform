@@ -314,11 +314,11 @@
     <if test="array != null">
       <where>
         1
-        <foreach collection="array" index="index" item="key" open="(" separator="," close=")">
+        <!--foreach collection="array" index="index" item="key" open="(" separator="," close=")">
           <if test="key != null and key != ''">
             AND description LIKE '%${key}%'
           </if>
-        </foreach>
+        </foreach-->
       </where>
     </if>
   </select>

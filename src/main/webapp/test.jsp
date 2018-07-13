@@ -37,7 +37,6 @@
 
 <script type="text/javascript">
     function clickTest() {
-        console.log("----------");
         var input1 = document.getElementById("testInput1");
         var input2 = document.getElementById("testInput2");
         var input3 = document.getElementById("testInput3");
@@ -54,9 +53,11 @@
                 //password:"9307a1"
             }),
             success:function(result){
-                alert(result.message);
+                console.log("server return : "+result.message);
                 if(result.status==200){
-                    console.log("----------------------------");
+                    for (var key in result.data){
+                        console.log(result.data[key].title);
+                    }
                 }
                 //alert(reult.data.userName);
                 //alert(result.status+result.message);
