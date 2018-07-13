@@ -25,22 +25,28 @@ public class MyquestionService {
         return result;
     }
 
+    /*
+    * 输入关键词，返回搜索到的相关问题列表
+    * */
     public ArrayList<SearchResult> questionSearchResults(String[] keys) {
 
         ArrayList<SearchResult> questions = null;
         /*for (int i = 0; i < keys.length; i++)
-            System.out.println(keys[i]);
-        questions = (ArrayList<SearchResult>) questionMapper.selectByKeywords(keys);*/
+            System.out.println(keys[i]);*/
+        questions = (ArrayList<SearchResult>) questionMapper.selectByKeywords(keys);
 
-        questions = new ArrayList<SearchResult>();
+        /*questions = new ArrayList<SearchResult>();
         for (int i = 0; questions.size() < 5; i++){
             Question question = questionMapper.selectByPrimaryKey(21+i);
             if (question != null)
                 questions.add(question);
-        }
+        }*/
         return questions;
     }
 
+    /*
+     * 输入关键词，返回搜索到的相关资源列表
+     * */
     public ArrayList<SearchResult> resourceSearchResults(String[] keys) {
         return null;
     }

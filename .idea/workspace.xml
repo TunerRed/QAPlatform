@@ -7,13 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/controller/CommonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/service/MyquestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/service/MyquestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/signformchange.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/signformchange.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/controller/CommonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/controller/CommonController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/qasite/controller/CommonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qasite/controller/CommonController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,14 +21,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyquestionService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyquestionService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/MyquestionService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+            <state relative-caret-position="190">
+              <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
               <folding>
-                <element signature="e#1381#1382#0" expanded="true" />
-                <element signature="e#1408#1409#0" expanded="true" />
+                <element signature="e#1400#1401#0" expanded="true" />
+                <element signature="e#1427#1428#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,8 +46,8 @@
       <file leaf-file-name="CommonController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/CommonController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="74" column="46" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="46" />
+            <state relative-caret-position="188">
+              <caret line="100" column="49" lean-forward="true" selection-start-line="100" selection-start-column="49" selection-end-line="100" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,11 +55,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+            <state relative-caret-position="115">
+              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,10 +144,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/dao/QuestionMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/test.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/JS/signformchange.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/controller/CommonController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/MyquestionService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/test.jsp" />
       </list>
     </option>
   </component>
@@ -525,7 +523,7 @@
       <workItem from="1531311834674" duration="7487000" />
       <workItem from="1531355123043" duration="8397000" />
       <workItem from="1531375592791" duration="11755000" />
-      <workItem from="1531446657896" duration="1097000" />
+      <workItem from="1531446657896" duration="2202000" />
     </task>
     <servers />
   </component>
@@ -562,7 +560,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72648000" />
+    <option name="totallyTimeSpent" value="73753000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -921,13 +919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/test/MapperTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -938,23 +929,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/MyquestionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+          <folding>
+            <element signature="e#1400#1401#0" expanded="true" />
+            <element signature="e#1427#1428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/CommonController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="74" column="46" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="46" />
+        <state relative-caret-position="188">
+          <caret line="100" column="49" lean-forward="true" selection-start-line="100" selection-start-column="49" selection-end-line="100" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/MyquestionService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        <state relative-caret-position="115">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
           <folding>
-            <element signature="e#1381#1382#0" expanded="true" />
-            <element signature="e#1408#1409#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
