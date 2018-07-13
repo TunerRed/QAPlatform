@@ -23,7 +23,6 @@
         console.log("----------");
         var input = document.getElementById("testInput");
         $.ajax({
-
             type:"post",
             url:'http://localhost:8080/webapp/common/search',
             contentType:'application/json',
@@ -38,8 +37,7 @@
             success:function(result){
                 alert(result.message);
                 if(result.status==200){
-                    alert("data:");
-                    print("----------------------------");
+                    console.log("----------------------------");
                 }
                 //alert(reult.data.userName);
                 //alert(result.status+result.message);

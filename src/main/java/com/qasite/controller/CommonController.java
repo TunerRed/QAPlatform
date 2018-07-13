@@ -70,6 +70,7 @@ public class CommonController {
     @RequestMapping(value = "/common/search",method =RequestMethod.POST)
     @ResponseBody
     public Result search(@RequestBody Map<String,String> map){
+        //System.out.println("/common/search");
         //System.out.println("search : "+map.get("description"));
         String[] keys = questionService.splitQuestion(map.get("description"));
         ArrayList<SearchResult> datas = null;
@@ -80,14 +81,15 @@ public class CommonController {
         }else {
             return ResultCache.getFailureDetail("错误的请求类型！");
         }
+        //System.out.println("right request : "+map.get("type"));
         if (datas == null || datas.size() == 0)
             return ResultCache.getFailureDetail("找不到相关问题或资源！");
-        /*
+
         if (datas == null)
             System.out.println("datas null");
         else
-            System.out.println("datas : "+datas.length);
-            */
+            System.out.println("datas : "+datas.size());
+
         String s_index = map.get("index"),s_length=map.get("length");
         if (s_index == null || s_index.length() == 0)
             s_index = "1";
@@ -99,7 +101,7 @@ public class CommonController {
         JsonNode root = mapper.createArrayNode();
 
         for (int i = index-1; i < datas.size() && i < index*length; i++){
-            //System.out.print("data "+i+" : "+datas[i].getTitle());
+            //System.out.print("data "+i+" : "+datas.get(i).getTitle());
             JsonNode data = mapper.createObjectNode();
             ((ObjectNode) data).put("title",datas.get(i).getTitle());
             ((ObjectNode) data).put("description",datas.get(i).getDescription());

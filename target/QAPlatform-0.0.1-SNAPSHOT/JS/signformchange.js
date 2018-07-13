@@ -59,9 +59,11 @@ function signclose(){
     document.getElementById('nameId').style.display="block";
 }
 function searchOrResource(){
+    console.log("searchOrResource");
     var imgObj = document.getElementById("show");
     var textObj= document.getElementById("getName").innerHTML;
     if(imgObj.getAttribute("src",2)=="picsInHomepage\\r_s2.png"){
+        console.log("signformchange-question");
         $.ajax({
             type:"post",
             url:'http://localhost:8080/webapp/common/search',
@@ -79,13 +81,15 @@ function searchOrResource(){
             }
         });
     }else{
+        console.log("signformchange-question");
         $.ajax({
             type:"post",
             url:'http://localhost:8080/webapp/common/search',
             contentType:'application/json',
             data:{
                 type:"question",
-                description:"${textObj}",
+                description:"aaaaa",
+                //description:"${textObj}",
                 index:1,
                 length:10
             },

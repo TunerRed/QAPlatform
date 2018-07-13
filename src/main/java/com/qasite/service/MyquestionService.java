@@ -19,8 +19,9 @@ public class MyquestionService {
     }
 
     public String[] splitQuestion(String description) {
-        String[] result = new String[1];
+        String[] result = new String[2];
         result[0] = "为什么";
+        result[1] = "为什么";
         return result;
     }
 
