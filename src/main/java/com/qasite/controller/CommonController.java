@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -71,8 +72,8 @@ public class CommonController {
     @ResponseBody
     public Result search(@RequestBody Map<String,String> map){
         //System.out.println("/common/search");
-        //System.out.println("search : "+map.get("description"));
-        String[] keys = questionService.splitQuestion(map.get("description"));
+        System.out.println("search : "+map.get("description"));
+        List<String> keys = questionService.splitQuestion(map.get("description"));
         ArrayList<SearchResult> datas = null;
         if (map.get("type").equalsIgnoreCase("question")){
             datas = questionService.questionSearchResults(keys);
@@ -85,10 +86,10 @@ public class CommonController {
         if (datas == null || datas.size() == 0)
             return ResultCache.getFailureDetail("找不到相关问题或资源！");
 
-        if (datas == null)
+        /*if (datas == null)
             System.out.println("datas null");
         else
-            System.out.println("datas : "+datas.size());
+            System.out.println("datas : "+datas.size());*/
 
         String s_index = map.get("index"),s_length=map.get("length");
         if (s_index == null || s_index.length() == 0)

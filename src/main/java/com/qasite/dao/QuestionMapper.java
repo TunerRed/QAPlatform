@@ -32,5 +32,5 @@ public interface QuestionMapper {
 
     List<Question> selectAriserid(Integer user_id);
 
-    List<SearchResult> selectByKeywords(String[] keys);
+    List<SearchResult> selectByKeywords(List<String> keys);
 }
