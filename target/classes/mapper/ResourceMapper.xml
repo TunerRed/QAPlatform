@@ -4,10 +4,14 @@
   <resultMap id="BaseResultMap" type="com.qasite.bean.Resource">
     <id column="Id" jdbcType="INTEGER" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
-    <result column="type" jdbcType="INTEGER" property="type" />
     <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="format" jdbcType="VARCHAR" property="format" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="provider_id" jdbcType="INTEGER" property="providerId" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="point" jdbcType="INTEGER" property="point" />
+    <result column="date" jdbcType="TIMESTAMP" property="date" />
+    <result column="download_times" jdbcType="INTEGER" property="downloadTimes" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -68,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    Id, title, type, description, address, provider_id
+    Id, title, description, format, address, provider_id, type, point, date, download_times
   </sql>
   <select id="selectByExample" parameterType="com.qasite.bean.ResourceExample" resultMap="BaseResultMap">
     select
@@ -101,12 +105,14 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.qasite.bean.Resource">
-    insert into resource (Id, title, type, 
-      description, address, provider_id
-      )
-    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, 
-      #{description,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{providerId,jdbcType=INTEGER}
-      )
+    insert into resource (Id, title, description, 
+      format, address, provider_id, 
+      type, point, date, 
+      download_times)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{format,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{providerId,jdbcType=INTEGER}, 
+      #{type,jdbcType=VARCHAR}, #{point,jdbcType=INTEGER}, #{date,jdbcType=TIMESTAMP}, 
+      #{downloadTimes,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.qasite.bean.Resource">
     insert into resource
@@ -117,17 +123,29 @@
       <if test="title != null">
         title,
       </if>
-      <if test="type != null">
-        type,
-      </if>
       <if test="description != null">
         description,
+      </if>
+      <if test="format != null">
+        format,
       </if>
       <if test="address != null">
         address,
       </if>
       <if test="providerId != null">
         provider_id,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="point != null">
+        point,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="downloadTimes != null">
+        download_times,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -137,17 +155,29 @@
       <if test="title != null">
         #{title,jdbcType=VARCHAR},
       </if>
-      <if test="type != null">
-        #{type,jdbcType=INTEGER},
-      </if>
       <if test="description != null">
         #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="format != null">
+        #{format,jdbcType=VARCHAR},
       </if>
       <if test="address != null">
         #{address,jdbcType=VARCHAR},
       </if>
       <if test="providerId != null">
         #{providerId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="point != null">
+        #{point,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="downloadTimes != null">
+        #{downloadTimes,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -166,17 +196,29 @@
       <if test="record.title != null">
         title = #{record.title,jdbcType=VARCHAR},
       </if>
-      <if test="record.type != null">
-        type = #{record.type,jdbcType=INTEGER},
-      </if>
       <if test="record.description != null">
         description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.format != null">
+        format = #{record.format,jdbcType=VARCHAR},
       </if>
       <if test="record.address != null">
         address = #{record.address,jdbcType=VARCHAR},
       </if>
       <if test="record.providerId != null">
         provider_id = #{record.providerId,jdbcType=INTEGER},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.point != null">
+        point = #{record.point,jdbcType=INTEGER},
+      </if>
+      <if test="record.date != null">
+        date = #{record.date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.downloadTimes != null">
+        download_times = #{record.downloadTimes,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -187,10 +229,14 @@
     update resource
     set Id = #{record.id,jdbcType=INTEGER},
       title = #{record.title,jdbcType=VARCHAR},
-      type = #{record.type,jdbcType=INTEGER},
       description = #{record.description,jdbcType=VARCHAR},
+      format = #{record.format,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
-      provider_id = #{record.providerId,jdbcType=INTEGER}
+      provider_id = #{record.providerId,jdbcType=INTEGER},
+      type = #{record.type,jdbcType=VARCHAR},
+      point = #{record.point,jdbcType=INTEGER},
+      date = #{record.date,jdbcType=TIMESTAMP},
+      download_times = #{record.downloadTimes,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -201,11 +247,11 @@
       <if test="title != null">
         title = #{title,jdbcType=VARCHAR},
       </if>
-      <if test="type != null">
-        type = #{type,jdbcType=INTEGER},
-      </if>
       <if test="description != null">
         description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="format != null">
+        format = #{format,jdbcType=VARCHAR},
       </if>
       <if test="address != null">
         address = #{address,jdbcType=VARCHAR},
@@ -213,16 +259,32 @@
       <if test="providerId != null">
         provider_id = #{providerId,jdbcType=INTEGER},
       </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="point != null">
+        point = #{point,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        date = #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="downloadTimes != null">
+        download_times = #{downloadTimes,jdbcType=INTEGER},
+      </if>
     </set>
     where Id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qasite.bean.Resource">
     update resource
     set title = #{title,jdbcType=VARCHAR},
-      type = #{type,jdbcType=INTEGER},
       description = #{description,jdbcType=VARCHAR},
+      format = #{format,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
-      provider_id = #{providerId,jdbcType=INTEGER}
+      provider_id = #{providerId,jdbcType=INTEGER},
+      type = #{type,jdbcType=VARCHAR},
+      point = #{point,jdbcType=INTEGER},
+      date = #{date,jdbcType=TIMESTAMP},
+      download_times = #{downloadTimes,jdbcType=INTEGER}
     where Id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

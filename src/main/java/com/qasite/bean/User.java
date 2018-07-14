@@ -5,6 +5,11 @@ import java.util.Date;
 
 public class User {
 
+    public static Integer PERMISSION_ADMIN = 1;
+    public static Integer PERMISSION_NO_ADMIN = 0;
+    public static String ROLE_STUDENT = "STUDENT";
+    public static String ROLE_TEACHER = "TEACHER";
+
     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
     //df.format(Math.random()*3<2?new Date():new Date());
 

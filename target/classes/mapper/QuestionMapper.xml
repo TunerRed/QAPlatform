@@ -308,13 +308,34 @@
       label3 = #{label3,jdbcType=VARCHAR}
     where Id = #{id,jdbcType=INTEGER}
   </update>
-
-  <select id="selectByKeywords" parameterType="java.util.ArrayList" resultMap="BaseResultMap">
+  <!-- 在数据库中使用一套关键词列表查询相关问题，返回一个问题的ArrayList -->
+  <select id="selectByKeywords" parameterType="java.util.LinkedList" resultMap="BaseResultMap">
     select * from question
     <if test="list != null">
       <where>
         1
         <foreach collection="list" index="index" item="key" open="" separator=" " close="">
+          <if test="key != null and key != ''">
+            AND description LIKE '%${key}%'
+          </if>
+        </foreach>
+      </where>
+    </if>
+  </select>
+  <!-- 使用关键词列表查询，并借助上次的查询结果排除已经得到的问题，返回一个问题的ArrayList -->
+  <select id="selectByKeywordsAndOlds" resultMap="BaseResultMap">
+    select * from question
+    <if test="keys != null">
+      <where>
+        1
+        <if test="oldResult != null and oldResult.size > 0">
+          AND
+          Id not in
+          <foreach item="item" index="index" collection="oldResult" open="(" separator="," close=")">
+            '${item.id}'
+          </foreach>
+        </if >
+        <foreach item="key" index="index" collection="keys" open="" separator=" " close="">
           <if test="key != null and key != ''">
             AND description LIKE '%${key}%'
           </if>

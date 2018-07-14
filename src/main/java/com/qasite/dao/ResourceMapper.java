@@ -3,6 +3,8 @@ package com.qasite.dao;
 import com.qasite.bean.Resource;
 import com.qasite.bean.ResourceExample;
 import java.util.List;
+
+import com.qasite.bean.SearchResult;
 import org.apache.ibatis.annotations.Param;
 
 public interface ResourceMapper {
@@ -27,4 +29,8 @@ public interface ResourceMapper {
     int updateByPrimaryKeySelective(Resource record);
 
     int updateByPrimaryKey(Resource record);
+
+    List<SearchResult> selectByKeywords(List<String> keys);
+
+    List<SearchResult> selectByKeywordsAndOlds(@Param("keys") List<String> keys, @Param("oldResult") List<SearchResult> oldResult);
 }

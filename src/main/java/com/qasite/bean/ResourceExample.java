@@ -1,6 +1,7 @@
 package com.qasite.bean;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ResourceExample {
@@ -234,66 +235,6 @@ public class ResourceExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNull() {
-            addCriterion("type is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeIsNotNull() {
-            addCriterion("type is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeEqualTo(Integer value) {
-            addCriterion("type =", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeNotEqualTo(Integer value) {
-            addCriterion("type <>", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeGreaterThan(Integer value) {
-            addCriterion("type >", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("type >=", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeLessThan(Integer value) {
-            addCriterion("type <", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeLessThanOrEqualTo(Integer value) {
-            addCriterion("type <=", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeIn(List<Integer> values) {
-            addCriterion("type in", values, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeNotIn(List<Integer> values) {
-            addCriterion("type not in", values, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeBetween(Integer value1, Integer value2) {
-            addCriterion("type between", value1, value2, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("type not between", value1, value2, "type");
-            return (Criteria) this;
-        }
-
         public Criteria andDescriptionIsNull() {
             addCriterion("description is null");
             return (Criteria) this;
@@ -361,6 +302,76 @@ public class ResourceExample {
 
         public Criteria andDescriptionNotBetween(String value1, String value2) {
             addCriterion("description not between", value1, value2, "description");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatIsNull() {
+            addCriterion("format is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatIsNotNull() {
+            addCriterion("format is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatEqualTo(String value) {
+            addCriterion("format =", value, "format");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatNotEqualTo(String value) {
+            addCriterion("format <>", value, "format");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatGreaterThan(String value) {
+            addCriterion("format >", value, "format");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatGreaterThanOrEqualTo(String value) {
+            addCriterion("format >=", value, "format");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatLessThan(String value) {
+            addCriterion("format <", value, "format");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatLessThanOrEqualTo(String value) {
+            addCriterion("format <=", value, "format");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatLike(String value) {
+            addCriterion("format like", value, "format");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatNotLike(String value) {
+            addCriterion("format not like", value, "format");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatIn(List<String> values) {
+            addCriterion("format in", values, "format");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatNotIn(List<String> values) {
+            addCriterion("format not in", values, "format");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatBetween(String value1, String value2) {
+            addCriterion("format between", value1, value2, "format");
+            return (Criteria) this;
+        }
+
+        public Criteria andFormatNotBetween(String value1, String value2) {
+            addCriterion("format not between", value1, value2, "format");
             return (Criteria) this;
         }
 
@@ -491,6 +502,256 @@ public class ResourceExample {
 
         public Criteria andProviderIdNotBetween(Integer value1, Integer value2) {
             addCriterion("provider_id not between", value1, value2, "providerId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIsNull() {
+            addCriterion("type is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIsNotNull() {
+            addCriterion("type is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeEqualTo(String value) {
+            addCriterion("type =", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNotEqualTo(String value) {
+            addCriterion("type <>", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeGreaterThan(String value) {
+            addCriterion("type >", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("type >=", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeLessThan(String value) {
+            addCriterion("type <", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeLessThanOrEqualTo(String value) {
+            addCriterion("type <=", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeLike(String value) {
+            addCriterion("type like", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNotLike(String value) {
+            addCriterion("type not like", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIn(List<String> values) {
+            addCriterion("type in", values, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNotIn(List<String> values) {
+            addCriterion("type not in", values, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeBetween(String value1, String value2) {
+            addCriterion("type between", value1, value2, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNotBetween(String value1, String value2) {
+            addCriterion("type not between", value1, value2, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andPointIsNull() {
+            addCriterion("point is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPointIsNotNull() {
+            addCriterion("point is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPointEqualTo(Integer value) {
+            addCriterion("point =", value, "point");
+            return (Criteria) this;
+        }
+
+        public Criteria andPointNotEqualTo(Integer value) {
+            addCriterion("point <>", value, "point");
+            return (Criteria) this;
+        }
+
+        public Criteria andPointGreaterThan(Integer value) {
+            addCriterion("point >", value, "point");
+            return (Criteria) this;
+        }
+
+        public Criteria andPointGreaterThanOrEqualTo(Integer value) {
+            addCriterion("point >=", value, "point");
+            return (Criteria) this;
+        }
+
+        public Criteria andPointLessThan(Integer value) {
+            addCriterion("point <", value, "point");
+            return (Criteria) this;
+        }
+
+        public Criteria andPointLessThanOrEqualTo(Integer value) {
+            addCriterion("point <=", value, "point");
+            return (Criteria) this;
+        }
+
+        public Criteria andPointIn(List<Integer> values) {
+            addCriterion("point in", values, "point");
+            return (Criteria) this;
+        }
+
+        public Criteria andPointNotIn(List<Integer> values) {
+            addCriterion("point not in", values, "point");
+            return (Criteria) this;
+        }
+
+        public Criteria andPointBetween(Integer value1, Integer value2) {
+            addCriterion("point between", value1, value2, "point");
+            return (Criteria) this;
+        }
+
+        public Criteria andPointNotBetween(Integer value1, Integer value2) {
+            addCriterion("point not between", value1, value2, "point");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateIsNull() {
+            addCriterion("date is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateIsNotNull() {
+            addCriterion("date is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateEqualTo(Date value) {
+            addCriterion("date =", value, "date");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateNotEqualTo(Date value) {
+            addCriterion("date <>", value, "date");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateGreaterThan(Date value) {
+            addCriterion("date >", value, "date");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateGreaterThanOrEqualTo(Date value) {
+            addCriterion("date >=", value, "date");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateLessThan(Date value) {
+            addCriterion("date <", value, "date");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateLessThanOrEqualTo(Date value) {
+            addCriterion("date <=", value, "date");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateIn(List<Date> values) {
+            addCriterion("date in", values, "date");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateNotIn(List<Date> values) {
+            addCriterion("date not in", values, "date");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateBetween(Date value1, Date value2) {
+            addCriterion("date between", value1, value2, "date");
+            return (Criteria) this;
+        }
+
+        public Criteria andDateNotBetween(Date value1, Date value2) {
+            addCriterion("date not between", value1, value2, "date");
+            return (Criteria) this;
+        }
+
+        public Criteria andDownloadTimesIsNull() {
+            addCriterion("download_times is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDownloadTimesIsNotNull() {
+            addCriterion("download_times is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDownloadTimesEqualTo(Integer value) {
+            addCriterion("download_times =", value, "downloadTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andDownloadTimesNotEqualTo(Integer value) {
+            addCriterion("download_times <>", value, "downloadTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andDownloadTimesGreaterThan(Integer value) {
+            addCriterion("download_times >", value, "downloadTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andDownloadTimesGreaterThanOrEqualTo(Integer value) {
+            addCriterion("download_times >=", value, "downloadTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andDownloadTimesLessThan(Integer value) {
+            addCriterion("download_times <", value, "downloadTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andDownloadTimesLessThanOrEqualTo(Integer value) {
+            addCriterion("download_times <=", value, "downloadTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andDownloadTimesIn(List<Integer> values) {
+            addCriterion("download_times in", values, "downloadTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andDownloadTimesNotIn(List<Integer> values) {
+            addCriterion("download_times not in", values, "downloadTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andDownloadTimesBetween(Integer value1, Integer value2) {
+            addCriterion("download_times between", value1, value2, "downloadTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andDownloadTimesNotBetween(Integer value1, Integer value2) {
+            addCriterion("download_times not between", value1, value2, "downloadTimes");
             return (Criteria) this;
         }
     }

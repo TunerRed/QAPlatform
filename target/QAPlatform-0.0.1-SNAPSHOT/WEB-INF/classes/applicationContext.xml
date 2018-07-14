@@ -72,7 +72,7 @@
 	</tx:advice>
 	<!-- 3. aop配置 -->
 	<aop:config>
-		<aop:pointcut expression="execution(* com.crud.service..*(..))" id="myPointCut"/>
+		<aop:pointcut expression="execution(* com.qasite.service..*(..))" id="myPointCut"/>
 		<aop:advisor advice-ref="transactionAdvice" pointcut-ref="myPointCut"/>
 	</aop:config>
 	

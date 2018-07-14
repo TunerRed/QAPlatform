@@ -41,6 +41,10 @@ public class Question implements SearchResult{
         return id;
     }
 
+    public Date getDate() {
+        return this.getTime1();
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }

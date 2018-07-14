@@ -1,17 +1,27 @@
 package com.qasite.bean;
 
-public class Resource implements SearchResult{
+import java.util.Date;
+
+public class Resource {
     private Integer id;
 
     private String title;
 
-    private Integer type;
-
     private String description;
+
+    private String format;
 
     private String address;
 
     private Integer providerId;
+
+    private String type;
+
+    private Integer point;
+
+    private Date date;
+
+    private Integer downloadTimes;
 
     public Integer getId() {
         return id;
@@ -29,20 +39,20 @@ public class Resource implements SearchResult{
         this.title = title == null ? null : title.trim();
     }
 
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description == null ? null : description.trim();
+    }
+
+    public String getFormat() {
+        return format;
+    }
+
+    public void setFormat(String format) {
+        this.format = format == null ? null : format.trim();
     }
 
     public String getAddress() {
@@ -59,5 +69,37 @@ public class Resource implements SearchResult{
 
     public void setProviderId(Integer providerId) {
         this.providerId = providerId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type == null ? null : type.trim();
+    }
+
+    public Integer getPoint() {
+        return point;
+    }
+
+    public void setPoint(Integer point) {
+        this.point = point;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Integer getDownloadTimes() {
+        return downloadTimes;
+    }
+
+    public void setDownloadTimes(Integer downloadTimes) {
+        this.downloadTimes = downloadTimes;
     }
 }

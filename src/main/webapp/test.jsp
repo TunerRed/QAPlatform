@@ -27,7 +27,7 @@
     </p>
     <br><br>
     <div>
-        输入项1：<input type="text" id="testInput1" width="200px" height="30px"/><br>
+        输入项1：<input type="text" id="testInput1" width="200px" height="30px" value="为什么"/><br>
         输入项2：<input type="text" id="testInput2" width="200px" height="30px"/><br>
         输入项3：<input type="text" id="testInput3" width="200px" height="30px"/>
     </div>
@@ -51,7 +51,7 @@
                 type:"question",
                 description:input1,
                 index:1,
-                length:4
+                length:10
                 //email:"9307a1@163.com",
                 //password:"9307a1"
             }),
@@ -59,7 +59,7 @@
                 console.log("server return : "+result.message);
                 if(result.status==200){
                     for (var key in result.data){
-                        console.log(result.data[key].title);
+                        console.log("title:"+result.data[key].title+" \t time:"+result.data[key].time);
                     }
                 }
                 //alert(reult.data.userName);

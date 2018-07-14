@@ -9,6 +9,9 @@
 	<!-- 跳转逻辑的配置 -->
 	<!-- 扫描业务逻辑组件，配置组件扫描器，注解式使用，只扫描控制器-->
 	<context:component-scan base-package="com.qasite.controller" />
+
+	<!-- 在spring配置文件引入这个标签之后，表示读取项目中的properties文件 -->
+	<context:property-placeholder location="classpath:*.properties" />
 	
 	<!-- 2.配置视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
