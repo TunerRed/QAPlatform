@@ -67,24 +67,21 @@
                 }
             });
         } else if (input2 != '') {
-            console.log("input2 : "+input2);
+            console.log("request : user/answers \tinput2 : "+input2)
             $.ajax({
                 type:"post",
-                url:'http://localhost:8080/webapp/common/search',
+                url:'http://localhost:8080/webapp/user/answers',
                 contentType:'application/json',
                 data:JSON.stringify({
-                    type:"resource",
-                    description:input2,
-                    index:1,
-                    length:5
-                    //email:"9307a1@163.com",
-                    //password:"9307a1"
+                    user_id:111,
                 }),
                 success:function(result){
                     console.log("server return : "+result.message);
                     if(result.status==200){
                         for (var key in result.data){
-                            console.log("title:"+result.data[key].title+" \t time:"+result.data[key].time);
+                            console.log("Question : "+result.data[key].title+
+                                "\nreply time : "+result.data[key].time+
+                                "\nquestion opening : "+result.data[key].status);
                         }
                     }
                 }

@@ -31,10 +31,21 @@ public class CommonService {
     * 个人页面
     * 我的问题列表
     * */
-    public List<Question> myquestion(int user_id) {
+    public List<Question> myQuestion(int user_id) {
         return questionMapper.selectAriserid(user_id);
     }
 
+    /*
+     * 个人页面
+     * 我的回复列表
+     * */
+    public List<Answer> myAnswers(Integer userid) {
+        return answerMapper.selectByUserId(userid);
+    }
+
+    /*
+    * 获取某个问题下的所有回复
+    * */
     public List<Answer> getAnswersByQuestionId(int questionId){
         return answerMapper.selectByQuestionId(questionId);
     }
@@ -100,4 +111,5 @@ public class CommonService {
 
         return selectResult == null ? null:(ArrayList<SearchResult>)selectResult;
     }
+
 }

@@ -90,11 +90,19 @@
     from answer
     where Id = #{id,jdbcType=INTEGER}
   </select>
+  <!-- 传入问题的id，返回隶属此问题的所有回复的列表 -->
   <select id="selectByQuestionId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from answer
     where question_id = #{questionId,jdbcType=INTEGER}
+  </select>
+  <!-- 传入用户id，返回此用户所有的回复内容 -->
+  <select id="selectByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from answer
+    where replier_id = #{userId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from answer

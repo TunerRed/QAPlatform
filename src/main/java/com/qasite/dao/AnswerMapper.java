@@ -34,4 +34,7 @@ public interface AnswerMapper {
 
     //传入问题的id，返回隶属此问题的所有回复的列表
     List<Answer> selectByQuestionId(@Param("questionId") int questionId);
+
+    //传入用户id，返回此用户所有的回复内容
+    List<Answer> selectByUserId(@Param("userId") Integer userid);
 }
