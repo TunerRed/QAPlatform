@@ -1,8 +1,10 @@
 package com.qasite.controller;
 
+import com.qasite.bean.Question;
 import com.qasite.bean.User;
 import com.qasite.result.Result;
 import com.qasite.result.ResultCache;
+import com.qasite.service.CommonService;
 import com.qasite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -18,6 +21,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private CommonService commonService;
 
     @RequestMapping(value = "/user/info",method =RequestMethod.POST)
     @ResponseBody
@@ -40,5 +45,15 @@ public class UserController {
             return ResultCache.getDataOk(null);
         }
         return ResultCache.getFailureDetail("该邮箱已被注册");
+    }
+
+    /*
+    * 返回用户提出的问题
+    * */
+    @RequestMapping(value = "user/questions",method =RequestMethod.POST)
+    @ResponseBody
+    public Result showQuestions(@RequestBody Map<String,Integer> map){
+        List<Question> questions=commonService.myquestion(map.get("Id"));
+        return ResultCache.getDataOk(questions);
     }
 }

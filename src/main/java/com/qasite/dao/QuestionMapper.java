@@ -7,7 +7,12 @@ import java.util.List;
 import com.qasite.bean.SearchResult;
 import org.apache.ibatis.annotations.Param;
 
-public interface QuestionMapper {
+/*
+ * 改动
+ * 继承了SearchMapper接口及其方法：selectByKeywords、selectByKeywordsAndOlds
+ * 添加了selectAriserid方法
+ * */
+public interface QuestionMapper extends SearchMapper{
     long countByExample(QuestionExample example);
 
     int deleteByExample(QuestionExample example);

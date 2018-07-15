@@ -37,4 +37,16 @@ public class UserService {
             return true;
         return false;
     }
+
+    @Autowired
+    private UserMapper UserMapper;
+    public boolean register(User user) {
+        User user1=UserMapper.selectByEmail(user.getEmail());
+        //User user2=UserMapper.selectByUsername(user.getUserName());
+        if(user1==null/*&&user2==null*/) {
+            UserMapper.insert(user);
+            return true;
+        }
+        return false;
+    }
 }

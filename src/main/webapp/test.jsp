@@ -27,7 +27,7 @@
     </p>
     <br><br>
     <div>
-        输入项1：<input type="text" id="testInput1" width="200px" height="30px" value="为什么"/><br>
+        输入项1：<input type="text" id="testInput1" width="200px" height="30px" value="文件"/><br>
         输入项2：<input type="text" id="testInput2" width="200px" height="30px"/><br>
         输入项3：<input type="text" id="testInput3" width="200px" height="30px"/>
     </div>
@@ -40,32 +40,70 @@
         var input1 = document.getElementById("testInput1").value;
         var input2 = document.getElementById("testInput2").value;
         var input3 = document.getElementById("testInput3").value;
-        console.log("input1 : "+input1);
-        console.log("input2 : "+input2);
-        console.log("input3 : "+input3);
-        $.ajax({
-            type:"post",
-            url:'http://localhost:8080/webapp/common/search',
-            contentType:'application/json',
-            data:JSON.stringify({
-                type:"question",
-                description:input1,
-                index:1,
-                length:10
-                //email:"9307a1@163.com",
-                //password:"9307a1"
-            }),
-            success:function(result){
-                console.log("server return : "+result.message);
-                if(result.status==200){
-                    for (var key in result.data){
-                        console.log("title:"+result.data[key].title+" \t time:"+result.data[key].time);
+
+        if (input1 != ''){
+            console.log("input1 : "+input1);
+            $.ajax({
+                type:"post",
+                url:'http://localhost:8080/webapp/common/search',
+                contentType:'application/json',
+                data:JSON.stringify({
+                    type:"question",
+                    description:input1,
+                    index:1,
+                    length:5
+                }),
+                success:function(result){
+                    console.log("server return : "+result.message);
+                    if(result.status==200){
+                        for (var key in result.data){
+                            console.log("title:"+result.data[key].title+" \t time:"+result.data[key].time);
+                        }
                     }
                 }
-                //alert(reult.data.userName);
-                //alert(result.status+result.message);
-            }
-        });
+            });
+        } else if (input2 != '') {
+            console.log("input2 : "+input2);
+            $.ajax({
+                type:"post",
+                url:'http://localhost:8080/webapp/common/search',
+                contentType:'application/json',
+                data:JSON.stringify({
+                    type:"resource",
+                    description:input2,
+                    index:1,
+                    length:5
+                    //email:"9307a1@163.com",
+                    //password:"9307a1"
+                }),
+                success:function(result){
+                    console.log("server return : "+result.message);
+                    if(result.status==200){
+                        for (var key in result.data){
+                            console.log("title:"+result.data[key].title+" \t time:"+result.data[key].time);
+                        }
+                    }
+                }
+            });
+        }else if (input3 != '') {
+            console.log("input3 : "+input3);
+            $.ajax({
+                type:"post",
+                url:'http://localhost:8080/webapp/common/login',
+                contentType:'application/json',
+                data:JSON.stringify({
+                    email:input3+"@163.com",
+                    password:input3,
+                }),
+                success:function(result){
+                    console.log("server return : "+result.message);
+                    if(result.status==200){
+                        console.log(result.data.userName);
+                    }
+                }
+            });
+        }
+
     }
 </script>
 </body>

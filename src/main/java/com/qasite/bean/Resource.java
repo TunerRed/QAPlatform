@@ -2,7 +2,7 @@ package com.qasite.bean;
 
 import java.util.Date;
 
-public class Resource {
+public class Resource implements SearchResult{
     private Integer id;
 
     private String title;

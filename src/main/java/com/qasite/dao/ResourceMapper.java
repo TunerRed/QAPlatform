@@ -7,7 +7,11 @@ import java.util.List;
 import com.qasite.bean.SearchResult;
 import org.apache.ibatis.annotations.Param;
 
-public interface ResourceMapper {
+/*
+* 改动
+* 继承了SearchMapper接口及其方法：selectByKeywords、selectByKeywordsAndOlds
+* */
+public interface ResourceMapper extends SearchMapper{
     long countByExample(ResourceExample example);
 
     int deleteByExample(ResourceExample example);

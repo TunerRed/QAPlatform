@@ -1,0 +1,33 @@
+package com.qasite.service;
+import com.huaban.analysis.jieba.JiebaSegmenter;
+import com.huaban.analysis.jieba.SegToken;
+import java.util.*;
+
+public class SentenceDivService {
+    /*
+    * Param sentence 传入字符串
+    * return result 将字符串中进行分词并返回词条列表
+    * */
+    public static List<String> divide(String sentence){
+        JiebaSegmenter segmenter = new JiebaSegmenter();
+        List<SegToken> list = segmenter.process(sentence, JiebaSegmenter.SegMode.SEARCH);
+        List<String>  results = new ArrayList<String>();
+        for(SegToken s : list){
+            results.add(s.word);
+        }
+        return results;
+    }
+    /*
+     * Param sentence 传入字符串
+     * return result 将字符串中进行分词并返回词条列表对应的词性
+     * */
+    public static List<String> properties(String sentence){
+        JiebaSegmenter segmenter = new JiebaSegmenter();
+        List<SegToken> list = segmenter.process(sentence, JiebaSegmenter.SegMode.SEARCH);
+        List<String>  results = new ArrayList<String>();
+        for(SegToken s : list){
+            results.add(s.properties);
+        }
+        return results;
+    }
+}
