@@ -28,6 +28,8 @@ public class CommonController {
     private UserService userService;
     @Autowired
     private CommonService commonService;
+    @Autowired
+    private DetailService detilService;
 
     @RequestMapping(value = "/common/login",method =RequestMethod.POST)
     @ResponseBody
@@ -113,11 +115,10 @@ public class CommonController {
         return ResultCache.getDataOk(root);
     }
 
-    @Autowired
-    private DetailService detilService;
+
     @RequestMapping(value = "common/search/res",method =RequestMethod.POST)
     @ResponseBody
-    public Result resourcedetil(@RequestBody Map<String,Integer> map){
+    public Result resourceDetail(@RequestBody Map<String,Integer> map){
         Resource resource = detilService.resourceDetail(map.get("resource_id"));
         if (resource == null)
             return ResultCache.getFailureDetail("找不到ID对应的资源！");
@@ -131,16 +132,7 @@ public class CommonController {
         * 经过后台协商，0代表普通登录用户，1代表管理员身份
         * 经过与前台的协商，当访问者为游客时，发送数字0（由于数据库设置的自动增长机制，ID值至少为1，因此不存在重复）
         * */
-        String viewer="visitor";
-        if (map.get("user_id") > 0){
-            int  useridentify = detilService.userIdentify(map.get("user_id"));
-            if (useridentify==User.PERMISSION_NO_ADMIN)
-                viewer="user";
-            else if (useridentify==User.PERMISSION_ADMIN)
-                viewer="admin";
-            else
-                return ResultCache.getFailureDetail("后台程序处理不当");
-        }
+        String viewer=getUserRank(map.get("user_id"));
         ObjectMapper mapper = new ObjectMapper();
         JsonNode data = mapper.createObjectNode();
         ((ObjectNode) data).put("resource",resource.getTitle());
@@ -155,6 +147,77 @@ public class CommonController {
         ((ObjectNode) data).put("download_times",resource.getDownloadTimes());
         ((ObjectNode) data).put("viewer",viewer);
         return ResultCache.getDataOk(data);
+    }
+
+
+    @RequestMapping(value = "common/search/que",method =RequestMethod.POST)
+    @ResponseBody
+    public Result questionDetil(@RequestBody Map<String,Integer> map){
+        Question question = detilService.questionDetail(map.get("question_id"));
+        if (question == null)
+            return ResultCache.getFailureDetail("找不到ID对应的问题！");
+        //这里要找的是资源上传者的ID而不是资源的ID，不应使用getID()方法
+        User uploader = userService.getUserInfo(question.getAriserId());
+        if (uploader == null)
+            return ResultCache.getFailureDetail("找不到问题的发布者！");
+        String userNameOfQuestion = uploader.getUserName();
+        /*
+         * viewer返回英文信息，避免编码方式带来的异常
+         * 经过后台协商，0代表普通登录用户，1代表管理员身份
+         * 经过与前台的协商，当访问者为游客时，发送数字0（由于数据库设置的自动增长机制，ID值至少为1，因此不存在重复）
+         * */
+        String viewer=getUserRank(map.get("user_id"));
+        if (viewer == null)
+            return ResultCache.getFailureDetail("后台程序处理不当,获取用户身份失败");
+        //开始构建data
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode data = mapper.createObjectNode();
+        JsonNode replies = mapper.createArrayNode();
+        ((ObjectNode) data).put("question",question.getTitle());
+        ((ObjectNode) data).put("description",question.getDescription());
+        //资源上传者的name而不是查看该网页用户的userName
+        ((ObjectNode) data).put("ariser",userNameOfQuestion);
+        ((ObjectNode) data).put("credit",question.getPoints());
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+        ((ObjectNode) data).put("time",df.format(question.getDate()));
+        String status = Question.STATUS_MESSAGE_CLOSED;
+        if (question.getStates() == Question.STATUS_VALUE_OPEN)
+            status = Question.STATUS_MESSAGE_OPEN;
+        ((ObjectNode) data).put("status",status);
+        ((ObjectNode) data).put("viewer",viewer);
+        /*
+        * 构建replies数组
+        * */
+        List<Answer> replyList = commonService.getAnswersByQuestionId(question.getId());
+        for (int i = 0; i < replyList.size(); i++){
+            Answer searchAnswer = replyList.get(i);
+            //System.out.print("answer "+i+" : "+searchAnswer.getTitle());
+            JsonNode replyData = mapper.createObjectNode();
+            ((ObjectNode) replyData).put("reply_id",searchAnswer.getId());
+            ((ObjectNode) replyData).put("replier_id",searchAnswer.getReplierId());
+            ((ObjectNode) replyData).put("replier",userService.getUserInfo(searchAnswer.getReplierId()).getUserName());
+            ((ObjectNode) replyData).put("content",searchAnswer.getContent());
+            //若是最佳回复，则返回BEST_MESSAGE_TRUE，当前版本返回“YES”，否则返回“NO”
+            ((ObjectNode) replyData).put("best",
+                    searchAnswer.getState()==Answer.BEST_VALUE_TRUE?Answer.BEST_MESSAGE_TRUE:Answer.BEST_MESSAGE_FALSE);
+            ((ObjectNode) replyData).put("time",df.format(searchAnswer.getTime1()));
+            ((ArrayNode) replies).add(replyData);
+        }
+        ((ObjectNode) data).put("replies",replies);
+        return ResultCache.getDataOk(data);
+    }
+
+    private String getUserRank(int  userid){
+        if (userid > 0){
+            int  useridentify = detilService.userIdentify(userid);
+            if (useridentify==User.PERMISSION_VALUE_NO_ADMIN)
+                return User.ROLE_USER;
+            else if (useridentify==User.PERMISSION_VALUE_ADMIN)
+                return User.ROLE_ADMIN;
+            else
+                return null;
+        }else
+            return User.ROLE_NULL;
     }
 
 }

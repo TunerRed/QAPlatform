@@ -1,8 +1,10 @@
 package com.qasite.service;
 
 import com.mysql.jdbc.log.StandardLogger;
+import com.qasite.bean.Answer;
 import com.qasite.bean.Question;
 import com.qasite.bean.SearchResult;
+import com.qasite.dao.AnswerMapper;
 import com.qasite.dao.QuestionMapper;
 import com.qasite.dao.ResourceMapper;
 import com.qasite.dao.SearchMapper;
@@ -21,9 +23,20 @@ public class CommonService {
     @Autowired
     private QuestionMapper questionMapper;
     @Autowired
+    private AnswerMapper answerMapper;
+    @Autowired
     private ResourceMapper resourceMapper;
+
+    /*
+    * 个人页面
+    * 我的问题列表
+    * */
     public List<Question> myquestion(int user_id) {
         return questionMapper.selectAriserid(user_id);
+    }
+
+    public List<Answer> getAnswersByQuestionId(int questionId){
+        return answerMapper.selectByQuestionId(questionId);
     }
 
     /*
@@ -34,8 +47,8 @@ public class CommonService {
      * （即可在搜索中起到参照作用的词汇）
      * */
     public List<String> splitSentence(String description,String searchStardard) {
-        List<String> divide = SentenceDivService.divide(description);
-        List<String> property = SentenceDivService.properties(description);
+        List<String> divide = SentenceDiv.divide(description);
+        List<String> property = SentenceDiv.properties(description);
         List<String> result = new ArrayList<String>();
 
         //System.out.println("----splitQuestion----");

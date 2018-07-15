@@ -65,7 +65,7 @@ public class MapperTest {
         * user_id_min 在自己的数据库中，用户id的最小值（或是要匹配的问题提出者列表的id基值）
         * user_size 要将插入的问题匹配给多少个用户，建议远小于问题数量，保证每个用户有较多问题，方便测试
         * */
-	    int count_of_question = 20,count_of_reply = 6,user_id_min=110,user_size = 10;
+	    int count_of_question = 20,count_of_reply = 6,user_id_min=110,user_size = 10,question_base_id = 1;
 
         String pathname = "questions.txt";
         File filename = new File(pathname);
@@ -101,17 +101,18 @@ public class MapperTest {
         QuestionMapper questionMapper = sqlSession.getMapper(QuestionMapper.class);
         AnswerMapper answerMapper = sqlSession.getMapper(AnswerMapper.class);
         for(int i = 0;i<count_of_question && i<questions.size();i++) {
-            Integer ariser_id = (int)(Math.random()*user_size)+user_id_min;
-            questionMapper.insert(new Question(getDateBefore(new Date(),(int)(Math.random()*3)-1),
+            questionMapper.insert(new Question(getDateBefore(new Date(),(int)(Math.random()*3)-3),
                     questions.get(i).get(0),
                     (questions.get(i).get(0)+questions.get(i).get(0)),
-                     ariser_id,
+                    (int)(Math.random()*user_size)+user_id_min,
                     (int)(Math.random()*10)+10, (int)(Math.random()*2),
                     questions.get(i).size()-1));
             Integer best = (int)(Math.random()*(questions.get(i).size()-1));
             for (int j = 0; j < questions.get(i).size()-1; j++){
                 LinkedList<String> an = questions.get(i);
-                answerMapper.insert(new Answer(an.get(j+1),(int)(Math.random()*user_size)+user_id_min,ariser_id,(int)Math.random()*2));
+                answerMapper.insert(new Answer(an.get(j+1),
+                        (int)(Math.random()*user_size)+user_id_min, question_base_id+i,
+                        (int)Math.random()*2, getDateBefore(new Date(),(int)(Math.random()*3)-1)));
             }
         }
     }

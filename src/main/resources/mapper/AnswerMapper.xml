@@ -7,6 +7,7 @@
     <result column="replier_id" jdbcType="INTEGER" property="replierId" />
     <result column="question_id" jdbcType="INTEGER" property="questionId" />
     <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="time1" jdbcType="TIMESTAMP" property="time1"/>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    Id, content, replier_id, question_id, state
+    Id, content, replier_id, question_id, state, time1
   </sql>
   <select id="selectByExample" parameterType="com.qasite.bean.AnswerExample" resultMap="BaseResultMap">
     select
@@ -89,6 +90,12 @@
     from answer
     where Id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByQuestionId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from answer
+    where question_id = #{questionId,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from answer
     where Id = #{id,jdbcType=INTEGER}
@@ -101,9 +108,9 @@
   </delete>
   <insert id="insert" parameterType="com.qasite.bean.Answer">
     insert into answer (Id, content, replier_id, 
-      question_id, state)
+      question_id, state,time1)
     values (#{id,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, #{replierId,jdbcType=INTEGER}, 
-      #{questionId,jdbcType=INTEGER}, #{state,jdbcType=INTEGER})
+      #{questionId,jdbcType=INTEGER}, #{state,jdbcType=INTEGER},#{time1,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.qasite.bean.Answer">
     insert into answer
@@ -123,6 +130,9 @@
       <if test="state != null">
         state,
       </if>
+      <if test="time1 != null">
+        time1,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -139,6 +149,9 @@
       </if>
       <if test="state != null">
         #{state,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{time1,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -166,6 +179,9 @@
       <if test="record.state != null">
         state = #{record.state,jdbcType=INTEGER},
       </if>
+      <if test="record.time1 != null">
+        time1 = #{record.time1,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,7 +193,8 @@
       content = #{record.content,jdbcType=VARCHAR},
       replier_id = #{record.replierId,jdbcType=INTEGER},
       question_id = #{record.questionId,jdbcType=INTEGER},
-      state = #{record.state,jdbcType=INTEGER}
+      state = #{record.state,jdbcType=INTEGER},
+      time1 = #{record.time1,jdbcType=TIMESTAMP},
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -197,6 +214,9 @@
       <if test="state != null">
         state = #{state,jdbcType=INTEGER},
       </if>
+      <if test="time1 != null">
+        time1 = #{time1,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where Id = #{id,jdbcType=INTEGER}
   </update>
@@ -205,7 +225,8 @@
     set content = #{content,jdbcType=VARCHAR},
       replier_id = #{replierId,jdbcType=INTEGER},
       question_id = #{questionId,jdbcType=INTEGER},
-      state = #{state,jdbcType=INTEGER}
+      state = #{state,jdbcType=INTEGER},
+      time1 = #{time1,jdbcType=TIMESTAMP}
     where Id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

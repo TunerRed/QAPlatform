@@ -4,6 +4,11 @@ import java.util.Date;
 
 public class Question implements SearchResult{
 
+    public static Integer STATUS_VALUE_OPEN = 1;
+    public static Integer STATUS_VALUE_CLOSED = 0;
+    public static String STATUS_MESSAGE_OPEN = "open";
+    public static String STATUS_MESSAGE_CLOSED = "closed";
+
     public Question(){}
     public Question(Date arise_time,String title,String description,Integer ariserId,Integer points,Integer states,Integer answers){
         this.title = title;

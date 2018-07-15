@@ -5,10 +5,15 @@ import java.util.Date;
 
 public class User {
 
-    public static Integer PERMISSION_ADMIN = 1;
-    public static Integer PERMISSION_NO_ADMIN = 0;
+    public static Integer PERMISSION_VALUE_ADMIN = 1;
+    public static Integer PERMISSION_VALUE_NO_ADMIN = 0;
+    public static String ROLE_ADMIN = "admin";
+    public static String ROLE_USER= "user";
+    public static String ROLE_NULL= "visitor";
     public static String ROLE_STUDENT = "STUDENT";
     public static String ROLE_TEACHER = "TEACHER";
+    public static String GENDER_MALE = "MALE";
+    public static String GENDER_FEMALE = "FEMALE";
 
     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
     //df.format(Math.random()*3<2?new Date():new Date());
@@ -18,8 +23,8 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.email = email;
-        this.gender = Math.random()*1.0<0.5?"MALE":"FEMALE";
-        this.type = Math.random()*2.0<1.5?"STUDENT":"TEACHER";
+        this.gender = Math.random()*1.0<0.5?GENDER_MALE:GENDER_FEMALE;
+        this.type = Math.random()*2.0<1.5?ROLE_STUDENT:ROLE_TEACHER;
         this.credit = 20;
         this.states = status;
         this.regTime = reg_date;

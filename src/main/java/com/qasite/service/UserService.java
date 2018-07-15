@@ -20,6 +20,16 @@ public class UserService {
         return user;
     }
 
+    public boolean register(User user) {
+        User user1=userMapper.selectByEmail(user.getEmail());
+        //User user2=UserMapper.selectByUsername(user.getUserName());
+        if(user1==null/*&&user2==null*/) {
+            userMapper.insert(user);
+            return true;
+        }
+        return false;
+    }
+
     public User getUserInfo(Integer id){
         User user = userMapper.selectByPrimaryKey(id);
         return user;
@@ -35,18 +45,6 @@ public class UserService {
             return true;
         if (emailUser.getId()==user.getId())
             return true;
-        return false;
-    }
-
-    @Autowired
-    private UserMapper UserMapper;
-    public boolean register(User user) {
-        User user1=UserMapper.selectByEmail(user.getEmail());
-        //User user2=UserMapper.selectByUsername(user.getUserName());
-        if(user1==null/*&&user2==null*/) {
-            UserMapper.insert(user);
-            return true;
-        }
         return false;
     }
 }

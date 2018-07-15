@@ -1,13 +1,21 @@
 package com.qasite.bean;
 
+import java.util.Date;
+
 public class Answer {
 
+    public static Integer BEST_VALUE_TRUE = 1;
+    public static Integer BEST_VALUE_FALSE = 0;
+    public static String BEST_MESSAGE_TRUE = "YES";
+    public static String BEST_MESSAGE_FALSE = "NO";
+
     public Answer(){}
-    public Answer(String content,Integer replierId,Integer questionId,Integer state){
+    public Answer(String content,Integer replierId,Integer questionId,Integer state,Date time1){
         this.content = content;
         this.replierId = replierId;
         this.questionId = questionId;
         this.state = state;
+        this.time1 = time1;
     }
 
     private Integer id;
@@ -19,6 +27,8 @@ public class Answer {
     private Integer questionId;
 
     private Integer state;
+
+    private Date time1;
 
     public Integer getId() {
         return id;
@@ -53,10 +63,20 @@ public class Answer {
     }
 
     public Integer getState() {
+        if (state == null)
+            return BEST_VALUE_FALSE;
         return state;
     }
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public Date getTime1() {
+        return time1;
+    }
+
+    public void setTime1(Date time1) {
+        this.time1 = time1;
     }
 }

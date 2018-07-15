@@ -45,19 +45,23 @@
             console.log("input1 : "+input1);
             $.ajax({
                 type:"post",
-                url:'http://localhost:8080/webapp/common/search',
+                //问题详情页面
+                url:'http://localhost:8080/webapp/common/search/que',
                 contentType:'application/json',
                 data:JSON.stringify({
-                    type:"question",
-                    description:input1,
-                    index:1,
-                    length:5
+                    question_id:11,
+                    user_id:0
                 }),
                 success:function(result){
                     console.log("server return : "+result.message);
                     if(result.status==200){
-                        for (var key in result.data){
-                            console.log("title:"+result.data[key].title+" \t time:"+result.data[key].time);
+                        console.log("question:"+result.data.question);
+                        console.log("viewer:"+result.data.viewer);
+                        console.log("reply count : "+ result.data.replies.length);
+                        for (var key in result.data.replies){
+                            console.log("reply id:"+result.data.replies[key].reply_id+
+                                "\nreply content:"+result.data.replies[key].content+
+                                "\ntime:"+result.data.replies[key].time);
                         }
                     }
                 }

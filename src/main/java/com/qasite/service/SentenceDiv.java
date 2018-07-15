@@ -3,7 +3,7 @@ import com.huaban.analysis.jieba.JiebaSegmenter;
 import com.huaban.analysis.jieba.SegToken;
 import java.util.*;
 
-public class SentenceDivService {
+public class SentenceDiv {
     /*
     * Param sentence 传入字符串
     * return result 将字符串中进行分词并返回词条列表
