@@ -14,8 +14,8 @@ public class User {
     public static String ROLE_USER= "user";
     public static String ROLE_NULL= "visitor";
     //老师或学生的身份
-    public static String ROLE_STUDENT = "STUDENT";
-    public static String ROLE_TEACHER = "TEACHER";
+    public static String ROLE_STUDENT = "student";
+    public static String ROLE_TEACHER = "teacher";
     //用户性别
     public static String GENDER_MALE = "MALE";
     public static String GENDER_FEMALE = "FEMALE";

@@ -17,8 +17,6 @@ public class DetailService {
     @Autowired
     private QuestionMapper questionMapper;
     @Autowired
-    private AnswerMapper answerMapper;
-    @Autowired
     private UserMapper userMapper;
 
     public Resource resourceDetail(int reid) {

@@ -54,7 +54,6 @@ public class CommonController {
         user.setRegTime(new Date());
         user.setCredit(20);
         if(userService.register(user)){
-            //System.out.println("success");
             return ResultCache.getDataOk(null);
         }
         return ResultCache.getFailureDetail("邮箱或用户名重复");

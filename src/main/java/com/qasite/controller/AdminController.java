@@ -3,6 +3,7 @@ package com.qasite.controller;
 import com.qasite.result.Result;
 import com.qasite.result.ResultCache;
 import com.qasite.service.AdminService;
+import com.qasite.service.MuteService;
 import com.qasite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,5 +44,23 @@ public class AdminController {
             return ResultCache.getFailureDetail("操作失败，找不到对应的实体！");
         }
         return ResultCache.getDataOk(null);
+    }
+
+
+    @Autowired
+    private MuteService amute;
+    @RequestMapping(value = "/admin/mute",method =RequestMethod.POST)
+    @ResponseBody
+    public Result muteSomeone(@RequestBody Map<String,Integer> map){
+        if (!(map.containsKey("Id")&&map.containsKey("punish_time")&&map.containsKey("punish_point")))
+            return ResultCache.getFailureDetail("错误的信息格式");
+        boolean is = amute.isexist(map.get("Id"));
+        if (is){
+            amute.mute(map.get("Id"),map.get("punish_time"));
+            amute.minusPoint(map.get("Id"),map.get("punish_point"));
+            return ResultCache.getDataOk(null);
+        }
+        else
+            return ResultCache.getFailureDetail("该用户id不存在");
     }
 }

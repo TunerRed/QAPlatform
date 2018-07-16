@@ -105,14 +105,14 @@ public class MapperTest {
                     questions.get(i).get(0),
                     (questions.get(i).get(0)+questions.get(i).get(0)),
                     (int)(Math.random()*user_size)+user_id_min,
-                    (int)(Math.random()*10)+10, (int)(Math.random()*2),
+                    (int)(Math.random()*10)+10, Question.STATUS_VALUE_OPEN,
                     questions.get(i).size()-1));
             Integer best = (int)(Math.random()*(questions.get(i).size()-1));
             for (int j = 0; j < questions.get(i).size()-1; j++){
                 LinkedList<String> an = questions.get(i);
                 answerMapper.insert(new Answer(an.get(j+1),
                         (int)(Math.random()*user_size)+user_id_min, question_base_id+i,
-                        (int)Math.random()*2, getDateBefore(new Date(),(int)(Math.random()*3)-1)));
+                        Answer.BEST_VALUE_FALSE, getDateBefore(new Date(),(int)(Math.random()*3)-1)));
             }
         }
     }

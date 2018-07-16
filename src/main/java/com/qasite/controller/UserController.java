@@ -42,6 +42,8 @@ public class UserController {
         User user = userService.getUserInfo(id);
         if (user==null)
             return  ResultCache.getFailureDetail("错误的ID，找不到该用户！");
+        if (user.getCredit() == null)
+            user.setCredit(0);
         return ResultCache.getDataOk(user);
     }
 
@@ -74,9 +76,11 @@ public class UserController {
             SimpleDateFormat dd=new SimpleDateFormat("yyyy-MM-dd");
             String date = dd.format(questions.get(i).getTime1());
             ((ObjectNode) data).put("date",date);
-            String status="open";
-            if(questions.get(i).getStates()==1)
-                status="closed";
+            String status=Question.STATUS_MESSAGE_OPEN;
+            if(questions.get(i).getStates()==Question.STATUS_VALUE_CLOSED)
+                status=Question.STATUS_MESSAGE_CLOSED;
+            else if (questions.get(i).getStates()==Question.STATUS_VALUE_OPEN)
+                status = Question.STATUS_MESSAGE_OPEN;
             ((ObjectNode) data).put("status",status);
             ((ObjectNode) data).put("reply_count",questions.get(i).getAnswers());
             ((ArrayNode) root).add(data);
@@ -183,4 +187,29 @@ public class UserController {
         ((ObjectNode) jsonNode).put("address",res.getAddress());
         return ResultCache.getDataOk(jsonNode);
     }
+
+    //检查禁言，并返回禁言天数
+    @RequestMapping(value = "/user/newque/permission",method =RequestMethod.POST)
+    @ResponseBody
+    public Result checkRight(@RequestBody Map<String,Integer> map){
+        int day = userService.checkRight(map.get("Id"));
+        return ResultCache.getDataOk(day);
+    }
+
+    //确认发布问题
+    @RequestMapping(value = "/user/ask",method =RequestMethod.POST)
+    @ResponseBody
+    public Result askQuestion(@RequestBody  Map<String,String> map){
+        Question question = new Question();
+        question.setTitle(map.get("question"));
+        question.setDescription(map.get("description"));
+        question.setAriserId(Integer.parseInt(map.get("questioner_id")));
+        question.setPoints(Integer.parseInt(map.get("point")));
+        question.setTime1(new Date());
+        question.setAnswers(0);
+        question.setStates(Question.STATUS_VALUE_OPEN);
+        userService.askQuestion(question);
+        return ResultCache.getDataOk(null);
+    }
+
 }

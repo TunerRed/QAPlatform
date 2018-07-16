@@ -10,6 +10,7 @@ import com.qasite.dao.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -124,5 +125,22 @@ public class UserService {
         replier.setCredit(replier.getCredit()+question.getPoints());
         userMapper.updateByPrimaryKeySelective(replier);
         return true;
+    }
+
+    //检查禁言，并返回禁言天数
+    public int checkRight(Integer Id){
+        User a = userMapper.selectByPrimaryKey(Id);
+        if (a.getStates()==null)
+            return 0;
+        Date now = new Date();
+        long m = a.getStates().getTime()-now.getTime();
+        double daysBetween=(double) (m+1000000)/(double) (3600*24*1000);
+        int days = Integer.parseInt(new java.text.DecimalFormat("0").format(daysBetween));
+        return days;
+    }
+
+    //确认发布问题
+    public void askQuestion(Question qu){
+        questionMapper.insert(qu);
     }
 }
