@@ -27,7 +27,7 @@
     </p>
     <br><br>
     <div>
-        输入项1：<input type="text" id="testInput1" width="200px" height="30px" value="文件"/><br>
+        输入项1：<input type="text" id="testInput1" width="200px" height="30px" value="1"/><br>
         输入项2：<input type="text" id="testInput2" width="200px" height="30px"/><br>
         输入项3：<input type="text" id="testInput3" width="200px" height="30px"/>
     </div>
@@ -46,24 +46,16 @@
             $.ajax({
                 type:"post",
                 //问题详情页面
-                url:'http://localhost:8080/webapp/common/search/que',
+                url:'http://localhost:8080/webapp/user/best',
                 contentType:'application/json',
                 data:JSON.stringify({
-                    question_id:11,
-                    user_id:0
+                    //question_id:"10",
+                    reply_id:"48",
+                    //reply:"simple reply , to earn User.DEFAULT_CREDIT_POINT points"
                 }),
                 success:function(result){
                     console.log("server return : "+result.message);
-                    if(result.status==200){
-                        console.log("question:"+result.data.question);
-                        console.log("viewer:"+result.data.viewer);
-                        console.log("reply count : "+ result.data.replies.length);
-                        for (var key in result.data.replies){
-                            console.log("reply id:"+result.data.replies[key].reply_id+
-                                "\nreply content:"+result.data.replies[key].content+
-                                "\ntime:"+result.data.replies[key].time);
-                        }
-                    }
+                    console.log("new reply id : "+result.data.reply_id);
                 }
             });
         } else if (input2 != '') {

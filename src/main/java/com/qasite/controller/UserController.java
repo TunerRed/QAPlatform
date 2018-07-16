@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -94,5 +95,48 @@ public class UserController {
             ((ArrayNode) root).add(data);
         }
         return ResultCache.getDataOk(root);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "user/reply",method =RequestMethod.POST)
+    public Result submitReply(@RequestBody Map<String,String> map){
+        //拿到请求的id值
+        int questionId = 0,replierId = 0;
+        String replyContent = map.get("reply");
+        try {
+            questionId = Integer.parseInt(map.get("question_id"));
+            replierId = Integer.parseInt(map.get("replier_id"));
+            if (replyContent == null || replyContent.trim().length()==0){
+                return ResultCache.getFailureDetail("回复内容为空！");
+            }
+        }catch (NumberFormatException nfe){
+            nfe.printStackTrace();
+            return ResultCache.getFailureDetail("错误的id格式！");
+        }
+        //根据请求构造Answer
+        Answer answer = new Answer(replyContent,replierId,questionId,Answer.BEST_VALUE_FALSE,new Date());
+        Integer reply_id = userService.updateUserReply(questionId, replierId, answer);
+        if (reply_id == -1)
+            return ResultCache.getFailureDetail("找不到相关实体，后台操作中止！");
+        JsonNode jsonNode = new ObjectMapper().createObjectNode();
+        ((ObjectNode) jsonNode).put("reply_id",reply_id);
+        return ResultCache.getDataOk(jsonNode);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "user/best",method =RequestMethod.POST)
+    public Result setBestAnswer(@RequestBody Map<String,String> map){
+        //拿到请求的id值
+        int replyId = 0;
+        try {
+            replyId = Integer.parseInt(map.get("reply_id"));
+        }catch (NumberFormatException nfe){
+            nfe.printStackTrace();
+            return ResultCache.getFailureDetail("错误的id格式！");
+        }
+        //设置目标回复为最佳答案
+        if (!userService.setBest(replyId))
+            return ResultCache.getFailureDetail("找不到相关实体，操作中止！");
+        return ResultCache.getDataOk(null);
     }
 }

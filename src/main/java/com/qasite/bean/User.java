@@ -5,13 +5,18 @@ import java.util.Date;
 
 public class User {
 
+    //默认的积分，提交回复后增加少量积分
+    public static Integer DEFAULT_CREDIT_POINT = 2;
+    //用户的权限，管理员或普通用户
     public static Integer PERMISSION_VALUE_ADMIN = 1;
     public static Integer PERMISSION_VALUE_NO_ADMIN = 0;
     public static String ROLE_ADMIN = "admin";
     public static String ROLE_USER= "user";
     public static String ROLE_NULL= "visitor";
+    //老师或学生的身份
     public static String ROLE_STUDENT = "STUDENT";
     public static String ROLE_TEACHER = "TEACHER";
+    //用户性别
     public static String GENDER_MALE = "MALE";
     public static String GENDER_FEMALE = "FEMALE";
 
