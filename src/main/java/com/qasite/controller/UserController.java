@@ -4,14 +4,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.qasite.bean.Answer;
-import com.qasite.bean.Question;
-import com.qasite.bean.SearchResult;
-import com.qasite.bean.User;
+import com.qasite.bean.*;
 import com.qasite.dao.QuestionMapper;
 import com.qasite.result.Result;
 import com.qasite.result.ResultCache;
 import com.qasite.service.CommonService;
+import com.qasite.service.ResourceService;
 import com.qasite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,6 +32,8 @@ public class UserController {
     private CommonService commonService;
     @Autowired
     private QuestionMapper questionMapper;
+    @Autowired
+    private ResourceService resourceService;
 
     @RequestMapping(value = "/user/info",method =RequestMethod.POST)
     @ResponseBody
@@ -65,7 +65,23 @@ public class UserController {
     @ResponseBody
     public Result showQuestions(@RequestBody Map<String,Integer> map){
         List<Question> questions=commonService.myQuestion(map.get("Id"));
-        return ResultCache.getDataOk(questions);
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode root = mapper.createArrayNode();
+        for(int i=0;i<questions.size();i++) {
+            JsonNode data = mapper.createObjectNode();
+            ((ObjectNode) data).put("question_id", questions.get(i).getId());
+            ((ObjectNode) data).put("title", questions.get(i).getTitle());
+            SimpleDateFormat dd=new SimpleDateFormat("yyyy-MM-dd");
+            String date = dd.format(questions.get(i).getTime1());
+            ((ObjectNode) data).put("date",date);
+            String status="open";
+            if(questions.get(i).getStates()==1)
+                status="closed";
+            ((ObjectNode) data).put("status",status);
+            ((ObjectNode) data).put("reply_count",questions.get(i).getAnswers());
+            ((ArrayNode) root).add(data);
+        }
+        return ResultCache.getDataOk(root);
     }
 
     /*
@@ -138,5 +154,33 @@ public class UserController {
         if (!userService.setBest(replyId))
             return ResultCache.getFailureDetail("找不到相关实体，操作中止！");
         return ResultCache.getDataOk(null);
+    }
+
+    @RequestMapping(value = "/user/download",method =RequestMethod.POST)
+    @ResponseBody
+    public Result download(@RequestBody Map<String,String> map){
+        Integer id = Integer.parseInt(map.get("Id"));
+        Integer resource_id = Integer.parseInt(map.get("resource_id"));
+        //下载者的id
+        User user = userService.getUserInfo(id);
+        //待下载的资源
+        Resource res = resourceService.resource(resource_id);
+
+        if(res==null)
+            return  ResultCache.getFailureDetail("错误的ID，找不到该资源！");
+        if (user == null)
+            return ResultCache.getFailureDetail("找不到下载者的id，数据库异常！");
+
+        if(user.getCredit()<res.getPoint()){
+            return ResultCache.getPermissionDeniedDetail("积分不足");
+        }
+        //增加上传者的积分，扣除下载者的积分
+        userService.update_credit(user.getId(),-1*res.getPoint());
+        userService.update_credit(res.getProviderId(),res.getPoint());
+        //增加资源的下载次数
+        resourceService.add_downloattimes(resource_id);
+        JsonNode jsonNode = new ObjectMapper().createObjectNode();
+        ((ObjectNode) jsonNode).put("address",res.getAddress());
+        return ResultCache.getDataOk(jsonNode);
     }
 }

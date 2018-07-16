@@ -160,7 +160,6 @@ public class CommonController {
         User uploader = userService.getUserInfo(question.getAriserId());
         if (uploader == null)
             return ResultCache.getFailureDetail("找不到问题的发布者！");
-        String userNameOfQuestion = uploader.getUserName();
         /*
          * viewer返回英文信息，避免编码方式带来的异常
          * 经过后台协商，0代表普通登录用户，1代表管理员身份
@@ -175,9 +174,13 @@ public class CommonController {
         JsonNode replies = mapper.createArrayNode();
         ((ObjectNode) data).put("question",question.getTitle());
         ((ObjectNode) data).put("description",question.getDescription());
-        //资源上传者的name而不是查看该网页用户的userName
-        ((ObjectNode) data).put("ariser",userNameOfQuestion);
+        //问题发布者的name而不是查看该网页用户的userName
+        ((ObjectNode) data).put("ariser",uploader.getUserName());
+        ((ObjectNode) data).put("ariser_id",uploader.getId());
         ((ObjectNode) data).put("credit",question.getPoints());
+        //是否在禁言状态
+        ((ObjectNode) data).put("shutup",
+                (uploader.getStates().compareTo(new Date())>0)?User.SHUT_UP_MESSAGE_TRUE:User.SHUT_UP_MESSAGE_FALSE);
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
         ((ObjectNode) data).put("time",df.format(question.getDate()));
         String status = Question.STATUS_MESSAGE_CLOSED;
@@ -191,6 +194,9 @@ public class CommonController {
         List<Answer> replyList = commonService.getAnswersByQuestionId(question.getId());
         for (int i = 0; i < replyList.size(); i++){
             Answer searchAnswer = replyList.get(i);
+            User replier = userService.getUserInfo(searchAnswer.getReplierId());
+            if (replier == null)
+                ResultCache.getFailureDetail("null replier for an anwser!check your database");
             //System.out.print("answer "+i+" : "+searchAnswer.getTitle());
             JsonNode replyData = mapper.createObjectNode();
             ((ObjectNode) replyData).put("reply_id",searchAnswer.getId());
@@ -201,6 +207,8 @@ public class CommonController {
             ((ObjectNode) replyData).put("best",
                     searchAnswer.getState()==Answer.BEST_VALUE_TRUE?Answer.BEST_MESSAGE_TRUE:Answer.BEST_MESSAGE_FALSE);
             ((ObjectNode) replyData).put("time",df.format(searchAnswer.getTime1()));
+            ((ObjectNode) data).put("shutup",
+                    (replier.getStates().compareTo(new Date())>0)?User.SHUT_UP_MESSAGE_TRUE:User.SHUT_UP_MESSAGE_FALSE);
             ((ArrayNode) replies).add(replyData);
         }
         ((ObjectNode) data).put("replies",replies);

@@ -15,7 +15,7 @@
     %>
     <script type="text/javascript" src="JS\jquery-1.11.0.min.js"></script>
 </head>
-<body>
+<body onkeydown="keyOnClick(event);">
 <div style="text-align: center">
     <p>
         后台测试用jsp，若“点我测试”返回了了正常值<br>
@@ -36,6 +36,13 @@
 </div>
 
 <script type="text/javascript">
+    function keyOnClick(e){
+        var theEvent = window.event || e;
+        var code = theEvent.keyCode || theEvent.which;
+        if (code==13) {  //回车键的键值为13
+            clickTest();  //调用搜索事件
+        }
+    }
     function clickTest() {
         var input1 = document.getElementById("testInput1").value;
         var input2 = document.getElementById("testInput2").value;
@@ -46,55 +53,22 @@
             $.ajax({
                 type:"post",
                 //问题详情页面
-                url:'http://localhost:8080/webapp/user/best',
+                url:'http://localhost:8080/webapp/user/download',
                 contentType:'application/json',
                 data:JSON.stringify({
-                    //question_id:"10",
-                    reply_id:"48",
+                    Id:input2,
+                    resource_id:input3
                     //reply:"simple reply , to earn User.DEFAULT_CREDIT_POINT points"
                 }),
                 success:function(result){
                     console.log("server return : "+result.message);
-                    console.log("new reply id : "+result.data.reply_id);
+                    console.log(result.data.address);
                 }
             });
         } else if (input2 != '') {
-            console.log("request : user/answers \tinput2 : "+input2)
-            $.ajax({
-                type:"post",
-                url:'http://localhost:8080/webapp/user/answers',
-                contentType:'application/json',
-                data:JSON.stringify({
-                    user_id:111,
-                }),
-                success:function(result){
-                    console.log("server return : "+result.message);
-                    if(result.status==200){
-                        for (var key in result.data){
-                            console.log("Question : "+result.data[key].title+
-                                "\nreply time : "+result.data[key].time+
-                                "\nquestion opening : "+result.data[key].status);
-                        }
-                    }
-                }
-            });
+            console.log("request : user/questions \tinput2 : "+input2)
         }else if (input3 != '') {
             console.log("input3 : "+input3);
-            $.ajax({
-                type:"post",
-                url:'http://localhost:8080/webapp/common/login',
-                contentType:'application/json',
-                data:JSON.stringify({
-                    email:input3+"@163.com",
-                    password:input3,
-                }),
-                success:function(result){
-                    console.log("server return : "+result.message);
-                    if(result.status==200){
-                        console.log(result.data.userName);
-                    }
-                }
-            });
         }
 
     }

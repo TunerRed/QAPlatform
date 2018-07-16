@@ -94,6 +94,13 @@ public class UserService {
         return answers.get(0).getId();
     }
 
+    public User update_credit(int id,int point){
+        User user = userMapper.selectByPrimaryKey(id);
+        user.setCredit(user.getCredit() + point);
+        userMapper.updateByPrimaryKey(user);
+        return null;
+    }
+
     public boolean setBest(Integer replyId){
         //找到回复实体
         Answer answer = answerMapper.selectByPrimaryKey(replyId);

@@ -19,6 +19,9 @@ public class User {
     //用户性别
     public static String GENDER_MALE = "MALE";
     public static String GENDER_FEMALE = "FEMALE";
+    //用户是否被禁言
+    public static String SHUT_UP_MESSAGE_TRUE = "TRUE";
+    public static String SHUT_UP_MESSAGE_FALSE = "FALSE";
 
     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
     //df.format(Math.random()*3<2?new Date():new Date());
