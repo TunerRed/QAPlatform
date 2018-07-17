@@ -143,4 +143,5 @@ public class UserService {
     public void askQuestion(Question qu){
         questionMapper.insert(qu);
     }
+
 }

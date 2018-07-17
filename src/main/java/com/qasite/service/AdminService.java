@@ -36,4 +36,14 @@ public class AdminService {
         //返回最早回复的id准备将其设为最佳回复
         return answers.get(0).getId();
     }
+
+    //管理员删除问题
+    public void deleteQuestion(int question_id) {
+        //删除问题本身
+        questionMapper.deleteByPrimaryKey(question_id);
+        //删除问题的回复
+        AnswerExample example=new AnswerExample();
+        example.createCriteria().andQuestionIdEqualTo(question_id);
+        answerMapper.deleteByExample(example);
+    }
 }

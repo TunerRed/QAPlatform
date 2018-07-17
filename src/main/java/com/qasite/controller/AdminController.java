@@ -63,4 +63,13 @@ public class AdminController {
         else
             return ResultCache.getFailureDetail("该用户id不存在");
     }
+
+    @RequestMapping(value = "/admin/question/delete",method =RequestMethod.POST)
+    @ResponseBody
+    public Result deleteQuestion(@RequestBody Map<String,String> map){
+        int question_id=Integer.parseInt(map.get("question_id"));
+        adminService.deleteQuestion(question_id);
+        System.out.println("大帝");
+        return ResultCache.getDataOk(null);
+    }
 }
