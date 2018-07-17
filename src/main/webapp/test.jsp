@@ -34,6 +34,20 @@
     <br><br>
     <button class="btn btn-success" id="click2test" onclick="clickTest()">点我测试</button>
 </div>
+<br>
+<div style="text-align: center">
+    <p>上传文件的接口，已与前端协商</p>
+    <form action="user/upload" enctype="multipart/form-data" method="post">
+        <input type = "file" name= 'file' style="width: 200px"/><br>
+        <%--输入对文件的描述--%>
+        文件描述：<span style="width: 30px"></span><input type="text" name="description"/><br>
+        <%--输入文件的积分--%>
+        下载积分：<span style="width: 30px"></span><input type="text" name="point"/><br>
+        <%--前端还需要返回一个用户id，这里先用的输入--%>
+        上传者id：<span style="width: 30px"></span><input type="text" name="Id"/><br>
+        <input type ="submit" value="上传">
+    </form>
+</div>
 
 <script type="text/javascript">
     function keyOnClick(e){
@@ -45,31 +59,22 @@
     }
     function clickTest() {
         var input1 = document.getElementById("testInput1").value;
-        var input2 = document.getElementById("testInput2").value;
-        var input3 = document.getElementById("testInput3").value;
-
-        if (input1 != ''){
-            console.log("input1 : "+input1);
-            $.ajax({
-                type:"post",
-                //问题详情页面
-                url:'http://localhost:8080/webapp/user/download',
-                contentType:'application/json',
-                data:JSON.stringify({
-                    Id:input2,
-                    resource_id:input3
-                    //reply:"simple reply , to earn User.DEFAULT_CREDIT_POINT points"
-                }),
-                success:function(result){
-                    console.log("server return : "+result.message);
-                    console.log(result.data.address);
-                }
-            });
-        } else if (input2 != '') {
-            console.log("request : user/questions \tinput2 : "+input2)
-        }else if (input3 != '') {
-            console.log("input3 : "+input3);
-        }
+        console.log("input1 : "+input1);
+        $.ajax({
+            type:"post",
+            //问题详情页面
+            url:'http://localhost:8080/webapp/user/download',
+            contentType:'application/json',
+            data:JSON.stringify({
+                Id:input2,
+                resource_id:input3
+                //reply:"simple reply , to earn User.DEFAULT_CREDIT_POINT points"
+            }),
+            success:function(result){
+                console.log("server return : "+result.message);
+                console.log(result.data.address);
+            }
+        });
 
     }
 </script>

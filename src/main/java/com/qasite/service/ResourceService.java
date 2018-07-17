@@ -22,4 +22,9 @@ public class ResourceService {
         resourceMapper.updateByPrimaryKey(res);
         return null;
     }
+
+    public void uploadResource(Resource resource){
+        if (resource != null)
+            resourceMapper.insert(resource);
+    }
 }

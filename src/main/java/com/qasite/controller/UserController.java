@@ -13,15 +13,17 @@ import com.qasite.service.ResourceService;
 import com.qasite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @Controller
 public class UserController {
@@ -218,6 +220,44 @@ public class UserController {
         question.setStates(Question.STATUS_VALUE_OPEN);
         userService.askQuestion(question);
         return ResultCache.getDataOk(null);
+    }
+
+
+    @RequestMapping(value = "/user/upload", method = RequestMethod.POST)
+    @ResponseBody
+    //单个变量的接收需要按顺序
+    public String upload(@RequestParam MultipartFile file, HttpServletRequest request, @RequestParam("description")String des,
+                         @RequestParam("point")int point, @RequestParam("Id") int provider_id) throws IOException {
+        String path = request.getServletContext().getRealPath("/upload");
+        String filename = file.getOriginalFilename();
+        //获取格式
+        String suffix = filename.substring(filename.lastIndexOf("."));
+        //用UUID和文件名的方式存到本地，防止文件名重复
+        String storename = UUID.randomUUID().toString() + filename;
+        /*上传到目录
+         QAPlatform/target/QAPlatform-0.0.1-SNAPSHOT/upload/
+        以绝对路径存储*/
+        File dir = new File(path + "/" + storename);
+
+        //将文件存储到本地
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+        file.transferTo(dir);
+
+        //在数据库中添加数据
+        Resource resource = new Resource();
+        resource.setDownloadTimes(0);
+        resource.setDate(new Date());
+        resource.setDescription(des);
+        resource.setPoint(point);
+        resource.setAddress(dir.toString());
+        resource.setFormat(suffix);
+        resource.setProviderId(provider_id);
+        resource.setTitle(filename);
+        resourceService.uploadResource(resource);
+
+        return null;
     }
 
 }
