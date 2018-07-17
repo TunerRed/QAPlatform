@@ -52,13 +52,18 @@ public class AdminController {
     @RequestMapping(value = "/admin/mute",method =RequestMethod.POST)
     @ResponseBody
     public Result muteSomeone(@RequestBody Map<String,Integer> map){
-        if (!(map.containsKey("Id")&&map.containsKey("punish_time")&&map.containsKey("punish_point")))
+        if (!(map.containsKey("Id")))
             return ResultCache.getFailureDetail("错误的信息格式");
         boolean is = amute.isexist(map.get("Id"));
+        int a = userService.checkRight(map.get("Id"));
         if (is){
-            amute.mute(map.get("Id"),map.get("punish_time"));
-            amute.minusPoint(map.get("Id"),map.get("punish_point"));
-            return ResultCache.getDataOk(null);
+            if(a==0){
+                amute.mute(map.get("Id"),5);
+                amute.minusPoint(map.get("Id"),5);
+                return ResultCache.getDataOk(null);
+            }
+            else
+                return ResultCache.getFailureDetail("该用户已被禁言");
         }
         else
             return ResultCache.getFailureDetail("该用户id不存在");
@@ -67,9 +72,10 @@ public class AdminController {
     @RequestMapping(value = "/admin/question/delete",method =RequestMethod.POST)
     @ResponseBody
     public Result deleteQuestion(@RequestBody Map<String,String> map){
-        int question_id=Integer.parseInt(map.get("question_id"));
+        Integer question_id=Integer.parseInt(map.get("question_id"));
+        if (question_id==null || question_id <= 0)
+            return ResultCache.getFailureDetail("找不到id对应的问题！");
         adminService.deleteQuestion(question_id);
-        System.out.println("大帝");
         return ResultCache.getDataOk(null);
     }
 }

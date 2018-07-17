@@ -51,8 +51,8 @@ public class UserService {
         userMapper.updateByPrimaryKeySelective(user);
     }
 
-    public boolean checkUserInfo(User user) {
-        User emailUser = userMapper.selectByEmail(user.getEmail());
+    public boolean checkUserRegister(String newEmail, User user) {
+        User emailUser = userMapper.selectByEmail(newEmail);
         if (emailUser == null)
             return true;
         if (emailUser.getId()==user.getId())
@@ -136,6 +136,8 @@ public class UserService {
         long m = a.getStates().getTime()-now.getTime();
         double daysBetween=(double) (m+1000000)/(double) (3600*24*1000);
         int days = Integer.parseInt(new java.text.DecimalFormat("0").format(daysBetween));
+        if (days < 0)
+            days = 0;
         return days;
     }
 

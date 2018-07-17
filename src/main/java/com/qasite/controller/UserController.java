@@ -49,12 +49,20 @@ public class UserController {
 
     @RequestMapping(value = "/user/change",method =RequestMethod.POST)
     @ResponseBody
-    public Result changeInfo(@RequestBody User user){
-        User targetUser = userService.getUserInfo(user.getId());
+    public Result changeInfo(@RequestBody Map<String,String> map){
+        User targetUser = userService.getUserInfo(Integer.parseInt(map.get("id")));
         if (targetUser==null)
             return  ResultCache.getFailureDetail("错误的ID，找不到该用户！");//除非修改cookie否则基本不会出现的错误
-        if (userService.checkUserInfo(user)){
-            userService.updateUserInfo(user);
+        if (userService.checkUserRegister(map.get("email"),targetUser)){
+            if (targetUser.getPassword() == null || targetUser.getPassword().equals(map.get("pre_password")))
+                targetUser.setPassword(map.get("new_password"));
+            else
+                return ResultCache.getFailureDetail("原密码错误！");
+            targetUser.setEmail(map.get("email"));
+            targetUser.setGender(map.get("gender"));
+            targetUser.setType(map.get("type"));
+            targetUser.setUserName(map.get("userName"));
+            userService.updateUserInfo(targetUser);
             return ResultCache.getDataOk(null);
         }
         return ResultCache.getFailureDetail("该邮箱已被注册");
