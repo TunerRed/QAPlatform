@@ -1,6 +1,7 @@
 package com.qasite.bean;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class User {
@@ -116,6 +117,13 @@ public class User {
     }
 
     public Date getStates() {
+        if (states == null){
+            Calendar now =Calendar.getInstance();
+            now.setTime(new Date());
+            //如果为空，则设禁言时间为10天前
+            now.set(Calendar.DATE,now.get(Calendar.DATE)-10);
+            setStates(now.getTime());
+        }
         return states;
     }
 
