@@ -117,12 +117,9 @@ public class User {
     }
 
     public Date getStates() {
+        //若禁言时间为空，则设置为注册时间
         if (states == null){
-            Calendar now =Calendar.getInstance();
-            now.setTime(new Date());
-            //如果为空，则设禁言时间为10天前
-            now.set(Calendar.DATE,now.get(Calendar.DATE)-10);
-            setStates(now.getTime());
+            setStates(getRegTime());
         }
         return states;
     }
