@@ -21,10 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Controller
 public class UserController {
@@ -230,6 +227,10 @@ public class UserController {
     //资源下载的基址，可在resource.properties中修改
     @Value("${resource_base_path}")
     String resource_base_path;
+    @Value("${resourceType.video}")
+    String resourceType_video;
+    @Value("${resourceType.document}")
+    String resourceType_document;
     @RequestMapping(value = "/user/upload", method = RequestMethod.POST)
     @ResponseBody
     //单个变量的接收需要按顺序
@@ -265,7 +266,19 @@ public class UserController {
         resource.setPoint(point);
         resource.setAddress(resource_base_path+storename);
         resource.setFormat(suffix);
-        resource.setType(resource.checkType(resource.getFormat()));
+        //检查格式，确定类型
+        ArrayList<String> formats = new ArrayList<String>();
+        //目前检查的类型只有视频和文档
+        formats.add(resourceType_video);
+        formats.add(resourceType_document);
+        Integer type = resource.checkType(suffix,formats);
+        if (type == Resource.RESOURCE_TYPE_VALUE_VIDEO)
+            resource.setType(Resource.RESOURCE_TYPE_VIDEO);
+        else if (type == Resource.RESOURCE_TYPE_VALUE_DOCUMENT)
+            resource.setType(Resource.RESOURCE_TYPE_DOCUMENT);
+        else
+            resource.setType(Resource.RESOURCE_TYPE_OTHER);
+
         resource.setProviderId(provider_id);
         resource.setTitle(filename);
         resourceService.uploadResource(resource);

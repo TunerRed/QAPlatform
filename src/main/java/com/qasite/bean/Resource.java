@@ -1,6 +1,7 @@
 package com.qasite.bean;
 
 import java.util.Date;
+import java.util.List;
 
 public class Resource implements SearchResult{
 
@@ -81,12 +82,15 @@ public class Resource implements SearchResult{
 
     public String getType() {
         if (type == null)
-            return checkType(getFormat());
+            return RESOURCE_TYPE_OTHER;
         return type;
     }
 
-    public String checkType(String format){
-
+    public Integer checkType(String format, List<String> formats){
+        for (int i = 0; i < formats.size(); i++){
+            if (formats.get(i).trim().toUpperCase().contains(format.trim().toUpperCase()))
+                return i;
+        }
         return null;
     }
 
