@@ -143,6 +143,7 @@ public class CommonController {
                 uploader.getStates().compareTo(new Date())>0?User.SHUT_UP_MESSAGE_TRUE:User.SHUT_UP_MESSAGE_FALSE);
         ((ObjectNode) data).put("point",resource.getPoint());
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+        ((ObjectNode) data).put("address",resource.getAddress());
         ((ObjectNode) data).put("time",df.format(resource.getDate()));
         ((ObjectNode) data).put("download_times",resource.getDownloadTimes());
         ((ObjectNode) data).put("viewer",viewer);

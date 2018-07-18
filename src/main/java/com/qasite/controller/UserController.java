@@ -12,6 +12,7 @@ import com.qasite.service.CommonService;
 import com.qasite.service.ResourceService;
 import com.qasite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -170,6 +171,8 @@ public class UserController {
         return ResultCache.getDataOk(null);
     }
 
+    //Tomcat访问服务器文件时很多情况下会显示文件而不是下载文件
+    //查看https://blog.csdn.net/u013758456/article/details/46908807添加映射
     @RequestMapping(value = "/user/download",method =RequestMethod.POST)
     @ResponseBody
     public Result download(@RequestBody Map<String,String> map){
@@ -223,12 +226,16 @@ public class UserController {
     }
 
 
+    //资源下载的基址，可在resource.properties中修改
+    @Value("${resource_base_path}")
+    String resource_base_path;
     @RequestMapping(value = "/user/upload", method = RequestMethod.POST)
     @ResponseBody
     //单个变量的接收需要按顺序
     public String upload(@RequestParam MultipartFile file, HttpServletRequest request, @RequestParam("description")String des,
                          @RequestParam("point")int point, @RequestParam("Id") int provider_id) throws IOException {
-        String path = request.getServletContext().getRealPath("/upload");
+        String path = resource_base_path;
+        String storePath = request.getServletContext().getRealPath("/upload");
         String filename = file.getOriginalFilename();
         filename.replace("/","");
         filename.replace("\\","");
@@ -241,7 +248,7 @@ public class UserController {
         /*上传到目录
          QAPlatform/target/QAPlatform-0.0.1-SNAPSHOT/upload/
         以绝对路径存储*/
-        File dir = new File(path + "/" + storename);
+        File dir = new File(storePath + "/" + storename);
 
         //将文件存储到本地
         if (!dir.exists()) {
@@ -255,7 +262,7 @@ public class UserController {
         resource.setDate(new Date());
         resource.setDescription(des);
         resource.setPoint(point);
-        resource.setAddress(dir.toString());
+        resource.setAddress(resource_base_path+storename);
         resource.setFormat(suffix);
         resource.setProviderId(provider_id);
         resource.setTitle(filename);

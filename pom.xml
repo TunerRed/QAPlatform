@@ -143,12 +143,6 @@
 			<artifactId>slf4j-simple</artifactId>
 			<version>1.7.25</version>
 		</dependency>
-		<!-- File Upload 1 -->
-		<dependency>
-			<groupId>com.huaban</groupId>
-			<artifactId>jieba-analysis</artifactId>
-			<version>1.0.2</version>
-		</dependency>
 		<!-- File Upload 2 -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
