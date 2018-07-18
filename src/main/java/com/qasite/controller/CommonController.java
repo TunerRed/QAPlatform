@@ -125,7 +125,6 @@ public class CommonController {
         User uploader = userService.getUserInfo(resource.getProviderId());
         if (uploader == null)
             return ResultCache.getFailureDetail("找不到资源的上传者！");
-        String userNameOfResource = uploader.getUserName();
         /*
         * viewer返回英文信息，避免编码方式带来的异常
         * 经过后台协商，0代表普通登录用户，1代表管理员身份
@@ -138,8 +137,10 @@ public class CommonController {
         ((ObjectNode) data).put("description",resource.getDescription());
         ((ObjectNode) data).put("format",resource.getFormat());
         //资源上传者的name而不是查看该网页用户的userName
-        ((ObjectNode) data).put("uploader",userNameOfResource);
-        ((ObjectNode) data).put("type",resource.getType());
+        ((ObjectNode) data).put("uploader",uploader.getUserName());
+        ((ObjectNode) data).put("uploader_id",uploader.getId());
+        ((ObjectNode) data).put("shutup",
+                uploader.getStates().compareTo(new Date())>0?User.SHUT_UP_MESSAGE_TRUE:User.SHUT_UP_MESSAGE_FALSE);
         ((ObjectNode) data).put("point",resource.getPoint());
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
         ((ObjectNode) data).put("time",df.format(resource.getDate()));

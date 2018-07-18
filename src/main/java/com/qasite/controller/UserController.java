@@ -230,8 +230,12 @@ public class UserController {
                          @RequestParam("point")int point, @RequestParam("Id") int provider_id) throws IOException {
         String path = request.getServletContext().getRealPath("/upload");
         String filename = file.getOriginalFilename();
+        filename.replace("/","");
+        filename.replace("\\","");
+        filename.replace("\"","");
+        filename.replace("'","");
         //获取格式
-        String suffix = filename.substring(filename.lastIndexOf("."));
+        String suffix = filename.substring(filename.lastIndexOf(".")+1);
         //用UUID和文件名的方式存到本地，防止文件名重复
         String storename = UUID.randomUUID().toString() + filename;
         /*上传到目录

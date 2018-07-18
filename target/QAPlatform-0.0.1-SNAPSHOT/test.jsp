@@ -10,9 +10,9 @@
 <head>
     <title>后台测试</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <%
+    <!--%
         pageContext.setAttribute("APP_PATH", "http://localhost:8080/webapp");
-    %>
+    %-->
     <script type="text/javascript" src="JS\jquery-1.11.0.min.js"></script>
 </head>
 <body onkeydown="keyOnClick(event);">
@@ -25,17 +25,19 @@
         否则是后台问题，包括修改了接口或没有考虑全部输入情况<br>
         或接口未开发完成
     </p>
-    <br><br>
+</div>
+<div style="text-align: center; margin-top: 30px">
+    <p>登录测试</p>
+    <br>
     <div>
-        输入项1：<input type="text" id="testInput1" width="200px" height="30px" value="1"/><br>
-        输入项2：<input type="text" id="testInput2" width="200px" height="30px"/><br>
-        输入项3：<input type="text" id="testInput3" width="200px" height="30px"/>
+        email：<span style="width: 30px"></span><input type="text" id="email" width="200px" height="30px" value=""/><br>
+        password：<input type="text" id="password" width="200px" height="30px"/><br>
     </div>
     <br><br>
-    <button class="btn btn-success" id="click2test" onclick="clickTest()">点我测试</button>
+    <button class="btn btn-success" id="login" onclick="clickTest()">点我登录</button>
 </div>
 <br>
-<div style="text-align: center">
+<div style="text-align: center; margin-top: 50px">
     <p>上传文件的接口，已与前端协商</p>
     <form action="user/upload" enctype="multipart/form-data" method="post">
         <input type = "file" name= 'file' style="width: 200px"/><br>
@@ -48,6 +50,17 @@
         <input type ="submit" value="上传">
     </form>
 </div>
+<br>
+<div style="margin-top: 50px; text-align: center">
+    <p>下载测试</p>
+    <br>
+    <div>
+        资源id：<span style="width: 30px"></span><input type="text" id="resource_id" width="200px" height="30px" value=""/><br>
+        下载者id：<input type="text" id="user_id" width="200px" height="30px"/><br>
+    </div>
+    <br>
+    <button class="btn btn-success" id="download" onclick="downloadTest()">点我下载</button>
+</div>
 
 <script type="text/javascript">
     function keyOnClick(e){
@@ -58,24 +71,48 @@
         }
     }
     function clickTest() {
-        var input1 = document.getElementById("testInput1").value;
-        console.log("input1 : "+input1);
+        var user_email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        console.log("login email : "+user_email);
+        console.log("login password : "+password);
+        $.ajax({
+            type:"post",
+            //问题详情页面
+            url:'http://localhost:8080/webapp/common/login',
+            contentType:'application/json',
+            data:JSON.stringify({
+                email:user_email,
+                password:password
+            }),
+            success:function(result){
+                console.log("server return : "+result.message);
+                console.log("login user : "+result.data.userName);
+                console.log("login id: "+result.data.id);
+            }
+        });
+
+    }
+    function downloadTest() {
+        var Id = document.getElementById("user_id").value;
+        var resource_id = document.getElementById("resource_id").value;
+        console.log("download user_id : "+Id);
+        console.log("download resource_id : "+resource_id);
         $.ajax({
             type:"post",
             //问题详情页面
             url:'http://localhost:8080/webapp/user/download',
             contentType:'application/json',
             data:JSON.stringify({
-                Id:input2,
-                resource_id:input3
+                Id:Id,
+                resource_id:resource_id
                 //reply:"simple reply , to earn User.DEFAULT_CREDIT_POINT points"
             }),
             success:function(result){
                 console.log("server return : "+result.message);
-                console.log(result.data.address);
+                console.log("download address : "+result.data.address);
+                window.open(result.data.address);
             }
         });
-
     }
 </script>
 </body>
