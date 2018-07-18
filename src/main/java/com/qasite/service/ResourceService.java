@@ -36,7 +36,7 @@ public class ResourceService {
      **/
     public List<Resource> myResource(int Id){
         ResourceExample example = new ResourceExample();
-        example.createCriteria().andIdEqualTo(Id);
+        example.createCriteria().andProviderIdEqualTo(Id);
         return resourceMapper.selectByExample(example);
     }
     /***

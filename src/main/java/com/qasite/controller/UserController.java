@@ -292,7 +292,7 @@ public class UserController {
     @RequestMapping(value = "user/resources",method =RequestMethod.POST)
     @ResponseBody
     public Result showResource(@RequestBody Map<String,Integer> map){
-        List<Resource> resourceList = resourceService.myResource(map.get("Id"));//whose id?
+        List<Resource> resourceList = resourceService.myResource(map.get("Id"));
         if(resourceList == null ||  resourceList.size()==0)
             return ResultCache.getFailureDetail("您的资源列表为空");
         ObjectMapper mapper = new ObjectMapper();  //把对象转换成为一个json字符串返回到前端
@@ -303,7 +303,7 @@ public class UserController {
             Resource resource = resourceList.get(i);
             JsonNode data = mapper.createObjectNode();
             ((ObjectNode) data).put("resource_id",resource.getId());
-            ((ObjectNode) data).put("title",resource.getTitle());
+            ((ObjectNode) data).put("name",resource.getTitle());
             ((ObjectNode) data).put("type",resource.getType());
             ((ObjectNode) data).put("point",resource.getPoint());
             ((ObjectNode) data).put("date",df.format(resource.getDate()));
