@@ -6,21 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resource.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/resource.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/searchProperties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/searchProperties.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/upload/547a051f-1709-4071-9151-ec8a685e621b接口文档v1.2.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/upload/5629e6a0-c603-4488-80ce-a62c61eb0adahijack-sock.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/upload/5aba35f9-5a9f-4601-af1b-db85c9923e36接口文档.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/upload/a4e5060e-01c4-44dd-b6c4-82fa68c063a1实验-内存信息.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/upload/b25be008-1eb6-4fe2-ae30-97cf74a65e3b初步分析.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/upload/ca70f1c3-ec0f-40eb-aef8-ed90b3fe94b8活动图v0.2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/upload/d3e879fd-cd14-4c74-aa44-a265cc319aec接口文档.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/upload/eebd1966-881b-46a1-8ff6-9e7a7993d1bdactivityv0.1.png" beforeDir="false" />
-    </list>
+    <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,8 +35,8 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12">
-              <caret line="272" column="43" lean-forward="true" selection-start-line="272" selection-start-column="43" selection-end-line="272" selection-end-column="43" />
+            <state relative-caret-position="145">
+              <caret line="279" column="59" lean-forward="true" selection-start-line="279" selection-start-column="59" selection-end-line="279" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#userInfo#0;class#UserController#0" />
@@ -642,7 +628,7 @@
       <workItem from="1531794009735" duration="503000" />
       <workItem from="1531807857735" duration="2195000" />
       <workItem from="1531815147883" duration="2290000" />
-      <workItem from="1531872881320" duration="11778000" />
+      <workItem from="1531872881320" duration="11849000" />
     </task>
     <servers />
   </component>
@@ -679,7 +665,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171845000" />
+    <option name="totallyTimeSpent" value="171916000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -713,7 +699,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32850242" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.49924356" weight="0.32850242" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4871407" visible="true" weight="0.31400967" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4871407" weight="0.31400967" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32850242" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32850242" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.32753405" />
@@ -1076,8 +1062,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="272" column="43" lean-forward="true" selection-start-line="272" selection-start-column="43" selection-end-line="272" selection-end-column="43" />
+        <state relative-caret-position="145">
+          <caret line="279" column="59" lean-forward="true" selection-start-line="279" selection-start-column="59" selection-end-line="279" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#userInfo#0;class#UserController#0" />
