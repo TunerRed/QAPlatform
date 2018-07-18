@@ -4,6 +4,7 @@ import com.qasite.result.Result;
 import com.qasite.result.ResultCache;
 import com.qasite.service.AdminService;
 import com.qasite.service.MuteService;
+import com.qasite.service.ResourceService;
 import com.qasite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,8 @@ public class AdminController {
     private AdminService adminService;
     @Autowired
     private UserService userService;
+    @Autowired
+    private ResourceService resourceService;
 
     /*
     * 关闭问题
@@ -76,6 +79,18 @@ public class AdminController {
         if (question_id==null || question_id <= 0)
             return ResultCache.getFailureDetail("找不到id对应的问题！");
         adminService.deleteQuestion(question_id);
+        return ResultCache.getDataOk(null);
+    }
+
+    /**
+     ***删除我的资源
+     **/
+    @RequestMapping(value = "/admin/resource",method =RequestMethod.POST)//value?
+    @ResponseBody
+    public Result deleteResource(@RequestBody Map<String,String> map){
+        int resource_id=Integer.parseInt(map.get("resource_id"));
+        resourceService.deleteResource(resource_id);
+        //System.out.println("删除………………");
         return ResultCache.getDataOk(null);
     }
 }

@@ -172,7 +172,8 @@ public class UserController {
     }
 
     //Tomcat访问服务器文件时很多情况下会显示文件而不是下载文件
-    //查看https://blog.csdn.net/u013758456/article/details/46908807添加映射
+    //Tomcat访问中文资源：http://www.cnblogs.com/gongchenglion/archive/2016/09/06/5846818.html
+    //下载文件而不是显示：https://blog.csdn.net/u010568976/article/details/78901150
     @RequestMapping(value = "/user/download",method =RequestMethod.POST)
     @ResponseBody
     public Result download(@RequestBody Map<String,String> map){
@@ -264,11 +265,39 @@ public class UserController {
         resource.setPoint(point);
         resource.setAddress(resource_base_path+storename);
         resource.setFormat(suffix);
+        resource.setType(resource.checkType(resource.getFormat()));
         resource.setProviderId(provider_id);
         resource.setTitle(filename);
         resourceService.uploadResource(resource);
 
         return null;
+    }
+
+    /**
+     ***查看我的资源
+     **/
+    @RequestMapping(value = "user/resources",method =RequestMethod.POST)
+    @ResponseBody
+    public Result showResource(@RequestBody Map<String,Integer> map){
+        List<Resource> resourceList = resourceService.myResource(map.get("Id"));//whose id?
+        if(resourceList == null ||  resourceList.size()==0)
+            return ResultCache.getFailureDetail("您的资源列表为空");
+        ObjectMapper mapper = new ObjectMapper();  //把对象转换成为一个json字符串返回到前端
+        JsonNode root = mapper.createArrayNode();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+
+        for (int i = 0; i < resourceList.size(); i++){
+            Resource resource = resourceList.get(i);
+            JsonNode data = mapper.createObjectNode();
+            ((ObjectNode) data).put("resource_id",resource.getId());
+            ((ObjectNode) data).put("title",resource.getTitle());
+            ((ObjectNode) data).put("type",resource.getType());
+            ((ObjectNode) data).put("point",resource.getPoint());
+            ((ObjectNode) data).put("date",df.format(resource.getDate()));
+            ((ObjectNode) data).put("address",resource.getAddress());
+            ((ArrayNode) root).add(data);
+        }
+        return ResultCache.getDataOk(root);
     }
 
 }

@@ -136,6 +136,7 @@ public class CommonController {
         ((ObjectNode) data).put("resource",resource.getTitle());
         ((ObjectNode) data).put("description",resource.getDescription());
         ((ObjectNode) data).put("format",resource.getFormat());
+        ((ObjectNode) data).put("type",resource.getType());
         //资源上传者的name而不是查看该网页用户的userName
         ((ObjectNode) data).put("uploader",uploader.getUserName());
         ((ObjectNode) data).put("uploader_id",uploader.getId());

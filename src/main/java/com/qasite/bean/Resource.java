@@ -4,6 +4,13 @@ import java.util.Date;
 
 public class Resource implements SearchResult{
 
+    public static Integer RESOURCE_TYPE_VALUE_VIDEO = 0;
+    public static Integer RESOURCE_TYPE_VALUE_DOCUMENT = 1;
+    public static Integer RESOURCE_TYPE_VALUE_OTHER = 2;
+    public static String RESOURCE_TYPE_VIDEO = "video";
+    public static String RESOURCE_TYPE_DOCUMENT = "document";
+    public static String RESOURCE_TYPE_OTHER = "other";
+
     private Integer id;
 
     private String title;
@@ -73,7 +80,14 @@ public class Resource implements SearchResult{
     }
 
     public String getType() {
+        if (type == null)
+            return checkType(getFormat());
         return type;
+    }
+
+    public String checkType(String format){
+
+        return null;
     }
 
     public void setType(String type) {
