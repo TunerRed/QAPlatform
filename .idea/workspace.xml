@@ -6,7 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="" />
+    <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/service/ResourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/service/ResourceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qasite/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qasite/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qasite/service/ResourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qasite/service/ResourceService.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,11 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="279" column="59" lean-forward="true" selection-start-line="279" selection-start-column="59" selection-end-line="279" selection-end-column="59" />
+            <state relative-caret-position="247">
+              <caret line="291" column="72" lean-forward="true" selection-start-line="291" selection-start-column="72" selection-end-line="291" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#userInfo#0;class#UserController#0" />
@@ -47,27 +54,16 @@
                 <element signature="method#setBestAnswer#0;class#UserController#0" />
                 <element signature="method#checkRight#0;class#UserController#0" />
                 <element signature="method#askQuestion#0;class#UserController#0" />
-                <element signature="e#9873#9896#1" expanded="true" />
-                <element signature="e#9869#9892#1" expanded="true" />
-                <element signature="e#9936#9962#1" expanded="true" />
-                <element signature="e#11480#11488#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="109" column="37" lean-forward="true" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="37" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state>
+              <caret line="81" column="43" lean-forward="true" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -137,7 +133,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/bean/Answer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/bean/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/test.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
@@ -148,6 +143,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" />
         <option value="$PROJECT_DIR$/src/main/resources/resource.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/test.jsp" />
       </list>
     </option>
   </component>
@@ -174,7 +170,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -186,6 +182,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,9 +245,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -516,7 +512,7 @@
       <deployment>
         <artifact name="QAPlatform:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/webapp" />
+            <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
@@ -629,6 +625,7 @@
       <workItem from="1531807857735" duration="2195000" />
       <workItem from="1531815147883" duration="2290000" />
       <workItem from="1531872881320" duration="11849000" />
+      <workItem from="1531960073648" duration="1660000" />
     </task>
     <servers />
   </component>
@@ -665,7 +662,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171916000" />
+    <option name="totallyTimeSpent" value="173576000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -677,8 +674,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5128593" side_tool="true" weight="0.3510467" />
@@ -698,21 +694,21 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32850242" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4871407" visible="true" weight="0.31400967" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.49924356" weight="0.32850242" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4871407" weight="0.31400967" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32850242" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32850242" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.32753405" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.33282906" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" sideWeight="0.5012407" side_tool="true" weight="0.290469" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -924,9 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="741">
           <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -979,20 +972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="109" column="37" lean-forward="true" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
@@ -1040,30 +1019,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="88" column="66" lean-forward="true" selection-start-line="88" selection-start-column="66" selection-end-line="88" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2102#2103#0" expanded="true" />
-            <element signature="e#2163#2164#0" expanded="true" />
-            <element signature="e#2196#2197#0" expanded="true" />
-            <element signature="e#2224#2225#0" expanded="true" />
-            <element signature="e#2267#2268#0" expanded="true" />
-            <element signature="e#2301#2302#0" expanded="true" />
-            <element signature="e#2330#2331#0" expanded="true" />
-            <element signature="e#2357#2358#0" expanded="true" />
-            <element signature="e#2395#2396#0" expanded="true" />
-            <element signature="e#2427#2428#0" expanded="true" />
-            <element signature="e#2468#2469#0" expanded="true" />
-            <element signature="e#2504#2505#0" expanded="true" />
-            <element signature="e#2563#2564#0" expanded="true" />
-            <element signature="e#2613#2614#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="279" column="59" lean-forward="true" selection-start-line="279" selection-start-column="59" selection-end-line="279" selection-end-column="59" />
+        <state relative-caret-position="247">
+          <caret line="291" column="72" lean-forward="true" selection-start-line="291" selection-start-column="72" selection-end-line="291" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#userInfo#0;class#UserController#0" />
@@ -1074,11 +1036,14 @@
             <element signature="method#setBestAnswer#0;class#UserController#0" />
             <element signature="method#checkRight#0;class#UserController#0" />
             <element signature="method#askQuestion#0;class#UserController#0" />
-            <element signature="e#9873#9896#1" expanded="true" />
-            <element signature="e#9869#9892#1" expanded="true" />
-            <element signature="e#9936#9962#1" expanded="true" />
-            <element signature="e#11480#11488#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="81" column="43" lean-forward="true" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
         </state>
       </provider>
     </entry>

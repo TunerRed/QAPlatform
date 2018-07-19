@@ -78,7 +78,7 @@
         $.ajax({
             type:"post",
             //问题详情页面
-            url:'http://localhost:8080/webapp/common/login',
+            url:'http://localhost:8080/QAPlatform/common/login',
             contentType:'application/json',
             data:JSON.stringify({
                 email:user_email,
