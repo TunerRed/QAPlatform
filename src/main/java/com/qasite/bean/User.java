@@ -37,6 +37,7 @@ public class User {
         this.credit = 20;
         this.states = status;
         this.regTime = reg_date;
+        this.rank = PERMISSION_VALUE_NO_ADMIN;
     }
 
     private Integer id;

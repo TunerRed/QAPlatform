@@ -12,6 +12,21 @@ public class Resource implements SearchResult{
     public static String RESOURCE_TYPE_DOCUMENT = "document";
     public static String RESOURCE_TYPE_OTHER = "other";
 
+    public Resource(){}
+    public Resource(String title,String description,String format,String address,Integer providerId,
+                    String type,Integer point,Date date,Integer downloadTimes){
+
+        this.title = title;
+        this.description = description;
+        this.format = format;
+        this.address = address;
+        this.providerId = providerId;
+        this.type = type;
+        this.point = point;
+        this.date = date;
+        this.downloadTimes = downloadTimes;
+    }
+
     private Integer id;
 
     private String title;

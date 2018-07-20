@@ -7,19 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/controller/CommonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/service/SentenceDiv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/service/SentenceDiv.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/publish.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CSS/publish.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/sign.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CSS/sign.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/publish.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/publish.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/signformchange.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/signformchange.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index_bak.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/r_s1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/r_s1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/bean/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/test/MapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/test/MapperTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,8 +39,8 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1083">
-              <caret line="303" column="54" lean-forward="true" selection-start-line="303" selection-start-column="54" selection-end-line="303" selection-end-column="54" />
+            <state relative-caret-position="133">
+              <caret line="229" column="35" lean-forward="true" selection-start-line="229" selection-start-column="35" selection-end-line="229" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#userInfo#0;class#UserController#0" />
@@ -66,24 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommonController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/CommonController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="205" column="74" lean-forward="true" selection-start-line="205" selection-start-column="74" selection-end-line="205" selection-end-column="74" />
-              <folding>
-                <element signature="method#search#0;class#CommonController#0" />
-                <element signature="method#resourceDetail#0;class#CommonController#0" />
-                <element signature="method#getUserRank#0;class#CommonController#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
+            <state relative-caret-position="-211">
               <caret line="102" column="33" lean-forward="true" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -97,6 +73,42 @@
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapperTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/test/MapperTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resource.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/resource.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Resource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/bean/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -166,19 +178,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/dao/AnswerMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/AnswerMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/DetailService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qasite/test/MapperTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/muteService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/MuteService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/AdminService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/bean/Answer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qasite/bean/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/ResourceService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/searchProperties.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" />
         <option value="$PROJECT_DIR$/src/main/resources/resource.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -186,6 +195,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/SentenceDiv.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/test.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/controller/CommonController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qasite/bean/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qasite/test/MapperTest.java" />
       </list>
     </option>
   </component>
@@ -212,7 +224,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -289,15 +301,7 @@
               <item name="QAPlatform" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAPlatform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QAPlatform" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -353,7 +357,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat">
+  <component name="RunManager" selected="JUnit.MapperTest.insertResources">
     <configuration name="MBGTest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.qasite.test.MBGTest" />
       <module name="QAPlatform" />
@@ -391,6 +395,29 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="MapperTest.insertResources" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QAPlatform" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qasite.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.qasite.test" />
+      <option name="MAIN_CLASS_NAME" value="com.qasite.test.MapperTest" />
+      <option name="METHOD_NAME" value="insertResources" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration name="MapperTest.testprepareData (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="QAPlatform" />
       <extension name="coverage">
@@ -405,29 +432,6 @@
       <option name="MAIN_CLASS_NAME" value="com.qasite.test.MapperTest" />
       <option name="METHOD_NAME" value="testprepareData" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="MvcTester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="QAPlatform" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.qasite.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.qasite.test" />
-      <option name="MAIN_CLASS_NAME" value="com.qasite.test.MvcTester" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -642,18 +646,18 @@
       <item itemvalue="Tomcat Server.Tomcat" />
       <item itemvalue="Tomcat Server.Remote" />
       <item itemvalue="Application.MBGTest (1)" />
-      <item itemvalue="JUnit.MvcTester" />
       <item itemvalue="JUnit.MvcTester.testPage" />
       <item itemvalue="JUnit.MapperTest.testprepareData (1)" />
       <item itemvalue="JUnit.MapperTest.insertQuestionsAndReplies" />
+      <item itemvalue="JUnit.MapperTest.insertResources" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MapperTest.insertResources" />
         <item itemvalue="JUnit.MapperTest.insertQuestionsAndReplies" />
-        <item itemvalue="Application.MBGTest (1)" />
         <item itemvalue="JUnit.MapperTest.testprepareData (1)" />
+        <item itemvalue="Application.MBGTest (1)" />
         <item itemvalue="JUnit.MvcTester.testPage" />
-        <item itemvalue="JUnit.MvcTester" />
       </list>
     </recent_temporary>
   </component>
@@ -686,29 +690,11 @@
       <workItem from="1531815147883" duration="2290000" />
       <workItem from="1531872881320" duration="11849000" />
       <workItem from="1531960073648" duration="2731000" />
-      <workItem from="1532046200481" duration="3296000" />
+      <workItem from="1532046200481" duration="7130000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MapperTest_insertQuestionsAndReplies - 2018.07.11 at 22h 06m 24s.xml">
-      <configuration name="MapperTest.insertQuestionsAndReplies" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MapperTest_insertQuestionsAndReplies - 2018.07.11 at 22h 11m 27s.xml">
-      <configuration name="MapperTest.insertQuestionsAndReplies" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MapperTest_insertQuestionsAndReplies - 2018.07.11 at 22h 14m 28s.xml">
-      <configuration name="MapperTest.insertQuestionsAndReplies" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MapperTest_insertQuestionsAndReplies - 2018.07.11 at 22h 16m 09s.xml">
-      <configuration name="MapperTest.insertQuestionsAndReplies" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MapperTest_testprepareData_(1) - 2018.07.11 at 22h 21m 05s.xml">
-      <configuration name="MapperTest.testprepareData (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MapperTest_insertQuestionsAndReplies - 2018.07.12 at 08h 42m 02s.xml">
-      <configuration name="MapperTest.insertQuestionsAndReplies" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MapperTest_insertQuestionsAndReplies - 2018.07.12 at 08h 47m 06s.xml">
       <configuration name="MapperTest.insertQuestionsAndReplies" configurationId="JUnit" />
     </history-entry>
@@ -721,9 +707,27 @@
     <history-entry file="MapperTest_insertQuestionsAndReplies - 2018.07.15 at 20h 54m 59s.xml">
       <configuration name="MapperTest.insertQuestionsAndReplies" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MapperTest_testprepareData_(1) - 2018.07.20 at 09h 58m 53s.xml">
+      <configuration name="MapperTest.testprepareData (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MapperTest_testprepareData_(1) - 2018.07.20 at 10h 03m 21s.xml">
+      <configuration name="MapperTest.testprepareData (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MapperTest_insertQuestionsAndReplies - 2018.07.20 at 10h 06m 48s.xml">
+      <configuration name="MapperTest.insertQuestionsAndReplies" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MapperTest_insertResources - 2018.07.20 at 10h 30m 41s.xml">
+      <configuration name="MapperTest.insertResources" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MapperTest_insertResources - 2018.07.20 at 10h 45m 16s.xml">
+      <configuration name="MapperTest.insertResources" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MapperTest_insertResources - 2018.07.20 at 10h 46m 05s.xml">
+      <configuration name="MapperTest.insertResources" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177943000" />
+    <option name="totallyTimeSpent" value="181777000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -757,10 +761,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32850242" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.49924356" weight="0.32850242" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4871407" visible="true" weight="0.31400967" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4871407" visible="true" weight="0.352657" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32850242" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32850242" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.33812407" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.33812407" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" sideWeight="0.5012407" side_tool="true" weight="0.290469" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -942,13 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/bean/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1352">
-          <caret line="140" column="24" lean-forward="true" selection-start-line="140" selection-start-column="24" selection-end-line="140" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/AdminService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="741">
@@ -1015,24 +1012,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resource.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/searchProperties.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="88" column="66" lean-forward="true" selection-start-line="88" selection-start-column="66" selection-end-line="88" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -1053,9 +1036,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="60" column="76" lean-forward="true" selection-start-line="60" selection-start-column="76" selection-end-line="60" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="-211">
           <caret line="102" column="33" lean-forward="true" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1072,20 +1062,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/test/MapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="106" column="63" lean-forward="true" selection-start-line="106" selection-start-column="63" selection-end-line="106" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="60" column="76" lean-forward="true" selection-start-line="60" selection-start-column="76" selection-end-line="60" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/bean/Question.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -1093,10 +1069,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/bean/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/CommonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="203" column="74" lean-forward="true" selection-start-line="203" selection-start-column="74" selection-end-line="203" selection-end-column="74" />
+          <folding>
+            <element signature="method#search#0;class#CommonController#0" />
+            <element signature="method#resourceDetail#0;class#CommonController#0" />
+            <element signature="method#getUserRank#0;class#CommonController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1083">
-          <caret line="303" column="54" lean-forward="true" selection-start-line="303" selection-start-column="54" selection-end-line="303" selection-end-column="54" />
+        <state relative-caret-position="133">
+          <caret line="229" column="35" lean-forward="true" selection-start-line="229" selection-start-column="35" selection-end-line="229" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#userInfo#0;class#UserController#0" />
@@ -1111,15 +1106,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/CommonController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resource.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="205" column="74" lean-forward="true" selection-start-line="205" selection-start-column="74" selection-end-line="205" selection-end-column="74" />
-          <folding>
-            <element signature="method#search#0;class#CommonController#0" />
-            <element signature="method#resourceDetail#0;class#CommonController#0" />
-            <element signature="method#getUserRank#0;class#CommonController#0" />
-          </folding>
+        <state relative-caret-position="76">
+          <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/test/MapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
         </state>
       </provider>
     </entry>
