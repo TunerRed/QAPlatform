@@ -1,0 +1,104 @@
+body {
+    font-family: 微软雅黑;
+}
+body{
+    background-repeat: no-repeat;
+    background-size:1365px 80px;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+#top_bar{
+    position:fixed;
+    width:100%;
+}
+#type{
+    position:fixed;
+    margin-left:18%;
+    margin-top:2.5%;
+    cursor:pointer;
+}
+#search{
+    position:fixed;
+    margin-left:28%;
+    margin-top:2.5%;
+    width:50%;
+    border:none;
+    BACKGROUND-COLOR: transparent;
+    outline:none;
+    border-bottom:.1em solid #fff;
+    color:white;
+    font-size:1.3em;
+}
+#question{
+    position:fixed;
+    margin-left:72%;
+    margin-top:2%;
+    cursor:pointer;
+}
+#plus{
+    position:fixed;
+    margin-left:75%;
+    margin-top:2%;
+    cursor:pointer;
+}
+.login{
+    position:fixed;
+    margin-left:89%;
+    margin-top:2.5%;
+}
+#style1{
+    float:left;
+    color:white;
+    font-size:20px;
+}
+#style2{
+    float:right;
+    color:white;
+    font-size:20px;
+}
+
+#user{
+    display: none;
+    position: absolute;
+    left: 1250px;
+    top:30px;
+    font-size: large;
+    width: 75px;
+    cursor:pointer;
+}
+
+#bg{
+    margin-top: 16px;
+    width: 1365px;
+    height: 580px;
+    overflow-y:scroll;
+}
+
+#list{
+    margin-left:380px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: x-large;
+    width: 700px;
+    word-break:break-all;
+    word-wrap:break-word;
+}
+
+#list>p{
+    color: #848484;
+    margin-bottom: 8px;
+}
+
+#list>a{
+    display:block;
+    color: #7dc9d2;
+    text-decoration: underline #7dc9d2;
+    margin-bottom: 6px;
+    margin-top: 30px;
+    cursor:pointer;
+}
+
+#list>span{
+    color: #b4b4b4b4;
+    font-size: medium;
+}

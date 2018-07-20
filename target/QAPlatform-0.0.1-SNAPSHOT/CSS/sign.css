@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    font-family: 微软雅黑;
     background-color: burlywood;
 }
 #displaysign{
@@ -13,7 +14,7 @@ body {
     position: fixed;
     background-color: white;
     top: 20%;
-    left: 37%;
+    left: 35%;
     width: 400px;
     height: 410px;
     border-radius: 1em;
@@ -75,11 +76,28 @@ body {
 }
 #nameId{
     display:none;
-    font-size:1.3em;
+    font-size:1.2em;
     float:left;
     text-align:right;
-    margin-right:10%;
     color:white;
     height:10%;
-    width:90%;
+    position: relative;
+    width:85%;
+}
+#quit{
+    display:none;
+    font-size:1.2em;
+    float:right;
+    text-align:left;
+    margin-right:3%;
+    color:white;
+    height:10%;
+    width:10%;
+    position: relative;
+}
+#getName{
+    font-size: 1.2em;
+}
+#quitText{
+    font-size: 1.1em;
 }

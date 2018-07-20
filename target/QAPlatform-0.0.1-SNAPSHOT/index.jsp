@@ -6,7 +6,7 @@
         智能问答平台
     </title>
     <%
-        pageContext.setAttribute("APP_PATH", "http://localhost:8080/webapp");
+        pageContext.setAttribute("APP_PATH", "http://47.94.131.133:8080/QASite");
     %>
     <style>
         *{
@@ -39,25 +39,34 @@
         }
 
     </style>
-    <link rel="stylesheet" type="text/css" href="./CSS\sign.css" />
+    <link rel="stylesheet" type="text/css" href="CSS\sign.css" />
     <script type="text/javascript" src="JS\signformchange.js"></script>
     <script type="text/javascript" src="JS\jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="JS\jquery.cookie.js"></script>
 </head>
-<body background="picsInHomepage\bg.jpg" style=" background-repeat:no-repeat ;background-size:100% 100%; background-attachment: fixed;" >
+<body background="picsInHomepage\bg.jpg" style=" background-repeat:no-repeat ;background-size:100% 100%; background-attachment: fixed;" onload="getState()">
 <div style="position:relative; height:5%; width:100%">
 </div>
 <div id="nameId">
+    <a style="cursor: pointer; text-decoration:none;" href="personalHomepage.jsp">
     <p id="getName">
-        宇宙大帝
     </p>
+    </a>
+</div>
+<div id="quit">
+    <a style="cursor: pointer; text-decoration:none;">
+        <p id="quitText" onclick="quitFunc();">
+            退出登录
+        </p>
+    </a>
 </div>
 <div id="signUpDiv" style="position:relative; float:left; width:85%; height:10%; text-align:right;">
-    <a onclick="start()" style="color:white; font-size:1.2em; cursor:pointer">
+    <a onclick="start()" style="color:white; font-size:1.3em; cursor:pointer">
         登 录
     </a>
 </div>
 <div id="signInDiv" style="position:relative; float:right; width:13%; height:10%; text-align:left;">
-    <a style="color:white; font-size:1.2em; cursor:pointer">
+    <a style="text-decoration:none; color:white; font-size:1.3em; cursor:pointer" href="register.html">
         注 册
     </a>
 </div>
@@ -76,7 +85,7 @@
     <img id="show" src="picsInHomepage\r_s1.png" onclick="changePic()" style="cursor:pointer; width:100%;" />
 </div>
 <div style="position:relative; float:left; width:47%;border-bottom:.1em solid #fff;margin-left:1em">
-    <input style="display:inline-block;margin-left:0%; width:85%;border:none; BACKGROUND-COLOR: transparent;  outline:none; color:white; font-size:1.3em;">
+    <input id="des" style="display:inline-block;margin-left:0%; width:85%;border:none; BACKGROUND-COLOR: transparent;  outline:none; color:white; font-size:1.3em;">
     <div style="display:inline-block">
         <a style="cursor:pointer;">
             <img src="picsInHomepage\plus_icon.png" style="width:60%"/>
@@ -84,7 +93,7 @@
     </div>
     <div style="display:inline-block">
         <a style="cursor:pointer;">
-            <img src="picsInHomepage\question_icon.png" style="width:60%" onclick="searchOrResource()"/>
+            <img src="picsInHomepage\question_icon.png" style="width:60%" onclick="searchOrResource()"href="search.jsp"/>
         </a>
     </div>
 </div>
@@ -103,16 +112,16 @@
         用户名
     </div>
     <div class="userdiv">
-        <input id="user" class="signinput" type="text" name="user" >
+        <input id="user" class="signinput" type="text" name="user" value="1234@163.com">
     </div>
     <div style="position:relative; height:10%; width:100%; margin-left:5%; color:#5f9fc9; font-size:1.3em; text-align:left;">
         密码
     </div>
     <div class="pwddiv">
-        <input id="pwd" class="signinput" type="password" name="pwd">
+        <input id="pwd" class="signinput" type="password" name="pwd" value="123456">
     </div>
     <div class="postdiv" >
-        <img src="picsInHomepage\login_btn.png" style="width:75%; cursor:pointer;" onclick="sign_in()"/>
+        <img src="picsInHomepage\login_button.png" style="width:75%; cursor:pointer;" onclick="sign_in()"/>
     </div>
     <br>
 </div>

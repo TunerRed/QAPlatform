@@ -1,0 +1,202 @@
+body {
+	font-family: 微软雅黑;
+}
+#top_bar{
+	position:fixed;
+	width:100%;
+}
+#type{
+	position:fixed;
+	margin-left:18%;
+	margin-top:2.5%;
+	cursor:pointer;
+}
+#search{
+	position:fixed;
+	margin-left:28%;
+	margin-top:2.5%;
+	width:50%;
+	border:none; 
+	BACKGROUND-COLOR: transparent;  
+	outline:none; 
+	border-bottom:.1em solid #fff;
+	color:white; 
+	font-size:1.3em;
+}
+#question{
+	position:fixed;
+	margin-left:72%;
+	margin-top:2%;
+	cursor:pointer;
+}
+#plus{
+	position:fixed;
+	margin-left:75%;
+	margin-top:2%;
+	cursor:pointer;
+}
+.login{
+	position:fixed;
+	margin-left:89%;
+	margin-top:2.5%;
+}
+#style1{
+	float:left;
+	color:white;
+	font-size:20px;
+}
+#style2{
+	float:right;
+	color:white;
+	font-size:20px;
+}
+.ques{
+	width:80%;
+	margin-right:auto;
+	margin-left:auto;
+}
+.quesDesc{
+	float:left;
+	margin-left:15%;
+	margin-top:40px;
+	margin-bottom:60px;
+}
+#title{
+	float:left;
+	color:#0CC;
+	font-size:34px;
+	font-weight:bold;
+	text-decoration:underline;
+}
+#close{
+	float:right;
+	margin-right:10px;
+	margin-top:10px;
+	cursor:pointer;
+}
+#delete{
+	float:right;
+	margin-right:13%;
+	margin-top:10px;
+	cursor:pointer;
+}
+.writing{
+	width:80%;
+	color:#333;
+	font-size:20px;
+}
+#quesWriting{
+	float:left;
+	margin-top:15px;
+}
+.userRela{
+	color:#999;
+	font-size:20px;
+	height:30px;
+}
+#bestAnswer{
+	float:left;
+	margin-top:4px;
+	margin-right:10px;
+	cursor:pointer;
+}
+.date{
+	float:left;
+}
+.userID{
+	float:left;
+	margin-left:10px;
+}
+.credit{
+	float: left;
+	margin-left: 10px;
+}
+.downloadTimes{
+	float:left;
+	margin-left: 10px;
+}
+.speaking{
+	float:left;
+	margin-left:10px;
+	margin-top:4px;
+	cursor:pointer;
+}
+.downloadImg{
+	float: left;
+	margin-left:10px;
+	margin-top: 4px;
+	cursor: pointer;
+}
+.answer{
+	width:100%;
+	float:right;
+	margin-top:10px;
+}
+#answerImg{
+	float:right;
+	margin-right:8%;
+	cursor:pointer;
+}
+#submitImg{
+	float:right;
+	margin-right:8%;
+	cursor:pointer;
+}
+#answerDesc{
+	float:right;
+	width:94%;
+	margin-right:3%;
+	margin-bottom:10px;
+}
+.answerArea{
+	float:right;
+	width:100%;
+	margin-top:10px;
+	display:none;
+}
+.subtitle{
+	float:left;
+	color:#0CC;
+	font-size:30px;
+	font-weight:bold;
+	width:100%;
+	margin-bottom:10px;
+}
+.answerBlock{
+	float:left;
+	margin-left:5%;
+	width:92%;
+}
+.quesRela{
+	float:left;
+	width:100%;
+}
+.relaTitle{
+	color:#666;
+	font-size:20px;
+	float:left;
+}
+.relaDate{
+	float:right;
+	margin-right:21%;
+	color:#999;
+	font-size:18px;
+}
+#video{
+	float:left;
+	margin-top:60px;
+	z-index:-1;
+}
+#pdfRead{
+	float:left;
+	margin-top:60px;
+}
+video::-internal-media-controls-download-button {
+	display:none;
+}
+video::-webkit-media-controls-enclosure {
+	overflow:hidden;
+}
+video::-webkit-media-controls-panel {
+	width: calc(100% + 30px);
+}

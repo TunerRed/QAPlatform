@@ -1,6 +1,9 @@
 /*
     发布问题
  */
+body {
+    font-family: 微软雅黑;
+}
 #title{
     width: 100%;
     height: 50px;

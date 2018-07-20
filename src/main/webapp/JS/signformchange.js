@@ -1,7 +1,20 @@
-var id;
-var userName;
-var question;
-
+var idValue;
+var userNameValue;
+var requestValue;
+var state;
+function getState() {
+    //alert($.cookie('stateVal'));
+    if($.cookie('stateVal')==undefined||$.cookie('stateVal').length==0||$.cookie('stateVal')==2){
+        state=0;
+        signclose();
+    }else{
+        state=1;
+        signclose();
+        document.getElementById('getName').innerHTML=$.cookie('name')
+    }
+}
+//var exdays=1;
+var APP_PATH='http://47.94.131.133:8080/QASite';
 (function ()
 {
     $('.change a').click(function ()
@@ -24,14 +37,14 @@ function changePic(){
     }else{
         imgObj.src="picsInHomepage\\r_s2.png";
     }
-
 }
 function sign_in(){
     var mail = document.getElementById("user");
     var pwd = document.getElementById("pwd");
     $.ajax({
         type:"post",
-        url:'http://localhost:8080/webapp/common/login',
+        //url:'http://47.94.131.133:8080/QASite/common/login',
+        url:APP_PATH+'/common/login',
         contentType:'application/json',
         data:JSON.stringify({
             email:mail.value,
@@ -40,80 +53,67 @@ function sign_in(){
             //password:"9307a1"
         }),
         success:function(result){
-            if(result.status==200){
-                alert("登陆成功");
+            if(result.status=='200'){
                 document.getElementById('getName').innerHTML=result.data.userName;
-            }else{
-                alert(result.message);
+                alert("登陆成功");
+                state=1;
+                signclose();
+                idValue=result.data.id;
+                //alert(result.data.id);
+                //document.cookie = "id=" + idValue + ";";
+                $.cookie('user_id', idValue);
+                userNameValue=result.data.userName;
+                //alert(userNameValue);
+                //document.cookie = "name=" + userNameValue + ";";
+                $.cookie('name', userNameValue);
             }
+            if(result.status=='300'){
+                alert("用户名或密码不正确");
+                state=0;
+            }
+            if(result.status=='400'){
+                alert("请确保您有正确的权限");
+                state=0;
+            }
+            //alert(result.status);
             //alert(reult.data.userName);
+
             //alert(result.status+result.message);
         }
     });
 
 }
 function signclose(){
-    document.getElementById('signform').style.display="none";
-    document.getElementById('signUpDiv').style.display="none";
-    document.getElementById('signInDiv').style.display="none";
-    document.getElementById('nameId').style.display="block";
-}
-function searchOrResource(){
-    console.log("searchOrResource");
-    var imgObj = document.getElementById("show");
-    var textObj= document.getElementById("getName").innerHTML;
-    if(imgObj.getAttribute("src",2)=="picsInHomepage\\r_s2.png"){
-        console.log("signformchange-question");
-        $.ajax({
-            type:"post",
-            url:'http://localhost:8080/webapp/common/search',
-            contentType:'application/json',
-            data:JSON.stringify({
-                type:"question",
-                description:"aaaaa",
-                index:1,
-                length:4
-                //email:"9307a1@163.com",
-                //password:"9307a1"
-            }),
-            success:function(result){
-                console.log("resource");
-            }
-        });
+    if(state==1) {
+        document.getElementById('signform').style.display = "none";
+        document.getElementById('signUpDiv').style.display = "none";
+        document.getElementById('signInDiv').style.display = "none";
+        document.getElementById('nameId').style.display = "block";
+        document.getElementById('quit').style.display = "block";
     }else{
-        console.log("signformchange-question");
-        $.ajax({
-            type:"post",
-            url:'http://localhost:8080/webapp/common/search',
-            contentType:'application/json',
-            data:{
-                type:"question",
-                description:"aaaaa",
-                //description:"${textObj}",
-                index:1,
-                length:10
-            },
-            success:function(result){
-                console.log("question:"+result.data[0].title);
-            }
-        });
+        document.getElementById('signform').style.display = "none";
+        document.getElementById('signUpDiv').style.display = "";
+        document.getElementById('signInDiv').style.display = "";
+        document.getElementById('nameId').style.display = "none";
+        document.getElementById('quit').style.display = "none";
     }
 }
-function setCookie(){
-    var d = new Date();
-    d.setTime(d.getTime()+(exdays*24*60*60*1000));
-    var expires = "expires="+d.toGMTString();
-    document.cookie = id + "=" + idValue + "; " + expires;
+function searchOrResource(){
+    var imgObj = document.getElementById("show");
+    var textObj= document.getElementById("des").value;
+    requestValue=textObj;
+    if(imgObj.getAttribute("src",2)=="picsInHomepage\\r_s2.png"){
+        $.cookie('resOrQues',"resource");
+        $.cookie('resource', requestValue);
+        window.location.href="search.jsp";
+    }else{
+        $.cookie('resOrQues',"question");
+        $.cookie('question', requestValue);
+        window.location.href="search.jsp";
+    }
 }
-function setCookie(){
-    var d = new Date();
-    d.setTime(d.getTime()+(exdays*24*60*60*1000));
-    var expires = "expires="+d.toGMTString();
-    document.cookie = userName + "=" + userNameValue + "; " + expires;
-}
-function setCookie(){
-    var d = new Date();
-    d.setTime(d.getTime()+(exdays*24*60*60*1000));
-    var expires = "expires="+d.toGMTString();
-    document.cookie = question + "=" + questioinValue + "; " + expires;
+function quitFunc() {
+    $.cookie('stateVal', '');
+    //getState();
+    location.reload();
 }

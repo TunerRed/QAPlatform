@@ -11,12 +11,30 @@
     <title>后台测试</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!--%
-        pageContext.setAttribute("APP_PATH", "http://localhost:8080/webapp");
+        pageContext.setAttribute("APP_PATH", "http://47.94.131.133:8080/QASite");
     %-->
     <script type="text/javascript" src="JS\jquery-1.11.0.min.js"></script>
+    <script>
+        var strCookie=document.cookie;
+        var res="userName";
+        var matchcookie=res;
+        var getMatchCookie;
+        function getdescookie(){
+            var arrCookie=strCookie.split(";");
+            for(var i=0;i<arrCookie.length;i++) {
+                var arr = arrCookie[i].split("=");
+                if (matchcookie == arr[0]) {
+                    getMatchCookie = arr[1];
+                    alert(getMatchCookie);
+                    break;
+
+                }
+            }
+        }
+    </script>
 </head>
-<body onkeydown="keyOnClick(event);">
-<div style="text-align: center">
+<body onload="getdescookie();">
+<div style="text-align: center" >
     <p>
         后台测试用jsp，若“点我测试”返回了了正常值<br>
         则证明接口没有明显问题<br>
@@ -51,7 +69,7 @@
     </form>
 </div>
 <br>
-<div style="margin-top: 50px; text-align: center">
+<div style="margin-top: 50px; margin-bottom: 200px; text-align: center">
     <p>下载测试</p>
     <br>
     <div>
@@ -78,7 +96,7 @@
         $.ajax({
             type:"post",
             //问题详情页面
-            url:'http://localhost:8080/QAPlatform/common/login',
+            url:'http://localhost:8080/QASite/common/login',
             contentType:'application/json',
             data:JSON.stringify({
                 email:user_email,
@@ -90,7 +108,6 @@
                 console.log("login id: "+result.data.id);
             }
         });
-
     }
     function downloadTest() {
         var Id = document.getElementById("user_id").value;
@@ -100,7 +117,7 @@
         $.ajax({
             type:"post",
             //问题详情页面
-            url:'http://localhost:8080/webapp/user/download',
+            url:'http://47.94.131.133:8080/QASite/user/download',
             contentType:'application/json',
             data:JSON.stringify({
                 Id:Id,

@@ -198,12 +198,12 @@ public class CommonController {
             Answer searchAnswer = replyList.get(i);
             User replier = userService.getUserInfo(searchAnswer.getReplierId());
             if (replier == null)
-                ResultCache.getFailureDetail("null replier for an anwser!check your database");
+                return ResultCache.getFailureDetail("null replier for an anwser!check your database");
             //System.out.print("answer "+i+" : "+searchAnswer.getTitle());
             JsonNode replyData = mapper.createObjectNode();
             ((ObjectNode) replyData).put("reply_id",searchAnswer.getId());
             ((ObjectNode) replyData).put("replier_id",searchAnswer.getReplierId());
-            ((ObjectNode) replyData).put("replier",userService.getUserInfo(searchAnswer.getReplierId()).getUserName());
+            ((ObjectNode) replyData).put("replier",replier.getUserName());
             ((ObjectNode) replyData).put("content",searchAnswer.getContent());
             //若是最佳回复，则返回BEST_MESSAGE_TRUE，当前版本返回“YES”，否则返回“NO”
             ((ObjectNode) replyData).put("best",

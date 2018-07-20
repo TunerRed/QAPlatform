@@ -58,8 +58,8 @@ public class CommonService {
      * （即可在搜索中起到参照作用的词汇）
      * */
     public List<String> splitSentence(String description,String searchStardard) {
-        List<String> divide = SentenceDiv.divide(description);
-        List<String> property = SentenceDiv.properties(description);
+        List<String> divide = SentenceDiv.getInstance().divide(description);
+        List<String> property = SentenceDiv.getInstance().properties(description);
         List<String> result = new ArrayList<String>();
 
         //System.out.println("----splitQuestion----");

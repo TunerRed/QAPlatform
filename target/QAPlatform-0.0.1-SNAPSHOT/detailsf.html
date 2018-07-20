@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="JS/jquery.cookie.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<title>资源详情</title>
+	<meta name="renderer" content="webkit">
+	<link rel="stylesheet" type="text/css" href="CSS/details.css">
+    <!--<script src="JS/details.js"></script>-->
+    <script src="JS/detailsf.js"></script>
+</head>
+<body id="body_id" style="display: none;">
+    <div style="height:86px;">
+        <img src="picsInHomepage/top_bar.png" id="top_bar" style="z-index:100">
+        <img src="picsInHomepage/r_s1.png" width="120" id="type" style="z-index:100">
+        <input type="text" id="search" style="z-index:100">
+        <img src="picsInHomepage/question_icon.png" width="30" id="question" style="z-index:100">
+        <a href="publish.html">
+            <img src="picsInHomepage/plus_icon.png" width="30" id="plus" style="z-index:100">
+        </a>
+        <div class="login" id="bt1" style="z-index:100">
+            <!--<a href="javascript:void(0)" id="style1" onclick="setCookie('name','aaaaa')">登录</a>-->
+            <a href="index.jsp" id="style1">登录</a>
+        </div>
+        <div class="login" id="bt2" style="margin-left:94%;z-index: 100">
+            <a href="register.html" id="style2">注册</a>
+        </div>
+    </div>
+    <div class="ques">
+    	<div class="quesDesc">
+        	<div style="width:100%;float:left">
+    			<div id="title">
+        		</div>
+            	<img src="picsInHomepage/conceal.png" width="30px" id="delete">
+            </div>
+            <div class="userRela" style="width:100%;float:left;margin-top:10px;">
+            	<div class="date" id="quesDate">
+                </div>
+                <div class="userID" id="quesOwner">
+                </div>
+                <!--<a href="javascript:void(0)" onclick="shutUp(this)">-->
+                <img src="picsInHomepage/speaking.png" width="20px" class="speaking" id="ask" onclick="shutUp(this)">
+                <!--</a>-->
+                <div class="credit" id="gain">
+                </div>
+                <div class="downloadTimes" id="down">
+                </div>
+                <img src="picsInHomepage/download.png" width="20px" class="downloadImg" id="download">
+            </div>
+            <div class="writing" id="quesWriting">
+                <div id="desc">
+                </div>
+                <div id="allPre">
+                </div>
+                <!--<video width="100%" controls id="video">-->
+                	<!--<source src="testFile/testmpeg.mp4" type="video/mp4" id="preview">-->
+                	<!--抱歉，您的浏览器不支持视频预览！-->
+            	<!--</video>-->
+				<!--<iframe src="generic/web/viewer.html?file=../../testFile/Android.pdf" width="100%" height="500px" id="pdfRead"></iframe>-->
+                <!--
+                <embed width="100%" height="500px" src="testFile/Java高级程序设计语言实验要求.doc" type="application/msword"></embed>
+                -->
+            </div>
+            <hr style="height:2px;border:none;width:80%;float:left;margin-top:60px" color="#CCCCCC" />
+            <div class="subtitle">
+            相关资源
+            </div>
+            <div id="rele">
+            </div>
+        </div>
+    </div>
+	<script>
+    	$(document).ready(function () {
+        	change();
+        	deleteResource();
+        	loadResource();
+        	download();
+        	search();
+    	});
+	</script>
+</body>
+</html>

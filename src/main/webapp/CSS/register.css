@@ -1,0 +1,46 @@
+body {
+	font-family: 微软雅黑;
+}
+#header {
+	float:left;
+	width:100%;
+}
+.wrap{
+	float:left;
+	width:50%;
+	margin-left:30%;
+	margin-top:40px;
+}
+.inline{
+	width:100%;
+	float:left;
+	height:40px;
+	margin-top:20px;
+}
+.titleImg{
+	float:left;
+	margin-top:5px;
+}
+.roundImg{
+	float:left;
+	margin-left:5%;
+	cursor:pointer;
+}
+#inputName{
+	width:200px;
+}
+.inputs{
+	float:left;
+	margin-left:10%;
+	height:40px;
+	width:400px;
+	font-size:20px;
+	outline:none;
+	border-width:0.1px;
+	border-radius:9px;
+}
+#register{
+	margin-left:29%;
+	margin-top:50px;
+	cursor:pointer;
+}

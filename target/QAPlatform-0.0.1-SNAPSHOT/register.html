@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<title>注册</title>
+	<meta name="renderer" content="webkit">
+	<link rel="stylesheet" type="text/css" href="CSS/register.css">
+    <script src="JS/register.js"></script>
+</head>
+<body>
+<img id="header" src="picsInHomepage/register_title.png">
+<div class="wrap">
+	<div class="inline">
+    	<img src="picsInHomepage/name.png" height="30px" class="titleImg">
+        <input type="text" placeholder="请输入用户名" class="inputs" id="inputName">
+    </div>
+    <div class="inline">
+        <img src="picsInHomepage/sex.png" height="30px" class="titleImg">
+        <img src="picsInHomepage/man_on.png" height="40px" class="roundImg" id="man" style="margin-left:10%">
+        <img src="picsInHomepage/woman_off.png" height="40px" class="roundImg" id="woman">
+    </div>
+    <div class="inline">
+        <img src="picsInHomepage/identity.png" height="30px" class="titleImg">
+        <img src="picsInHomepage/teacher_on.png" height="40px" class="roundImg" id="teacher" style="margin-left:10%">
+        <img src="picsInHomepage/student_off.png" height="40px" class="roundImg" id="student">
+    </div>
+    <div class="inline">
+        <img src="picsInHomepage/input_password.png" height="30px" class="titleImg">
+    	<input type="password" placeholder="请输入密码" class="inputs" id="inputPassword">
+    </div>
+    <div class="inline">
+        <img src="picsInHomepage/conform_password.png" height="30px" class="titleImg">
+    	<input type="password" placeholder="请确认密码" class="inputs" id="inputConfirmPassword">
+    </div>
+    <div class="inline">
+        <img src="picsInHomepage/email.png" height="30px" class="titleImg">
+        <input type="text" placeholder="请输入邮箱地址" class="inputs" id="inputMail">
+    </div>
+    <img src="picsInHomepage/register_button.png" height="40px" class="titleImg" id="register">
+</div>
+<script>
+    $(document).ready(function () {
+        change();
+        submit();
+    });
+</script>
+</body>
+</html>
