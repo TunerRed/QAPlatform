@@ -107,6 +107,10 @@ function submitAnswer() {
 	$("#submitImg").click(function () {
 	    var user_id=$.cookie('user_id');
         // var user_id="118";
+        if(user_id=='0'||user_id==null){
+            alert("未登录，请先登录！");
+            return;
+        }
         var question_id=$.cookie('question_id');
         // var question_id="19";
         $.ajax({
