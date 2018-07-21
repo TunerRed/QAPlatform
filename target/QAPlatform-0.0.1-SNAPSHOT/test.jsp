@@ -125,7 +125,7 @@
         $.ajax({
             type:"post",
             //问题详情页面
-            url:'http://localhost:8080/webapp/common/search',
+            url:'http://47.94.131.133:8080/QASite/common/search',
             contentType:'application/json',
             data:JSON.stringify({
                 type:"question",
