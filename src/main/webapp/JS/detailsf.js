@@ -26,6 +26,10 @@ function download() {
     $("#download").click(function () {
         var id=$.cookie('user_id');
         //var id="111";
+        if(id=='0'||id==null){
+            alert("未登录，请先登录！");
+            return;
+        }
         var resource_id=$.cookie('resource_id');
         //var resource_id="4";
         var resource_title=$.cookie('resource_title');
@@ -226,6 +230,8 @@ function relaRes(title,id) {
     window.location.href="detailsf.html";
 }
 function resign() {
+    $.cookie('stateVal',2);
     $.cookie('name','');
+    $.cookie('user_id','0');
     location.reload();
 }
