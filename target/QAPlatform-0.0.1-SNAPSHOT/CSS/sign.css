@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    font-family: 微软雅黑;
+    font-family: 黑体;
     background-color: burlywood;
 }
 #displaysign{
@@ -10,13 +10,13 @@ body {
     height: 40px;
 }
 .signform {
-    font-family: 微软雅黑;
+    font-family: 黑体;
     position: fixed;
     background-color: white;
     top: 20%;
     left: 35%;
     width: 400px;
-    height: 410px;
+    height: 430px;
     border-radius: 1em;
     text-align: center;
     z-index: 999;
@@ -62,7 +62,7 @@ body {
 }
 .postdiv {
     position: relative;
-    margin-top: 20px;
+    margin-top: 45px;
 }
 .postdiv button {
     cursor: pointer;

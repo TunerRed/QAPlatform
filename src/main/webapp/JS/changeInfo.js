@@ -59,7 +59,7 @@ function submit(){
         }*/
         $.ajax({
 			type:"post",
-			url:"http://47.94.131.133:8080/QASite/user/change",
+			url:"http://localhost:8080/webapp/user/change",
 			contentType:"application/json",
 			data:JSON.stringify({
 				id:myId,

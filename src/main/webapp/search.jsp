@@ -15,21 +15,21 @@
     <!-- 响应式布局设置-->
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <!-- 新 Bootstrap 核心 CSS 文件 -->
-    <%--<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">--%>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="JS/jquery-3.2.1.min.js"></script>
     <!--引入jquery.cookie插件-->
     <script src="JS/jquery.cookie.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <title>search</title>
     <!--引入css样式表-->
     <link href="CSS/search.css" rel="stylesheet" type="text/css">
     <!--引入JavaScript-->
     <script src="JS/search.js"></script>
 </head>
-<body  onload=" preSet(),appendQuestionText()">
+<body onload=" preSet(),appendQuestionText()">
+<div>
     <div style="height:86px;">
         <img src="picsInHomepage/top_bar.png" id="top_bar">
         <img src="picsInHomepage/r_s1.png" width="120" id="type">
@@ -46,6 +46,9 @@
         </div>
     </div>
     <div id="user"><a id="userName" style="color: white;"></a></div>
+        <div id="quit">
+            <p id="quitText" onclick="quitFunc()">退出登录</p>
+        </div>
     <div id="bg">
         <div id="list"></div>
     </div>
@@ -54,5 +57,6 @@
             search();
         });
     </script>
+</div>
 </body>
 </html>

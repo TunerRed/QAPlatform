@@ -3,6 +3,10 @@ var userNameValue;
 var requestValue;
 var state;
 function getState() {
+    if($.cookie('name')==undefined){
+        $.cookie('name','');
+        $.cookie('user_id',0);
+    }
     //alert($.cookie('stateVal'));
     if($.cookie('stateVal')==undefined||$.cookie('stateVal').length==0||$.cookie('stateVal')==2){
         state=0;
@@ -14,7 +18,7 @@ function getState() {
     }
 }
 //var exdays=1;
-var APP_PATH='http://47.94.131.133:8080/QASite';
+var APP_PATH='http://localhost:8080/webapp';
 (function ()
 {
     $('.change a').click(function ()
@@ -43,7 +47,7 @@ function sign_in(){
     var pwd = document.getElementById("pwd");
     $.ajax({
         type:"post",
-        //url:'http://47.94.131.133:8080/QASite/common/login',
+        //url:'http://localhost:8080/webapp/common/login',
         url:APP_PATH+'/common/login',
         contentType:'application/json',
         data:JSON.stringify({
@@ -56,6 +60,7 @@ function sign_in(){
             if(result.status=='200'){
                 document.getElementById('getName').innerHTML=result.data.userName;
                 alert("登陆成功");
+                $.cookie('stateVal',1);
                 state=1;
                 signclose();
                 idValue=result.data.id;
@@ -112,6 +117,14 @@ function searchOrResource(){
         window.location.href="search.jsp";
     }
 }
+function searchOrResource1(){
+    if($.cookie('name')==''){
+        alert("您还没有登录");
+    }else{
+        window.location.href="publish.jsp";
+    }
+}
+
 function quitFunc() {
     $.cookie('stateVal', '');
     //getState();

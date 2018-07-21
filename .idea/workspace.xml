@@ -2,11 +2,135 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="QAPlatform:war exploded" />
+      <artifact name="QAPlatform:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="" />
+    <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/details.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/personalHomepage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/publish.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/search.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSS/sign.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/changeInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/details.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/detailsf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/jquery-1.11.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/jquery-3.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/jquery.cookie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/personalHomepage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/publish.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/signformchange.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jieba-analysis.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/changeInfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/detailsf.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/personalHomepage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/answer_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/best.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/bird.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/change_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/conceal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/conform_password.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/description.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/email_change.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/gender_change.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/identity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/identity_change.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/input_password.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/login_btn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/login_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/login_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/login_spec.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/man_off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/man_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/mute.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/my_question.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/my_question_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/my_reply.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/my_reply_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/my_resource.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/my_resource_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/name.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/name_change.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/newcode_change.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/ordinary.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/plus_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/precode_change.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/publish.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/publish_title.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/question.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/question_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/r_s1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/r_s2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/register_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/register_title.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/relevent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/resource.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/resource_clicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/resource_unclicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/reticenting.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/search_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/sex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/signup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/speaking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/star_best.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/star_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/student_off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/student_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/submit_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/teacher_off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/teacher_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/title.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/top_bar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/upload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/wanted.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/woman_off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/woman_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/修改个人信息top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/发布（资源1）.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/发布（资源1）_spec.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/发布（资源2）.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/发布（问题）.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/发布（问题）_spec.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/相关资源.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/首页.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/picsInHomepage/首页_spec.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/publish.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/search.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/css/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/bootstrap-3.3.7-dist/js/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +159,7 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="1102">
               <caret line="83" column="60" selection-start-line="83" selection-start-column="60" selection-end-line="83" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -52,28 +176,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommonService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CommonService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="134" column="33" selection-start-line="134" selection-start-column="33" selection-end-line="134" selection-end-column="33" />
-              <folding>
-                <element signature="e#1868#1877#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="61" column="78" selection-start-line="61" selection-start-column="78" selection-end-line="61" selection-end-column="78" />
-              <folding>
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="307">
+              <caret line="136" column="24" lean-forward="true" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -152,8 +259,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/searchProperties.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/test.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java" />
       </list>
     </option>
   </component>
@@ -192,8 +299,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -218,27 +323,14 @@
               <item name="QAPlatform" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAPlatform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QAPlatform" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qasite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAPlatform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QAPlatform" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -253,25 +345,25 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.qasite.service" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform" />
-      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\java\com\qasite\service" />
-      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\java\com\qasite\controller" />
-      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\webapp\WEB-INF\lib" />
-      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\java\com\qasite\bean" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.qasite.test" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main" />
       <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\webapp" />
       <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\webapp\JS" />
       <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\java" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\webapp" />
+      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform" />
+      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\java\com\qasite\service" />
+      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\java\com\qasite\controller" />
+      <recent name="C:\Users\CodeVoid\Desktop\项目实训\QAPlatform\src\main\webapp\WEB-INF\lib" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.qasite.test" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.qasite.service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -621,7 +713,8 @@
       <workItem from="1531872881320" duration="11849000" />
       <workItem from="1531960073648" duration="2731000" />
       <workItem from="1532046200481" duration="12305000" />
-      <workItem from="1532165866085" duration="5899000" />
+      <workItem from="1532165866085" duration="6055000" />
+      <workItem from="1532180513861" duration="228000" />
     </task>
     <servers />
   </component>
@@ -658,7 +751,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192851000" />
+    <option name="totallyTimeSpent" value="193235000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -686,16 +779,15 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49319214" weight="0.55233496" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32850242" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.62178516" weight="0.3268921" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32850242" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.49924356" weight="0.32850242" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4871407" visible="true" weight="0.49275362" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4871407" weight="0.49275362" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32850242" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32850242" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.34341908" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.34871408" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" sideWeight="0.5012407" side_tool="true" weight="0.290469" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -703,6 +795,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.62178516" weight="0.3268921" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
@@ -941,14 +1034,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <folding>
-            <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
-            <element signature="n#sql#0;n#mapper#0;n#!!top" />
-            <element signature="n#sql#1;n#mapper#0;n#!!top" />
-            <element signature="n#sql#2;n#mapper#0;n#!!top" />
-          </folding>
-        </state>
+        <state relative-caret-position="-1" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/SentenceDiv.java">
@@ -989,15 +1075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
           <caret line="332" column="19" lean-forward="true" selection-start-line="332" selection-start-column="19" selection-end-line="332" selection-end-column="19" />
-          <folding>
-            <element signature="n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#select#3;n#mapper#0;n#!!top" />
-            <element signature="n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#update#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#2;n#mapper#0;n#!!top" />
-            <element signature="n#update#3;n#mapper#0;n#!!top" />
-            <element signature="n#select#4;n#mapper#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1031,7 +1108,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="1102">
           <caret line="83" column="60" selection-start-line="83" selection-start-column="60" selection-end-line="83" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1047,25 +1124,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="134" column="33" selection-start-line="134" selection-start-column="33" selection-end-line="134" selection-end-column="33" />
-          <folding>
-            <element signature="e#1868#1877#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="340">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="61" column="78" selection-start-line="61" selection-start-column="78" selection-end-line="61" selection-end-column="78" />
-          <folding>
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="307">
+          <caret line="136" column="24" lean-forward="true" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
         </state>
       </provider>
     </entry>

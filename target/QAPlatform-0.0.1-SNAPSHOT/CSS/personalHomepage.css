@@ -1,13 +1,16 @@
 body {
-	font-family: 微软雅黑;
+	font-size: 黑体;
 }
 #title{
 	width:100%;
 }
 #personalInfo{
-	font-family: 微软雅黑;
+	font-family: 黑体;
 	float:left;
 	width:260px;
+	bottom: 0px;
+	/*top: 85px;*/
+	/*position: absolute;*/
 	height:100%;
 	background-color:#ededed;
 }

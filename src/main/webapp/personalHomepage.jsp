@@ -23,7 +23,7 @@
 </head>
 <body onload="changePic1(); getDesCookie(); question(); reply(); resource(); getInfo();">
 
-<img id="title" src="picsInHomepage\top.png"/>
+<img id="title" src="picsInHomepage\top.png" style="height: 85px;"/>
 <div id="personalInfo">
 <div id="bird">
 <img src="picsInHomepage\bird.png" style="width:75%; height:75%;"/> 
@@ -58,7 +58,7 @@
 <img id="pic3" src="picsInHomepage\my_resource.png" style="width:100%; height:100%; cursor:pointer;" onclick="changePic3()"\>
 </div>
 <div id="changeInfo">
-<a style="pinter:cursor; text-decoration:none; color:#d4d4d4;" href="changeInfo.html">
+<a style="letter-spacing:0.1em; pinter:cursor; text-decoration:none; color:#d4d4d4;" href="changeInfo.html">
 修改密码\信息>>
 </a>
 </div>

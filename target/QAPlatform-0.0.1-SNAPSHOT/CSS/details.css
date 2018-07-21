@@ -1,5 +1,5 @@
 body {
-	font-family: 微软雅黑;
+	font-size: 黑体;
 }
 #top_bar{
 	position:fixed;
@@ -67,6 +67,8 @@ body {
 	font-size:34px;
 	font-weight:bold;
 	text-decoration:underline;
+	word-break: break-all;
+	word-wrap: break-word;
 }
 #close{
 	float:right;
@@ -84,6 +86,8 @@ body {
 	width:80%;
 	color:#333;
 	font-size:20px;
+	word-break: break-all;
+	word-wrap: break-word;
 }
 #quesWriting{
 	float:left;
@@ -109,7 +113,7 @@ body {
 }
 .credit{
 	float: left;
-	margin-left: 10px;
+	margin-left: 80px;
 }
 .downloadTimes{
 	float:left;
@@ -175,6 +179,8 @@ body {
 	color:#666;
 	font-size:20px;
 	float:left;
+	word-break: break-all;
+	word-wrap: break-word;
 }
 .relaDate{
 	float:right;

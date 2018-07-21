@@ -1,4 +1,4 @@
-var APP_PATH='http://47.94.131.133:8080/QASite';
+var APP_PATH='http://localhost:8080/webapp';
 var myId;
 var quesArr=new Array();
 var replyArr=new Array();
@@ -11,6 +11,7 @@ var myPage=1;
 //var matchCookie=" name";
 //var getMatchCookie;
 function getDesCookie(){
+    //alert($(window).height());
     myId=$.cookie('user_id');
     //alert(myId)
     document.getElementById('getName').innerHTML=$.cookie('name');
@@ -21,6 +22,16 @@ function getDesCookie(){
         $.cookie('stateVal',1);
     }
 }
+// function changeStyle(){
+//     wHeight=$(window).height();
+//     var img=new Image();
+//     img.src="picsInHomepage\\top.png";
+//     // alert(wHeight);
+//     // alert(img.height);
+//      document.getElementById('personalInfo').style.height=(wHeight-img.height).toString()+"px";
+//     // alert((wHeight-img.height).toString());
+//     //document.getElementById('personalInfo').style.height="400px";
+// }
 function getInfo(){
     $.ajax({
         type:'post',

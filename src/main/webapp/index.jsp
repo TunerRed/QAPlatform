@@ -6,7 +6,7 @@
         智能问答平台
     </title>
     <%
-        pageContext.setAttribute("APP_PATH", "http://47.94.131.133:8080/QASite");
+        pageContext.setAttribute("APP_PATH", "http://localhost:8080/webapp");
     %>
     <style>
         *{
@@ -88,12 +88,12 @@
     <input id="des" style="display:inline-block;margin-left:0%; width:85%;border:none; BACKGROUND-COLOR: transparent;  outline:none; color:white; font-size:1.3em;">
     <div style="display:inline-block">
         <a style="cursor:pointer;">
-            <img src="picsInHomepage\plus_icon.png" style="width:60%"/>
+            <img src="picsInHomepage\question_icon.png" style="width:60%" onclick="searchOrResource()" href="publish.jsp"/>
         </a>
     </div>
     <div style="display:inline-block">
         <a style="cursor:pointer;">
-            <img src="picsInHomepage\question_icon.png" style="width:60%" onclick="searchOrResource()"href="search.jsp"/>
+            <img src="picsInHomepage\plus_icon.png" style="width:60%" onclick="searchOrResource1()" href="search.jsp"/>
         </a>
     </div>
 </div>
@@ -109,13 +109,13 @@
         <img src="picsInHomepage\login_logo.png" style="width:120px; height:65px;">
     </div>
     <div style="position:relative; height:10%; width:100%; margin-left:5%; color:#5f9fc9; font-size:1.3em; text-align:left;">
-        用户名
+        用 户 名
     </div>
     <div class="userdiv">
         <input id="user" class="signinput" type="text" name="user" value="1234@163.com">
     </div>
-    <div style="position:relative; height:10%; width:100%; margin-left:5%; color:#5f9fc9; font-size:1.3em; text-align:left;">
-        密码
+    <div style="margin-top:3%; position:relative; height:10%; width:100%; margin-left:5%; color:#5f9fc9; font-size:1.3em; text-align:left;">
+        密 码
     </div>
     <div class="pwddiv">
         <input id="pwd" class="signinput" type="password" name="pwd" value="123456">
