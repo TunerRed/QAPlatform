@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -60,21 +62,59 @@ public class CommonService {
     public List<String> splitSentence(String description,String searchStardard) {
         List<String> divide = SentenceDiv.getInstance().divide(description);
         List<String> property = SentenceDiv.getInstance().properties(description);
-        List<String> result = new ArrayList<String>();
+        List<String> result = new LinkedList<String>();
+        List<Integer> result_property_priority = new LinkedList<Integer>();
 
-        //System.out.println("----splitQuestion----");
+        int property_priority = -1;
+        System.out.println("------- split start -------");
         for (int i = 0; i < divide.size(); i++){
-            //System.out.println("split : "+divide.get(i) +"\t\tproperty : " +property.get(i));
-            /*if (property.get(i) == null || property.get(i).trim().length() == 0){
-                System.out.println("empty property");
-                continue;
-            }*/
-            if (divide.get(i).trim().equalsIgnoreCase("N") ||
-                    (divide.get(i).trim().length()>1 && searchStardard.contains(property.get(i)))){
-                result.add(divide.get(i));
+            System.out.println("split result " +i+ " : " +divide.get(i) +"\t\tproperty : " +property.get(i));
+            /*
+            排序插入，根据searchStandard中设定的优先级
+            词性越靠前的词将被放在更前面
+            相同词性在句子中越靠后将被放在更前面
+            */
+            //若是名次，不论长度直接放在开始
+            if (property.get(i).trim().equalsIgnoreCase("n")){
+                System.out.println("\nsplitSentence case 1 : n");
+                result.add(0,divide.get(i));
+                result_property_priority.add(0,0);
             }
+            //若长度大于1
+            else if (divide.get(i).trim().length()>1 ){
+                //若为目标词性，则根据优先级插入结果集中
+                if ((property_priority = searchStardard.indexOf(property.get(i))) >= 0){
+                    System.out.println("\nsplitSentence case 2 : length&property");
+                    System.out.println("property_index(must greater than 0) : "+property_priority/2);
+                    property_priority /= 2;//排除逗号
+                    int cur_index = 0;
+                    for(Iterator iter = result_property_priority.iterator(); iter.hasNext();){
+                        Integer cur_priority = (Integer) iter.next();
+                        if (cur_priority >= property_priority){
+                            result.add(cur_index,divide.get(i));
+                            result_property_priority.add(cur_index,property_priority);
+                            break;
+                        }
+                        cur_index++;
+                    }
+                    if (cur_index == result_property_priority.size()){
+                        result.add(divide.get(i));
+                        result_property_priority.add(property_priority);
+                    }
+                }
+                //对英文单词进行处理
+                else if (property.get(i).trim().length() == 0){
+                    System.out.println("\nsplitSentence case 3 : english words");
+                    result.add(0,divide.get(i));
+                    result_property_priority.add(0,property_priority);
+                }
+            }
+
         }
-        //System.out.println("----------------------");
+        System.out.print("\nsplit result :");
+        for (int i = 0; i < result.size(); i++)
+            System.out.print(" "+result.get(i));
+        System.out.println("\n\n--------- split end -------------");
         return result;
     }
 
@@ -92,6 +132,7 @@ public class CommonService {
             searchMapper = resourceMapper;
 
         int key_count = keys.size();
+        int default_noun_keys = 3;
         if (key_count == 0)
             return null;
         List<SearchResult> selectResult = searchMapper.selectByKeywords(keys);
@@ -103,9 +144,18 @@ public class CommonService {
         /*for (int j = 0; j < selectResult.size(); j++)
             System.out.print(selectResult.get(j).getId()+" ");
         System.out.println();*/
+        List<String> subKeys = keys;
         for (int i = 0; i < key_count-1; i++){
-            keys = keys.subList(0,key_count-i-1);
-            List<SearchResult> tempResult = searchMapper.selectByKeywordsAndOlds(keys,selectResult);
+            subKeys = subKeys.subList(0,key_count-i-1);
+            List<SearchResult> tempResult = searchMapper.selectByKeywordsAndOlds(subKeys,selectResult);
+            selectResult.addAll(tempResult);
+        }
+        for (int i = 0; i < default_noun_keys && i < key_count; i++){
+            subKeys = keys.subList(i,i+1);
+            for (int j = 0; j < subKeys.size(); j++)
+                System.out.print("search noun keys "+j+" : "+subKeys.get(j));
+            System.out.println();
+            List<SearchResult> tempResult = searchMapper.selectByKeywordsAndOlds(subKeys,selectResult);
             selectResult.addAll(tempResult);
         }
 

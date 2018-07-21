@@ -81,6 +81,7 @@ public class UserController {
             JsonNode data = mapper.createObjectNode();
             ((ObjectNode) data).put("question_id", questions.get(i).getId());
             ((ObjectNode) data).put("title", questions.get(i).getTitle());
+            System.out.println(questions.get(i).getTitle());
             SimpleDateFormat dd=new SimpleDateFormat("yyyy-MM-dd");
             String date = dd.format(questions.get(i).getTime1());
             ((ObjectNode) data).put("date",date);

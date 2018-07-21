@@ -51,8 +51,18 @@
         email：<span style="width: 30px"></span><input type="text" id="email" width="200px" height="30px" value=""/><br>
         password：<input type="text" id="password" width="200px" height="30px"/><br>
     </div>
-    <br><br>
+    <br>
     <button class="btn btn-success" id="login" onclick="clickTest()">点我登录</button>
+</div>
+<br>
+<div style="text-align: center; margin-top: 30px">
+    <p>搜索测试</p>
+    <br>
+    <div>
+        search question：<input type="text" id="search" width="400px" height="40px" value="肥皂泡和水为什么会被火柴爆炸？!"/>
+    </div>
+    <br>
+    <button class="btn btn-success" id="searchBtn" onclick="searchTest()">点我搜索</button>
 </div>
 <br>
 <div style="text-align: center; margin-top: 50px">
@@ -95,7 +105,7 @@
         console.log("login password : "+password);
         $.ajax({
             type:"post",
-            //问题详情页面
+            //登录页面
             url:'http://localhost:8080/QASite/common/login',
             contentType:'application/json',
             data:JSON.stringify({
@@ -106,6 +116,28 @@
                 console.log("server return : "+result.message);
                 console.log("login user : "+result.data.userName);
                 console.log("login id: "+result.data.id);
+            }
+        });
+    }
+    function searchTest() {
+        var searchContent = document.getElementById("search").value;
+        console.log("search content : "+searchContent);
+        $.ajax({
+            type:"post",
+            //问题详情页面
+            url:'http://localhost:8080/webapp/common/search',
+            contentType:'application/json',
+            data:JSON.stringify({
+                type:"question",
+                description:searchContent,
+                index:1,
+                length:20
+            }),
+            success:function(result){
+                console.log("server return : "+result.message);
+                for (var i = 0; i < result.data.length; i++) {
+                    console.log("search : "+result.data[i].title);
+                }
             }
         });
     }
