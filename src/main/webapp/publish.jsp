@@ -41,7 +41,7 @@
 </div>
 
 <div id="user"><a  id='userName' style="color: white;"></a></div>
-<form role="form" id="form" action="http://localhost:8080/webapp/user/upload"  method="post" enctype ="multipart/form-data" target="123">
+<form role="form" id="form" action="http://47.94.131.133:8080/QASite/user/upload"  method="post" enctype ="multipart/form-data" target="123">
     <div class="form-group">
         <img src="picsInHomepage/question.png" id="questionImg" style="cursor:pointer;">
         <input type="text" class="form-control" name="question" id="question" placeholder="请输入问题">

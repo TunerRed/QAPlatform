@@ -6,7 +6,7 @@
         智能问答平台
     </title>
     <%
-        pageContext.setAttribute("APP_PATH", "http://localhost:8080/webapp");
+        pageContext.setAttribute("APP_PATH", "http://47.94.131.133:8080/QASite");
     %>
     <style>
         *{
