@@ -19,8 +19,10 @@ function search() {
         appendQuestionText();
         if($("#type").attr("src")==="picsInHomepage/r_s1.png"){
             $.cookie('resOrQues',"question");
+			$.cookie('question',questionName)
         }else{
             $.cookie('resOrQues',"resource");
+			$.cookie('resource',questionName)
         }
     })
 

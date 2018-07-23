@@ -1,4 +1,4 @@
-body {
+﻿body {
 	font-size: 黑体;
 }
 #top_bar{
@@ -60,6 +60,7 @@ body {
 	margin-left:15%;
 	margin-top:40px;
 	margin-bottom:60px;
+	width:87.5%;
 }
 #title{
 	float:left;

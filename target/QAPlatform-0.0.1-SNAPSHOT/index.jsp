@@ -112,13 +112,13 @@
         用 户 名
     </div>
     <div class="userdiv">
-        <input id="user" class="signinput" type="text" name="user" value="1234@163.com">
+        <input id="user" class="signinput" type="text" name="user" value="c23431@163.com">
     </div>
     <div style="margin-top:3%; position:relative; height:10%; width:100%; margin-left:5%; color:#5f9fc9; font-size:1.3em; text-align:left;">
         密 码
     </div>
     <div class="pwddiv">
-        <input id="pwd" class="signinput" type="password" name="pwd" value="123456">
+        <input id="pwd" class="signinput" type="password" name="pwd" value="c23431">
     </div>
     <div class="postdiv" >
         <img src="picsInHomepage\login_button.png" style="width:75%; cursor:pointer;" onclick="sign_in()"/>

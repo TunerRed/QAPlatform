@@ -1,4 +1,4 @@
-function change() {
+﻿function change() {
     $("#type").click(function () {
 		if($(this).attr("src")=="picsInHomepage/r_s1.png"){
             $(this).attr("src","picsInHomepage/r_s2.png");
@@ -91,6 +91,7 @@ function shutUp(obj){
 			// punish_point:punish_point
         }),
         success:function(result){
+alert(result.message);
             if(result.status==300)
                 alert("该用户已被禁言！");
             else {
@@ -125,7 +126,7 @@ function submitAnswer() {
             		alert("您已被禁言，不能回答！");
 				}
 				else{
-            		var reply=document.getElementById("answerDesc").innerHTML;
+            		var reply=$("#answerDesc").val();
             		$.ajax({
                         type: "post",
                         url: "http://47.94.131.133:8080/QASite/user/reply",
@@ -267,7 +268,7 @@ function loadQuestion(){
                     answer+="style='display:none'";
             	answer+="></a></div></div>";
             	//alert(result.data.replies[0].best);
-                // alert(result.data.replies[key].shutup);
+                alert(result.data.replies[key].shutup);
 				if(result.data.replies[key].shutup=="TRUE")
 					answer=answer.replace(/speaking.png/g, "reticenting.png");
                 if(result.data.replies[key].best=="YES") {

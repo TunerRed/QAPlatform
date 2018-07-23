@@ -118,7 +118,10 @@ function searchOrResource(){
     }
 }
 function searchOrResource1(){
-    if($.cookie('name')==''){
+    if($.cookie('name')==''||
+	$.cookie('stateVal')==undefined||
+	$.cookie('stateVal').length==0||
+	$.cookie('stateVal')==2){
         alert("您还没有登录");
     }else{
         window.location.href="publish.jsp";

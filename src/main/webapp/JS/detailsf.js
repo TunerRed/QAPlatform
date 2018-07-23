@@ -1,4 +1,4 @@
-function change() {
+﻿function change() {
     $("#type").click(function () {
         if($(this).attr("src")=="picsInHomepage/r_s1.png"){
             $(this).attr("src","picsInHomepage/r_s2.png");
@@ -155,7 +155,7 @@ function loadResource() {
             $("#desc").html(result.data.description);
              // alert(result.data.format);
             var preview="";
-            if(result.data.format=="video"){
+            if(result.data.type=="video"){
                 // $("#preview").attr("src", result.data.address);
                 // document.getElementById("video").style.display="";
                 preview="<video width='100%' controls id='video'><source src='"+
@@ -164,7 +164,7 @@ function loadResource() {
                     "抱歉，您的浏览器不支持视频预览！" +
                     "</video>";
             }
-            else if(result.data.format=="document"){
+            else if(result.data.type=="document"){
                 // $("#pdfRead").attr("src", result.data.address);
                 // document.getElementById("pdfRead").style.display="";
                 preview="<iframe src='generic/web/viewer.html?file=../../"+

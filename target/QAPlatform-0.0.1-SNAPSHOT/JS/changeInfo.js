@@ -1,4 +1,4 @@
-function getId(){
+﻿function getId(){
 	return $.cookie('user_id');
 }
 var myId=getId();
@@ -34,15 +34,15 @@ function change() {
 function submit(){
 	$("#register").click(function () {
         var user = document.getElementById("inputName");
-		var man=document.getElementById("man");
+		//var man=document.getElementById("man");
 		var sex;
-		if(man.src==getName("man",1))
+		if($("#man").attr("src")==getName("man",1))
 			sex="MALE";
 		else
 			sex="FEMALE";
-		var teacher=document.getElementById("teacher");
+		//var teacher=document.getElementById("teacher");
 		var type;
-        if(teacher.src==getName("teacher",1))
+        if($("#teacher").attr("src")==getName("teacher",1))
 			type="teacher";
 		else
 			type="student";
@@ -71,7 +71,6 @@ function submit(){
 				type:type
 			}),
 			success:function(result){
-				alert("123");
                if(result.status==200) {
                    alert("修改成功！");
                    window.location.href = "index.jsp";

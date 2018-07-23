@@ -1,4 +1,4 @@
-function change() {
+﻿function change() {
     $(".roundImg").click(function () {
 		var id=$(this).attr("id");
 		if(id=="woman"){
@@ -30,15 +30,17 @@ function change() {
 function submit(){
 	$("#register").click(function () {
         var user = document.getElementById("inputName");
-		var man=document.getElementById("man");
+		//var man=document.getElementById("man");
 		var sex;
-		if(man.src==getName("man",1))
+		//if(man.src==getName("man",1))
+		if($("#man").attr("src")==getName("man",1))
 			sex="MALE";
 		else
 			sex="FEMALE";
-		var teacher=document.getElementById("teacher");
+		//var teacher=document.getElementById("teacher");
 		var type;
-        if(teacher.src==getName("teacher",1))
+        //if(teacher.src==getName("teacher",1))
+        if($("#teacher").attr("src")==getName("teacher",1))
 			type="teacher";
 		else
 			type="student";
@@ -53,6 +55,7 @@ function submit(){
 			alert("两次输入的密码不一致！");
             return;
         }
+	
         $.ajax({
 			type:"post",
 			url:"http://47.94.131.133:8080/QASite/common/register",

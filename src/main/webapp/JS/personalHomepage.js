@@ -274,3 +274,12 @@ function setThisCookie2(column) {
     $.cookie('resource_title',column.innerHTML);
     $.cookie('resource_id',resArr[column.parentNode.rowIndex-1]);
 }
+function setWidth() {
+    document.getElementById('my_question').style.width=($(window).width()-370)+'px';
+    document.getElementById('my_question').style.height=($(window).height()-100)+'px';
+    document.getElementById('my_reply').style.width=($(window).width()-370)+'px';
+    document.getElementById('my_reply').style.height=($(window).height()-100)+'px';
+    document.getElementById('my_resource').style.width=($(window).width()-370)+'px';
+    document.getElementById('my_resource').style.height=($(window).height()-100)+'px';
+    //document.getElementById('personalInfo').style.height=($(window).height()-85)+'px';
+}

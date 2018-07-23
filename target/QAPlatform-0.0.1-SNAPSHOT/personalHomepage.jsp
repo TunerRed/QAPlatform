@@ -21,7 +21,7 @@
     <script type="text/javascript" src="JS\jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="JS\jquery.cookie.js"></script>
 </head>
-<body onload="changePic1(); getDesCookie(); question(); reply(); resource(); getInfo();">
+<body style="overflow-y: hidden; overflow-x: hidden" onload="changePic1(); getDesCookie(); question(); reply(); resource(); getInfo(); setWidth();">
 
 <img id="title" src="picsInHomepage\top.png" style="height: 85px;"/>
 <div id="personalInfo">

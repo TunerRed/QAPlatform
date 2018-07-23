@@ -15,7 +15,6 @@
     <!-- 响应式布局设置-->
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <!-- 新 Bootstrap 核心 CSS 文件 -->
-
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="JS/jquery-3.2.1.min.js"></script>
@@ -44,20 +43,20 @@
 <form role="form" id="form" action="http://47.94.131.133:8080/QASite/user/upload"  method="post" enctype ="multipart/form-data" target="123">
     <div class="form-group">
         <img src="picsInHomepage/question.png" id="questionImg" style="cursor:pointer;">
-        <input type="text" class="form-control" name="question" id="question" placeholder="请输入问题">
+        <input type="text" class="form-control" name="question" id="question" placeholder="请输入问题" required="required">
     </div>
     <div class="form-group">
         <img src="picsInHomepage/description.png" id="descriptionImg">
-        <textarea  class="form-control" name='description' id="description" rows="10" placeholder="请输入具体描述"></textarea>
+        <textarea  class="form-control" name='description' id="description" rows="10" placeholder="请输入具体描述" required="required"></textarea>
     </div>
     <div class="form-group" id="uploaddiv">
         <img src="picsInHomepage/upload.png" id="upload"><br>
         <img src="picsInHomepage/resource_unclicked.png" id="resourse_isclick">
-        <input type="file" name="file" id="inputfile" style="width: 175px">
+        <input type="file" name="file" id="inputfile" required="required" style="width: 175px">
     </div>
     <div class="form-group">
         <img src="picsInHomepage/wanted.png" id="wantedImg">
-        <input type="text" class="form-control" name="point" id="wanted" placeholder="请输入悬赏积分">
+        <input type="text" class="form-control" name="point" id="wanted" placeholder="请输入悬赏积分" required="required">
     </div>
     <div class="form-group" style="display: none">
         <input type="text" class="form-control" name="Id" id="user_id">
@@ -71,7 +70,7 @@
 <iframe name="123" style="display: none"></iframe>
 <script>
     $(document).ready(function () {
-     change();;
+     change();
     });
 </script>
 </body>

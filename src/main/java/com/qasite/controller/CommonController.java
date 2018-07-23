@@ -209,7 +209,7 @@ public class CommonController {
             ((ObjectNode) replyData).put("best",
                     searchAnswer.getState()==Answer.BEST_VALUE_TRUE?Answer.BEST_MESSAGE_TRUE:Answer.BEST_MESSAGE_FALSE);
             ((ObjectNode) replyData).put("time",df.format(searchAnswer.getTime1()));
-            ((ObjectNode) data).put("shutup",
+            ((ObjectNode) replyData).put("shutup",
                     (replier.getStates().compareTo(new Date())>0)?User.SHUT_UP_MESSAGE_TRUE:User.SHUT_UP_MESSAGE_FALSE);
             ((ArrayNode) replies).add(replyData);
         }

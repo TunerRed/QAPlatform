@@ -235,56 +235,68 @@ public class UserController {
     @RequestMapping(value = "/user/upload", method = RequestMethod.POST)
     @ResponseBody
     //单个变量的接收需要按顺序
-    public String upload(@RequestParam MultipartFile file, HttpServletRequest request, @RequestParam("description")String des,
+    public Result upload(@RequestParam("file") MultipartFile file, HttpServletRequest request,@RequestParam("question")String title,
+                         @RequestParam("description")String des,
                          @RequestParam("point")int point, @RequestParam("Id") int provider_id) throws IOException {
-        String path = resource_base_path;
-        String storePath = request.getServletContext().getRealPath("/upload");
-        String filename = file.getOriginalFilename();
-        filename.replace("/","");
-        filename.replace("\\","");
-        filename.replace("\"","");
-        filename.replace("'","");
-        //获取格式
-        String suffix = filename.substring(filename.lastIndexOf(".")+1);
-        //用UUID和文件名的方式存到本地，防止文件名重复
-        String storename = UUID.randomUUID().toString() + filename;
+        if (title == null || title.length() == 0 || file==null || file.isEmpty() || provider_id<=0){
+            return ResultCache.getFailureDetail("无效的文件！");
+        }else {
+            if (point < 0)
+                point = 0;
+            String path = resource_base_path;
+            String storePath = request.getServletContext().getRealPath("/upload");
+            String filename = file.getOriginalFilename();
+
+            filename = clean(filename);
+            title = clean(title);
+            des = clean(des);
+
+            //获取格式
+            String suffix = filename.substring(filename.lastIndexOf(".")+1);
+            //用UUID和文件名的方式存到本地，防止文件名重复
+            String storename = UUID.randomUUID().toString() + filename;
         /*上传到目录
          QAPlatform/target/QAPlatform-0.0.1-SNAPSHOT/upload/
         以绝对路径存储*/
-        File dir = new File(storePath + "/" + storename);
+            File dir = new File(storePath + "/" + storename);
 
-        //将文件存储到本地
-        if (!dir.exists()) {
-            dir.mkdirs();
+            //将文件存储到本地
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+            file.transferTo(dir);
+
+            //在数据库中添加数据
+            Resource resource = new Resource();
+            resource.setTitle(title);
+            resource.setProviderId(provider_id);
+            resource.setDownloadTimes(0);
+            resource.setDate(new Date());
+            resource.setDescription(des);
+            resource.setPoint(point);
+            resource.setAddress(resource_base_path+storename);
+            resource.setFormat(suffix);
+            //检查格式，确定类型
+            ArrayList<String> formats = new ArrayList<String>();
+            //目前检查的类型只有视频和文档
+            formats.add(resourceType_video);
+            formats.add(resourceType_document);
+            Integer type = resource.checkType(suffix,formats);
+            if (type == Resource.RESOURCE_TYPE_VALUE_VIDEO)
+                resource.setType(Resource.RESOURCE_TYPE_VIDEO);
+            else if (type == Resource.RESOURCE_TYPE_VALUE_DOCUMENT)
+                resource.setType(Resource.RESOURCE_TYPE_DOCUMENT);
+            else
+                resource.setType(Resource.RESOURCE_TYPE_OTHER);
+            resourceService.uploadResource(resource);
+
+            return ResultCache.getDataOk(null);
         }
-        file.transferTo(dir);
+    }
 
-        //在数据库中添加数据
-        Resource resource = new Resource();
-        resource.setDownloadTimes(0);
-        resource.setDate(new Date());
-        resource.setDescription(des);
-        resource.setPoint(point);
-        resource.setAddress(resource_base_path+storename);
-        resource.setFormat(suffix);
-        //检查格式，确定类型
-        ArrayList<String> formats = new ArrayList<String>();
-        //目前检查的类型只有视频和文档
-        formats.add(resourceType_video);
-        formats.add(resourceType_document);
-        Integer type = resource.checkType(suffix,formats);
-        if (type == Resource.RESOURCE_TYPE_VALUE_VIDEO)
-            resource.setType(Resource.RESOURCE_TYPE_VIDEO);
-        else if (type == Resource.RESOURCE_TYPE_VALUE_DOCUMENT)
-            resource.setType(Resource.RESOURCE_TYPE_DOCUMENT);
-        else
-            resource.setType(Resource.RESOURCE_TYPE_OTHER);
-
-        resource.setProviderId(provider_id);
-        resource.setTitle(filename);
-        resourceService.uploadResource(resource);
-
-        return null;
+    private String clean(String description){
+        return description.replace("/","").replace("\\","")
+                .replace("\"","").replace("'","");
     }
 
     /**
