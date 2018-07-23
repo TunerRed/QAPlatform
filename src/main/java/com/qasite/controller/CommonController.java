@@ -177,7 +177,9 @@ public class CommonController {
         ((ObjectNode) data).put("question",question.getTitle());
         ((ObjectNode) data).put("description",question.getDescription());
         //问题发布者的name而不是查看该网页用户的userName
-        ((ObjectNode) data).put("ariser",uploader.getUserName());
+        //20180723添加修改：返回用户名前添加身份
+        ((ObjectNode) data).put("ariser",uploader.getType().equalsIgnoreCase(User.ROLE_STUDENT)?"学生 ":"教师 "
+                +uploader.getUserName());
         ((ObjectNode) data).put("ariser_id",uploader.getId());
         ((ObjectNode) data).put("credit",question.getPoints());
         //是否在禁言状态
@@ -203,7 +205,9 @@ public class CommonController {
             JsonNode replyData = mapper.createObjectNode();
             ((ObjectNode) replyData).put("reply_id",searchAnswer.getId());
             ((ObjectNode) replyData).put("replier_id",searchAnswer.getReplierId());
-            ((ObjectNode) replyData).put("replier",replier.getUserName());
+            //20180723添加修改：返回用户名前添加身份
+            ((ObjectNode) replyData).put("replier",replier.getType().equalsIgnoreCase(User.ROLE_STUDENT)?"学生 ":"教师 "
+                    +replier.getUserName());
             ((ObjectNode) replyData).put("content",searchAnswer.getContent());
             //若是最佳回复，则返回BEST_MESSAGE_TRUE，当前版本返回“YES”，否则返回“NO”
             ((ObjectNode) replyData).put("best",

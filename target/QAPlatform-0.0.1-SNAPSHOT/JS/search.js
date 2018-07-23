@@ -1,4 +1,4 @@
-targetURL='http://47.94.131.133:8080/QASite'
+﻿targetURL='http://47.94.131.133:8080/QASite'
 message=new Array();
 
 function search() {
@@ -19,10 +19,10 @@ function search() {
         appendQuestionText();
         if($("#type").attr("src")==="picsInHomepage/r_s1.png"){
             $.cookie('resOrQues',"question");
-			$.cookie('question',questionName)
+			$.cookie('question_s',questionName)
         }else{
             $.cookie('resOrQues',"resource");
-			$.cookie('resource',questionName)
+			$.cookie('resource_s',questionName)
         }
     })
 
@@ -78,13 +78,13 @@ function appendQuestionText()
 function preSet() {
     if($.cookie('resOrQues')=='question'){
         tempType='question';
-        questionName=$.cookie('question');
+        questionName=$.cookie('question_s');
         $("#search").val(questionName);
     }else {
         if( $.cookie('resOrQues')=='resource'){
             tempType='resource';
             $("#type").attr("src","picsInHomepage/r_s2.png");
-            questionName=$.cookie('resource');
+            questionName=$.cookie('resource_s');
             $("#search").val(questionName);
         }
     }
@@ -131,7 +131,7 @@ function toDetail(node) {
                 $.cookie('question_id',message[num][2]);
             }else {
               if( $.cookie('resOrQues')=='resource'){
-                    $.cookie('resource',message[num][2]);
+                    $.cookie('resource',message[num][0]);
                   $.cookie('resource_id',message[num][2]);
                 }
             }
