@@ -47,6 +47,7 @@ public class Resource implements SearchResult{
 
     private Integer downloadTimes;
 
+
     public Integer getId() {
         return id;
     }
@@ -136,4 +137,5 @@ public class Resource implements SearchResult{
     public void setDownloadTimes(Integer downloadTimes) {
         this.downloadTimes = downloadTimes;
     }
+
 }

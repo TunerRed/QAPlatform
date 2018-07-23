@@ -36,7 +36,7 @@ function download() {
         //var resource_title="Android.pdf";
         $.ajax({
             type: "post",
-            url: "http://47.94.131.133:8080/QASite/user/download",
+            url: "http://localhost:8080/webapp/user/download",
             contentType: "application/json",
             data: JSON.stringify({
                 Id: id,
@@ -73,7 +73,7 @@ function shutUp(obj){
     // var punish_point="5";
     $.ajax({
         type:"post",
-        url:"http://47.94.131.133:8080/QASite/admin/mute",
+        url:"http://localhost:8080/webapp/admin/mute",
         contentType:"application/json",
         data:JSON.stringify({
             Id:id
@@ -99,7 +99,7 @@ function deleteResource() {
         //var resource_id="5";
         $.ajax({
             type: "post",
-            url: "http://47.94.131.133:8080/QASite/admin/resource",
+            url: "http://localhost:8080/webapp/admin/resource",
             contentType: "application/json",
             data: JSON.stringify({
                 resource_id:resource_id
@@ -129,7 +129,7 @@ function loadResource() {
     }
     $.ajax({
         type: "post",
-        url: "http://47.94.131.133:8080/QASite/common/search/res",
+        url: "http://localhost:8080/webapp/common/search/res",
         contentType: "application/json",
         data: JSON.stringify({
             resource_id: resource_id,
@@ -188,7 +188,7 @@ function loadRelaRes(){
     var length=5;
     $.ajax({
         type:"post",
-        url:"http://47.94.131.133:8080/QASite/common/search",
+        url:"http://localhost:8080/webapp/common/search",
         contentType:"application/json",
         data:JSON.stringify({
             type:type,

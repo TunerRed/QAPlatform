@@ -1,5 +1,5 @@
 permission=false     //权限
-targetURL='http://47.94.131.133:8080/QASite'
+targetURL='http://localhost:8080/webapp'
 
 //获取资源还是问题
 function change() {

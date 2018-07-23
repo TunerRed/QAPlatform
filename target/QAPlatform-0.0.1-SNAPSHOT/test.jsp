@@ -11,7 +11,7 @@
     <title>后台测试</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!--%
-        pageContext.setAttribute("APP_PATH", "http://47.94.131.133:8080/QASite");
+        pageContext.setAttribute("APP_PATH", "http://localhost:8080/webapp");
     %-->
     <script type="text/javascript" src="JS\jquery-1.11.0.min.js"></script>
     <script>
@@ -106,7 +106,7 @@
         $.ajax({
             type:"post",
             //登录页面
-            url:'http://localhost:8080/QASite/common/login',
+            url:'http://localhost:8080/webapp/common/login',
             contentType:'application/json',
             data:JSON.stringify({
                 email:user_email,
@@ -125,7 +125,7 @@
         $.ajax({
             type:"post",
             //问题详情页面
-            url:'http://47.94.131.133:8080/QASite/common/search',
+            url:'http://localhost:8080/webapp/common/search',
             contentType:'application/json',
             data:JSON.stringify({
                 type:"question",
@@ -149,7 +149,7 @@
         $.ajax({
             type:"post",
             //问题详情页面
-            url:'http://47.94.131.133:8080/QASite/user/download',
+            url:'http://localhost:8080/webapp/user/download',
             contentType:'application/json',
             data:JSON.stringify({
                 Id:Id,

@@ -42,6 +42,7 @@ public class Question implements SearchResult{
 
     private String label3;
 
+
     public Integer getId() {
         return id;
     }
@@ -133,4 +134,5 @@ public class Question implements SearchResult{
     public void setLabel3(String label3) {
         this.label3 = label3 == null ? null : label3.trim();
     }
+
 }

@@ -1,4 +1,4 @@
-targetURL='http://47.94.131.133:8080/QASite'
+targetURL='http://localhost:8080/webapp'
 message=new Array();
 
 function search() {
