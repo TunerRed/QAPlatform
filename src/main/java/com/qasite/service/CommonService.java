@@ -14,6 +14,7 @@ import com.qasite.sort.SortStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 
@@ -67,6 +68,9 @@ public class CommonService {
         List<String> property = SentenceDiv.getInstance().properties(description);
         List<String> result = new LinkedList<String>();
         List<Integer> result_property_priority = new LinkedList<Integer>();
+
+        if (divide==null)
+            return null;
 
         int property_priority = -1;
         //System.out.println("------- split start -------");
@@ -127,7 +131,7 @@ public class CommonService {
     /*
      * 输入关键词，返回搜索到的相关问题/资源列表
      * */
-    public ArrayList<SearchResult> getSearchResults(List<String> keys, Integer searchType) {
+    public ArrayList<SearchResult> getSearchResults(List<String> keys, Integer searchType,String sortQuestionResult,String sortResourceResult) {
         /*
          * 根据传入的searchType判断搜索的类型
          * 设置对应的SQL
@@ -139,18 +143,30 @@ public class CommonService {
         Comparator<SearchResult> comparator = null;
         if (searchType == SEARCH_TYPE_QUESTION){
             searchMapper = questionMapper;
-            //------------------------------------------------------------
-            comparator = new SortQuestionByAnwsers();
+            //---------------------------反射-----------------------------
+            try{
+                comparator = (Comparator<SearchResult>) Class.forName(sortQuestionResult)
+                        .getConstructor().newInstance();
+            }catch (Exception e){
+                e.printStackTrace();
+                comparator = new SortQuestionByAnwsers();
+            }
             //------------------------------------------------------------
         }
         else if (searchType == SEARCH_TYPE_RESOURCE){
             searchMapper = resourceMapper;
-            //------------------------------------------------------------
-            comparator = new SortResourceByDownload();
+            //----------------------------反射----------------------------
+            try{
+                comparator = (Comparator<SearchResult>) Class.forName(sortResourceResult)
+                        .getConstructor().newInstance();
+            }catch (Exception e){
+                e.printStackTrace();
+                comparator = new SortResourceByDownload();
+            }
             //------------------------------------------------------------
         }
 
-        int key_count = keys.size();
+        int key_count = keys==null?0:keys.size();
         int default_noun_keys = 2;
         if (key_count == 0)
             return null;

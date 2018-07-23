@@ -26,6 +26,8 @@ public class SentenceDiv {
     public List<String> divide(String sentence){
         if (segmenter == null)
             return null;
+        if (sentence == null || sentence.trim().length()==0)
+            return null;
         List<SegToken> list = segmenter.process(sentence, JiebaSegmenter.SegMode.SEARCH);
         List<String>  results = new ArrayList<String>();
         for(SegToken s : list){
@@ -39,6 +41,8 @@ public class SentenceDiv {
      * */
     public List<String> properties(String sentence){
         if (segmenter == null)
+            return null;
+        if (sentence == null || sentence.trim().length()==0)
             return null;
         List<SegToken> list = segmenter.process(sentence, JiebaSegmenter.SegMode.SEARCH);
         List<String>  results = new ArrayList<String>();

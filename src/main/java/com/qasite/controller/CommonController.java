@@ -66,6 +66,10 @@ public class CommonController {
     * */
     @Value("${searchStardard}")
     String searchStardard;
+    @Value("${SortStrategy.Question}")
+    String sortQuestionResult;
+    @Value("${SortStrategy.Resource}")
+    String sortResourceResult;
     @RequestMapping(value = "/common/search",method =RequestMethod.POST)
     @ResponseBody
     public Result search(@RequestBody Map<String,String> map){
@@ -93,10 +97,10 @@ public class CommonController {
         }else {
             return ResultCache.getFailureDetail("错误的请求类型！");
         }
-        datas = commonService.getSearchResults(keys,searchType);
+        //关键词、搜索类型、问题排序方式、资源排序方式
+        datas = commonService.getSearchResults(keys,searchType,sortQuestionResult,sortResourceResult);
         if (datas == null || datas.size() == 0)
             return ResultCache.getFailureDetail("找不到相关问题或资源！");
-
 
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root = mapper.createArrayNode();
