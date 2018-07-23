@@ -63,7 +63,7 @@ body {
 #changeInfo{
 	float:left;
 	width:100%;
-	margin-top:52%;
+	margin-top:56%;
 	text-align:center;
 	font-size:1.5em;
 }
@@ -80,8 +80,8 @@ body {
 	display:none;
 	/*width: 70%;*/
 	/*height:100%;*/
-	margin-left: 10%;
-	margin-top: 5%;
+	margin-left: 100px;
+	margin-top: 50px;
 	overflow-y: scroll;
 	float: left;
 }
@@ -89,8 +89,8 @@ body {
 	display:none;
 	/*width: 70%;*/
 	/*height:100%;*/
-	margin-left: 10%;
-	margin-top: 5%;
+	margin-left: 100px;
+	margin-top: 50px;
 	overflow-y: scroll;
 	float: left;
 }
@@ -104,6 +104,16 @@ table {
 }
 th {
 	height:50px;
+}
+td
+{
+	/*设置表格文字左右和上下居中对齐*/
+	/*vertical-align: middle;*/
+	/*text-align: center;*/
+	/*设置表格文字在一行显示*/
+	text-overflow:ellipsis;
+	word-break:keep-all;
+	white-space:nowrap;
 }
 #que_table{
 	width:700px;

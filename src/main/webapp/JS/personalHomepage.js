@@ -61,7 +61,6 @@ function getInfo(){
     })
 }
 function question(){
-
 	 $.ajax({
             type:'post',
             url:APP_PATH+'/user/questions',
@@ -124,7 +123,8 @@ function reply(){
         success:function(result){
             var tbody =document.getElementById('tbMain1')
             //var tr = "<tr>";
-            if(result.data.length!=0){
+            alert(result.data);
+            if(result.data!=null){
                 for(var i=0;i<result.data.length;i++){
                 replyArr[i]=result.data[i].question_id;
                 var row = document.createElement('tr');
@@ -162,8 +162,11 @@ function reply(){
                 row.appendChild(replyCell);
 
                 tbody.appendChild(row);
+                //alert("123");
+                //alert(tbody);
                 }
             }else {
+                //alert("123");
                 document.getElementById('reply_table').style.display="none";
                 document.getElementById('replyText').style.display="block";
             }
@@ -276,10 +279,10 @@ function setThisCookie2(column) {
 }
 function setWidth() {
     document.getElementById('my_question').style.width=($(window).width()-370)+'px';
-    document.getElementById('my_question').style.height=($(window).height()-100)+'px';
+    document.getElementById('my_question').style.height=($(window).height()-150)+'px';
     document.getElementById('my_reply').style.width=($(window).width()-370)+'px';
-    document.getElementById('my_reply').style.height=($(window).height()-100)+'px';
+    document.getElementById('my_reply').style.height=($(window).height()-150)+'px';
     document.getElementById('my_resource').style.width=($(window).width()-370)+'px';
-    document.getElementById('my_resource').style.height=($(window).height()-100)+'px';
+    document.getElementById('my_resource').style.height=($(window).height()-150)+'px';
     //document.getElementById('personalInfo').style.height=($(window).height()-85)+'px';
 }

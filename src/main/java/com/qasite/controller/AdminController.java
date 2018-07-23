@@ -1,5 +1,6 @@
 package com.qasite.controller;
 
+import com.qasite.bean.Resource;
 import com.qasite.result.Result;
 import com.qasite.result.ResultCache;
 import com.qasite.service.AdminService;
@@ -7,12 +8,14 @@ import com.qasite.service.MuteService;
 import com.qasite.service.ResourceService;
 import com.qasite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @Controller
@@ -85,12 +88,23 @@ public class AdminController {
     /**
      ***删除我的资源
      **/
+    @Value("${resource_base_path}")
+    String resource_base_path;
     @RequestMapping(value = "/admin/resource",method =RequestMethod.POST)//value?
     @ResponseBody
-    public Result deleteResource(@RequestBody Map<String,String> map){
+    public Result deleteResource(@RequestBody Map<String,String> map,HttpServletRequest request){
+        if (Resource.DEFAULT_PATH == null)
+            Resource.DEFAULT_PATH = request.getServletContext().getRealPath(resource_base_path);;
         int resource_id=Integer.parseInt(map.get("resource_id"));
-        resourceService.deleteResource(resource_id);
-        //System.out.println("删除………………");
-        return ResultCache.getDataOk(null);
+        int status = resourceService.deleteResource(resource_id,resource_base_path);
+        switch (status){
+            case 1:
+                return ResultCache.getDataOk(null);
+            case 0:
+                return ResultCache.getFailureDetail("文件不存在于服务器");
+            case -1:
+                return ResultCache.getFailureDetail("操作失败，数据库不存在该条数据");
+        }
+        return ResultCache.getFailureDetail("未知的错误，服务器爆炸");
     }
 }

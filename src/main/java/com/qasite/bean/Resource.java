@@ -1,15 +1,25 @@
 package com.qasite.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 import java.util.List;
 
 public class Resource implements SearchResult{
 
+    @JsonIgnore
+    public static String DEFAULT_PATH = null;
+    @JsonIgnore
     public static Integer RESOURCE_TYPE_VALUE_VIDEO = 0;
+    @JsonIgnore
     public static Integer RESOURCE_TYPE_VALUE_DOCUMENT = 1;
+    @JsonIgnore
     public static Integer RESOURCE_TYPE_VALUE_OTHER = 2;
+    @JsonIgnore
     public static String RESOURCE_TYPE_VIDEO = "video";
+    @JsonIgnore
     public static String RESOURCE_TYPE_DOCUMENT = "document";
+    @JsonIgnore
     public static String RESOURCE_TYPE_OTHER = "other";
 
     public Resource(){}

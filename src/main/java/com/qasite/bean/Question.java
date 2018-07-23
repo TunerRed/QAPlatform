@@ -1,12 +1,18 @@
 package com.qasite.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 
 public class Question implements SearchResult{
 
+    @JsonIgnore
     public static Integer STATUS_VALUE_OPEN = 1;
+    @JsonIgnore
     public static Integer STATUS_VALUE_CLOSED = 0;
+    @JsonIgnore
     public static String STATUS_MESSAGE_OPEN = "open";
+    @JsonIgnore
     public static String STATUS_MESSAGE_CLOSED = "closed";
 
     public Question(){}

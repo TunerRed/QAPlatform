@@ -70,6 +70,8 @@
     <form action="user/upload" enctype="multipart/form-data" method="post">
         <input type = "file" name= 'file' style="width: 200px"/><br>
         <%--输入对文件的描述--%>
+        biaoti：<span style="width: 30px"></span><input type="text" name="question"/><br>
+        <%--输入对文件的描述--%>
         文件描述：<span style="width: 30px"></span><input type="text" name="description"/><br>
         <%--输入文件的积分--%>
         下载积分：<span style="width: 30px"></span><input type="text" name="point"/><br>

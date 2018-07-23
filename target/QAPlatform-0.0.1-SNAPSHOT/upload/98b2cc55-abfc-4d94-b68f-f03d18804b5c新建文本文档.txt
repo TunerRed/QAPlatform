@@ -1,0 +1,11 @@
+function setWidth() {
+    document.getElementById('my_question').style.width=($(window).width()-370)+'px';
+    document.getElementById('my_question').style.height=($(window).height()-100)+'px';
+    document.getElementById('my_reply').style.width=($(window).width()-370)+'px';
+    document.getElementById('my_reply').style.height=($(window).height()-100)+'px';
+    document.getElementById('my_resource').style.width=($(window).width()-370)+'px';
+    document.getElementById('my_resource').style.height=($(window).height()-100)+'px';
+    //document.getElementById('personalInfo').style.height=($(window).height()-85)+'px';
+}
+
+$.cookie('stateVal')==undefined||$.cookie('stateVal').length==0||$.cookie('stateVal')==2$.cookie('stateVal')==undefined||$.cookie('stateVal').length==0||$.cookie('stateVal')==2

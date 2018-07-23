@@ -243,13 +243,18 @@ public class UserController {
         }else {
             if (point < 0)
                 point = 0;
-            String path = resource_base_path;
-            String storePath = request.getServletContext().getRealPath("/upload");
             String filename = file.getOriginalFilename();
 
+            int desLength;
             filename = clean(filename);
+            desLength = filename.length();
+            filename = filename.substring(0,desLength>50?50:desLength);
             title = clean(title);
+            desLength = title.length();
+            title = title.substring(0,desLength>50?50:desLength);
             des = clean(des);
+            desLength = des.length();
+            des = des.substring(0,desLength>500?500:desLength);
 
             //获取格式
             String suffix = filename.substring(filename.lastIndexOf(".")+1);
@@ -258,7 +263,7 @@ public class UserController {
         /*上传到目录
          QAPlatform/target/QAPlatform-0.0.1-SNAPSHOT/upload/
         以绝对路径存储*/
-            File dir = new File(storePath + "/" + storename);
+            File dir = new File(request.getServletContext().getRealPath(resource_base_path) + storename);
 
             //将文件存储到本地
             if (!dir.exists()) {

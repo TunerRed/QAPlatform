@@ -6,6 +6,7 @@ import com.qasite.dao.ResourceMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.util.List;
 
 @Service
@@ -39,13 +40,28 @@ public class ResourceService {
         example.createCriteria().andProviderIdEqualTo(Id);
         return resourceMapper.selectByExample(example);
     }
-    /***
-     /***删除相应的资源
-     ***/
-    public void deleteResource(int resource_id) {
-        resourceMapper.deleteByPrimaryKey(resource_id);
-        ResourceExample example=new ResourceExample();
-        example.createCriteria().andIdEqualTo(resource_id);
-        resourceMapper.deleteByExample(example);
+    /*
+     *删除相应的资源
+     */
+    public int deleteResource(int resource_id,String resource_base_path) {
+        Resource resource = resourceMapper.selectByPrimaryKey(resource_id);
+        if (resource == null)
+            return -1;
+        String address = resource.getAddress();
+        if (address != null){
+            address = Resource.DEFAULT_PATH + address.substring(resource_base_path.length());
+        }
+        File file = new File(address);
+        if (file.exists()){
+            resourceMapper.deleteByPrimaryKey(resource_id);
+            file.delete();
+            return 1;
+        } else{
+            return 0;
+        }
+        //resourceMapper.deleteByPrimaryKey(resource_id);
+        //ResourceExample example=new ResourceExample();
+        //example.createCriteria().andIdEqualTo(resource_id);
+        //resourceMapper.deleteByExample(example);
     }
 }
