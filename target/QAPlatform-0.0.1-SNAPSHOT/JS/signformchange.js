@@ -18,7 +18,7 @@ function getState() {
     }
 }
 //var exdays=1;
-var APP_PATH='http://localhost:8080/webapp';
+var APP_PATH='http://47.94.131.133:8080/QASite';
 (function ()
 {
     $('.change a').click(function ()
@@ -47,7 +47,7 @@ function sign_in(){
     var pwd = document.getElementById("pwd");
     $.ajax({
         type:"post",
-        //url:'http://localhost:8080/webapp/common/login',
+        //url:'http://47.94.131.133:8080/QASite/common/login',
         url:APP_PATH+'/common/login',
         contentType:'application/json',
         data:JSON.stringify({

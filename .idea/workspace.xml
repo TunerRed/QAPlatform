@@ -6,26 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qasite/sort/SortQuestionByAnwsers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qasite/sort/SortResourceByDownload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qasite/sort/SortStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/changeInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/changeInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/details.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/details.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/detailsf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/detailsf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/personalHomepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/personalHomepage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/publish.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/publish.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/signformchange.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/signformchange.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/publish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/publish.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,8 +90,8 @@
     <findStrings>
       <find>会</find>
       <find>水</find>
-      <find>水</find>
       <find>烟</find>
+      <find>alert</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -664,7 +645,7 @@
       <workItem from="1532224344888" duration="2122000" />
       <workItem from="1532309456165" duration="8029000" />
       <workItem from="1532319042510" duration="603000" />
-      <workItem from="1532320209608" duration="6193000" />
+      <workItem from="1532320209608" duration="6593000" />
     </task>
     <servers />
   </component>
@@ -701,7 +682,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213152000" />
+    <option name="totallyTimeSpent" value="213552000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -714,6 +695,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5128593" side_tool="true" weight="0.3510467" />

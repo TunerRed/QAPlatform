@@ -1,4 +1,4 @@
-var APP_PATH='http://localhost:8080/webapp';
+var APP_PATH='http://47.94.131.133:8080/QASite';
 var myId;
 var quesArr=new Array();
 var replyArr=new Array();

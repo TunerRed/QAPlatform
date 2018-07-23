@@ -58,7 +58,7 @@ function submit(){
 	
         $.ajax({
 			type:"post",
-			url:"http://localhost:8080/webapp/common/register",
+			url:"http://47.94.131.133:8080/QASite/common/register",
 			contentType:"application/json",
 			data:JSON.stringify({
 				userName:user.value,

@@ -41,7 +41,7 @@ function chooseBest(obj){
 	// var user_id="111";
     $.ajax({
         type:"post",
-        url:"http://localhost:8080/webapp/common/search/que",
+        url:"http://47.94.131.133:8080/QASite/common/search/que",
         contentType:"application/json",
         data:JSON.stringify({
             question_id:question_id,
@@ -54,7 +54,7 @@ function chooseBest(obj){
                 var reply_id = obj.getAttribute("id");
                 $.ajax({
                     type: "post",
-                    url: "http://localhost:8080/webapp/user/best",
+                    url: "http://47.94.131.133:8080/QASite/user/best",
                     contentType: "application/json",
                     data: JSON.stringify({
                         reply_id:reply_id
@@ -83,7 +83,7 @@ function shutUp(obj){
     // var punish_point="5";
     $.ajax({
         type:"post",
-        url:"http://localhost:8080/webapp/admin/mute",
+        url:"http://47.94.131.133:8080/QASite/admin/mute",
         contentType:"application/json",
         data:JSON.stringify({
             Id:id
@@ -116,7 +116,7 @@ function submitAnswer() {
         // var question_id="19";
         $.ajax({
             type: "post",
-            url: "http://localhost:8080/webapp/user/newque/permission",
+            url: "http://47.94.131.133:8080/QASite/user/newque/permission",
             contentType: "application/json",
             data: JSON.stringify({
                 Id: user_id
@@ -129,7 +129,7 @@ function submitAnswer() {
             		var reply=$("#answerDesc").val();
             		$.ajax({
                         type: "post",
-                        url: "http://localhost:8080/webapp/user/reply",
+                        url: "http://47.94.131.133:8080/QASite/user/reply",
                         contentType: "application/json",
                         data: JSON.stringify({
 							question_id:question_id,
@@ -159,7 +159,7 @@ function closeQues(){
         if ($("#close").attr("src") != "picsInHomepage/mute.png"&&$.cookie('isAd')=='TRUE') {
             $.ajax({
                 type: "post",
-                url: "http://localhost:8080/webapp/admin/question/close",
+                url: "http://47.94.131.133:8080/QASite/admin/question/close",
                 contentType: "application/json",
                 data: JSON.stringify({
                     question_id: question_id
@@ -182,7 +182,7 @@ function deleteQues() {
 		// var question_id="20";
         $.ajax({
             type: "post",
-            url: "http://localhost:8080/webapp/admin/question/delete",
+            url: "http://47.94.131.133:8080/QASite/admin/question/delete",
             contentType: "application/json",
             data: JSON.stringify({
                 question_id: question_id
@@ -212,7 +212,7 @@ function loadQuestion(){
     }
 	$.ajax({
         type:"post",
-        url:"http://localhost:8080/webapp/common/search/que",
+        url:"http://47.94.131.133:8080/QASite/common/search/que",
         contentType:"application/json",
         data:JSON.stringify({
 			question_id:question_id,
@@ -313,7 +313,7 @@ function loadRelaQues(){
 	var length=5;
 	$.ajax({
         type:"post",
-        url:"http://localhost:8080/webapp/common/search",
+        url:"http://47.94.131.133:8080/QASite/common/search",
         contentType:"application/json",
         data:JSON.stringify({
             type:type,
