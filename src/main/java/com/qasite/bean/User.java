@@ -86,7 +86,10 @@ public class User {
     }
 
     public String getGender() {
-        return gender.toUpperCase();
+        if (gender == null || gender.equalsIgnoreCase(GENDER_MALE))
+            return User.GENDER_MALE;
+        else
+            return GENDER_FEMALE;
     }
 
     public void setGender(String gender) {
@@ -102,7 +105,10 @@ public class User {
     }
 
     public String getType() {
-        return type.toUpperCase();
+        if (type == null || type.equalsIgnoreCase(User.ROLE_STUDENT))
+            return User.ROLE_STUDENT;
+        else
+            return User.ROLE_TEACHER;
     }
 
     public void setType(String type) {

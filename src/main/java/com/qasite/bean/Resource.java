@@ -107,9 +107,13 @@ public class Resource implements SearchResult{
     }
 
     public String getType() {
-        if (type == null)
+        if (type == null || type.equalsIgnoreCase(RESOURCE_TYPE_OTHER))
             return RESOURCE_TYPE_OTHER;
-        return type;
+        if (type.equalsIgnoreCase(RESOURCE_TYPE_DOCUMENT))
+            return RESOURCE_TYPE_DOCUMENT;
+        if (type.equalsIgnoreCase(RESOURCE_TYPE_VIDEO))
+            return RESOURCE_TYPE_VIDEO;
+        return RESOURCE_TYPE_OTHER;
     }
 
     public Integer checkType(String format, List<String> formats){

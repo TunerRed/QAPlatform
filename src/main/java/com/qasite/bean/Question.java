@@ -110,7 +110,9 @@ public class Question implements SearchResult{
     }
 
     public Integer getStates() {
-        return states;
+        if (states == null || states == STATUS_VALUE_CLOSED)
+            return STATUS_VALUE_CLOSED;
+        return STATUS_VALUE_OPEN;
     }
 
     public void setStates(Integer states) {

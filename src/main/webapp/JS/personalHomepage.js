@@ -72,7 +72,7 @@ function question(){
             success:function(result){
                 var tbody =document.getElementById('tbMain')
                 //var tr = "<tr>";
-                if(result.data.length!=0){
+                if(result.data != null && result.data.length!=0){
                     for(var i=0;i<result.data.length;i++){
                     quesArr[i]=result.data[i].question_id;
                     var row = document.createElement('tr');
@@ -123,8 +123,8 @@ function reply(){
         success:function(result){
             var tbody =document.getElementById('tbMain1')
             //var tr = "<tr>";
-            alert(result.data);
-            if(result.data!=null){
+            //alert(result.data);
+            if(result.data != null && result.data.length !=0){
                 for(var i=0;i<result.data.length;i++){
                 replyArr[i]=result.data[i].question_id;
                 var row = document.createElement('tr');
@@ -187,7 +187,7 @@ function resource(){
             var tbody =document.getElementById('tbMain2')
             //var tr = "<tr>";
             //alert(result.data);
-            if(result.data!=null) {
+            if(result.data != null && result.data.length !=0) {
                 for (var i = 0; i < result.data.length; i++) {
                     resArr[i]=result.data[i].resource_id;
                     var row = document.createElement('tr');

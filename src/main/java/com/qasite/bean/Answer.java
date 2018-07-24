@@ -63,9 +63,9 @@ public class Answer {
     }
 
     public Integer getState() {
-        if (state == null)
+        if (state == null || state == BEST_VALUE_FALSE)
             return BEST_VALUE_FALSE;
-        return state;
+        return BEST_VALUE_TRUE;
     }
 
     public void setState(Integer state) {
