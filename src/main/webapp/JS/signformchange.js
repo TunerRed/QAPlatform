@@ -110,10 +110,12 @@ function searchOrResource(){
     if(imgObj.getAttribute("src",2)=="picsInHomepage\\r_s2.png"){
         $.cookie('resOrQues',"resource");
         $.cookie('resource', requestValue);
+        $.cookie('resource_s',requestValue)
         window.location.href="search.jsp";
     }else{
         $.cookie('resOrQues',"question");
         $.cookie('question', requestValue);
+        $.cookie('question_s',requestValue)
         window.location.href="search.jsp";
     }
 }

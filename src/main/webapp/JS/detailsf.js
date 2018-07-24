@@ -13,11 +13,14 @@ function search() {
         var searchBox=$("#search").val();
         if($("#type").attr("src")=="picsInHomepage/r_s1.png") {
             $.cookie('question', searchBox);
+			$.cookie('question_s', searchBox);
             $.cookie('resOrQues','question');
         }
         else {
             $.cookie('resource', searchBox);
+			$.cookie('resource_s', searchBox);
             $.cookie('resOrQues','resource');
+			
         }
         window.location.href="search.jsp";
     })
@@ -155,7 +158,7 @@ function loadResource() {
             $("#desc").html(result.data.description);
              // alert(result.data.format);
             var preview="";
-            if(result.data.type=="video"){
+            if(/*result.data.type=="video" &&*/ result.data.format.toUpperCase()=="MP4" || result.data.format.toUpperCase()=="AVI"){
                 // $("#preview").attr("src", result.data.address);
                 // document.getElementById("video").style.display="";
                 preview="<video width='100%' controls id='video'><source src='"+
@@ -164,13 +167,18 @@ function loadResource() {
                     "抱歉，您的浏览器不支持视频预览！" +
                     "</video>";
             }
-            else if(result.data.type=="document"){
+            else if(/*result.data.type=="document"  &&*/ result.data.format.toUpperCase()=="PDF"){
                 // $("#pdfRead").attr("src", result.data.address);
                 // document.getElementById("pdfRead").style.display="";
                 preview="<iframe src='generic/web/viewer.html?file=../../"+
                     result.data.address+
                     "' width='100%' height='500px' id='pdfRead'></iframe>";
-            }
+            }else if(result.data.format.toUpperCase()=="PNG" || result.data.format.toUpperCase()=="JPG" 
+				|| result.data.format.toUpperCase()=="JPEG" || result.data.format.toUpperCase()=="TXT"){
+                preview="<iframe src='"+
+                    result.data.address+
+                    "' width='100%' height='500px' id='pdfRead'></iframe>";				
+			}
             $("#allPre").html(preview);
             loadRelaRes();
         },

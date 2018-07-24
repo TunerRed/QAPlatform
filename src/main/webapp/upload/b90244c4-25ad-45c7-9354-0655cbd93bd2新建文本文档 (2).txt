@@ -1,0 +1,46 @@
+http://47.94.131.133:8080/
+/*function upLoadResourse() {
+    var targetUrl = $("#form").attr("action");
+    alert('upload')
+    $.submit({
+        type: 'post',
+        url: targetUrl,
+        contentType:'application/json',
+        data:JSON.stringify({
+            id: 123  ,//$.cookie('user_id'),
+            name:'s' , //$("#question").val(),
+            description:'asd',   //$("#description").val(),
+            point:4//$("#wanted").val(),
+        }),
+        success:function (result) {
+            if(result.status==200)
+                alert("上传成功")
+        },
+        error:function () {
+            alert("上传失败")
+        }
+    })
+
+}*/
+ /*  var targetUrl = $("#form").attr("action");
+        var data = new FormData($("#form")[0]);*/
+
+
+
+  /*  $.ajax({
+            type: 'post',
+            url: targetUrl,
+            cache: false,    //上传文件不需缓存
+            processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
+            contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性enctype="multipart/form-data"
+            data: JSON.stringify(data),
+            success: function (result) {
+                if (result.status == 200)
+                    alert("上传成功")
+            },
+            error: function (XMLHttpRequest) {
+                alert('status:' + XMLHttpRequest.status);
+                // alert(XMLHttpRequest.readyState);
+                // alert(textStatus);
+            },
+        })*/

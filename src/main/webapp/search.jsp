@@ -35,8 +35,8 @@
         <img src="picsInHomepage/r_s1.png" width="120" id="type">
         <input type="text" id="search">
         <img src="picsInHomepage/question_icon.png" width="30" id="question">
-        <a href="publish.html">
-            <img src="picsInHomepage/plus_icon.png" width="30" id="plus" style="z-index:100">
+        <a>
+            <img src="picsInHomepage/plus_icon.png" width="30" id="plus" style="z-index:100" onclick="searchOrResource1()">
         </a>
         <div class="login" id="bt1">
             <a href="index.jsp" id="style1">登录</a>
@@ -45,7 +45,7 @@
             <a href="register.html" id="style2">注册</a>
         </div>
     </div>
-    <div id="user"><a id="userName" style="color: white;"></a></div>
+    <div id="user"><a href='personalHomepage.jsp' id="userName" style="color: white;"></a></div>
         <div id="quit">
             <p id="quitText" onclick="quitFunc()">退出登录</p>
         </div>

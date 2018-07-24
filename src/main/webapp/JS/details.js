@@ -13,10 +13,12 @@ function search() {
         var searchBox=$("#search").val();
         if($("#type").attr("src")=="picsInHomepage/r_s1.png") {
             $.cookie('question', searchBox);
+			$.cookie('question_s', searchBox);
             $.cookie('resOrQues','question');
         }
         else {
             $.cookie('resource', searchBox);
+			$.cookie('resource_s', searchBox);
             $.cookie('resOrQues','resource');
         }
         window.location.href="search.jsp";
