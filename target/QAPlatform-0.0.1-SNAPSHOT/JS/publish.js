@@ -1,4 +1,4 @@
-permission=false     //权限
+﻿permission=false     //权限
 targetURL='http://47.94.131.133:8080/QASite'
 
 //获取资源还是问题
@@ -8,18 +8,21 @@ function change() {
         if ($("#questionImg").attr("src") === "picsInHomepage/question.png") {
             $("#questionImg").attr("src", "picsInHomepage/resource.png");
             $("#uploaddiv").show();
-            ques=false
             isChooseFile();
         } else {
             $("#questionImg").attr("src", "picsInHomepage/question.png");
             $("#uploaddiv").hide();
-            ques=true
         }
     });
     $("#publish").click(function () {
-          publishPermissionCheck()
-       if(permission==true&&ques==true){
-          publish()
+          
+        if($("#questionImg").attr("src") === "picsInHomepage/question.png"){
+            if(permission==true){
+                publish()
+            }
+        }else{
+            $("form").submit();
+			alert('上传成功')
         }
         })
 }
@@ -42,8 +45,7 @@ function publish() {
     var date=new Date()
     var dateString=getNowFormatDate(date)
     $.ajax({
-        async: true,
-            type: "POST",
+        type: "POST",
         url: targetURL+'/user/ask',
         contentType:'application/json',
         data: JSON.stringify({
@@ -109,13 +111,13 @@ function getNowFormatDate(date) {
 function preSet() {   //本次修改
     isLogin()
     if(isLogin==true){
-        $("#bt1").html("<a href='' id='style1'>"+$.cookie('user_id')+"<a>");
-        $("#bt2").html("<a href='index.jsp' id='style2'>退出登录<a>");
-        $.cookie('stateVal',2);
+        $("#bt1").html("<a href='personalHomepage.jsp' id='style1'>"+$.cookie('name')+"<a>");
+        $("#bt2").html("<a id='style2' onclick='quitFunc()'href=''>退出登录<a>");
         $("#userName").text($.cookie('name'))
+		publishPermissionCheck()
     }else{
         $("#bt1").html("<a href='index.jsp' id='style1'>登录<a>")
-        $("#bt2").html("<a href='register.html 'id='style2'>注册<a>")
+        $("#bt2").html("<a href='register.html' id='style2'>注册<a>")
     }
 }
 function isLogin() {
@@ -124,4 +126,9 @@ function isLogin() {
     }else{
         isLogin=true;
     }
+}
+
+function quitFunc() {
+    $.cookie('stateVal',2);
+    preSet();
 }

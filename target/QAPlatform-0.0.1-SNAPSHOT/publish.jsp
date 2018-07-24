@@ -65,7 +65,7 @@
             $("#user_id").val(i)
         </script>
     </div>
-    <input type="submit" class="btn btn-primary"  id="publish" value="立即发布">
+    <button  class="btn btn-primary"  id="publish" >立即发布</button>
 </form>
 <iframe name="123" style="display: none"></iframe>
 <script>

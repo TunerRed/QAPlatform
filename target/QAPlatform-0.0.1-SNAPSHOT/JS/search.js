@@ -40,7 +40,7 @@ function appendQuestionText()
             type:tempType,
             description:questionName,
             index:1,    //查询第几条数据
-            length:30   //查询多少条数据，即查询数据库中第index~index+length条数据
+            length:1000   //查询多少条数据，即查询数据库中第index~index+length条数据
         }),
         success:function(result) {
              //alert(result.data.length);
@@ -131,7 +131,7 @@ function toDetail(node) {
                 $.cookie('question_id',message[num][2]);
             }else {
               if( $.cookie('resOrQues')=='resource'){
-                    $.cookie('resource',message[num][0]);
+                    $.cookie('resource',message[num][1]);
                   $.cookie('resource_id',message[num][2]);
                 }
             }
@@ -147,4 +147,15 @@ function toDetail(node) {
 function quitFunc() {
     $.cookie('stateVal',2);
     preSet();
+}
+
+function searchOrResource1(){
+    if($.cookie('name')==''||
+	$.cookie('stateVal')==undefined||
+	$.cookie('stateVal').length==0||
+	$.cookie('stateVal')==2){
+        alert("您还没有登录");
+    }else{
+        window.location.href="publish.jsp";
+    }
 }

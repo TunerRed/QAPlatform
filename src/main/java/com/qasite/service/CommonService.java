@@ -121,6 +121,9 @@ public class CommonService {
             }
 
         }
+        //如果待搜索句子没有任何重要分词，就把句子所有成分分组后返回
+        if (result.size() == 0)
+            result.addAll(divide);
         //System.out.print("\nsplit result :");
         /*for (int i = 0; i < result.size(); i++)
             System.out.print(" "+result.get(i));
