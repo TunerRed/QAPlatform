@@ -124,10 +124,10 @@ public class CommonService {
         //如果待搜索句子没有任何重要分词，就把句子所有成分分组后返回
         if (result.size() == 0)
             result.addAll(divide);
-        System.out.print("\nsplit result :");
-        for (int i = 0; i < result.size(); i++)
+        //System.out.print("\nsplit result :");
+        /*for (int i = 0; i < result.size(); i++)
             System.out.print(" "+result.get(i));
-        System.out.println("\n\n--------- split end -------------");
+        System.out.println("\n\n--------- split end -------------");*/
         return result;
     }
 
@@ -178,14 +178,14 @@ public class CommonService {
         Collections.sort(selectResult,comparator);
 
         //debug
-        /*System.out.print("key_count : "+keys.size()+"; keys : ");
+        System.out.print("key_count : "+keys.size()+"; keys : ");
         for (int j = 0; j < keys.size(); j++)
             System.out.print(keys.get(j)+" ");
         System.out.print("search answers :");
         if(selectResult != null)
             for (int j = 0; j < selectResult.size(); j++)
                 System.out.print(" "+((Question)selectResult.get(j)).getAnswers());
-        System.out.println();*/
+        System.out.println();
 
         List<String> subKeys = keys;
         for (int i = 0; i < key_count-1; i++){
