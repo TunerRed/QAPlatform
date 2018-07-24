@@ -8,11 +8,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/bean/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/JS/personalHomepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/JS/personalHomepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qasite/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qasite/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qasite/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qasite/service/UserService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,34 +41,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/AdminController.java">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="98" column="44" selection-start-line="98" selection-start-column="44" selection-end-line="98" selection-end-column="44" />
+            <state relative-caret-position="150">
+              <caret line="220" column="21" selection-start-line="220" selection-start-column="21" selection-end-line="220" selection-end-column="21" />
               <folding>
-                <element signature="method#closeQuestion#0;class#AdminController#0" />
-                <element signature="method#muteSomeone#0;class#AdminController#0" />
-                <element signature="method#deleteQuestion#0;class#AdminController#0" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#userInfo#0;class#UserController#0" />
+                <element signature="method#changeInfo#0;class#UserController#0" />
+                <element signature="method#showQuestions#0;class#UserController#0" />
+                <element signature="method#showAnswers#0;class#UserController#0" />
+                <element signature="method#submitReply#0;class#UserController#0" />
+                <element signature="method#setBestAnswer#0;class#UserController#0" />
+                <element signature="method#download#0;class#UserController#0" />
+                <element signature="method#checkRight#0;class#UserController#0" />
+                <element signature="method#upload#0;class#UserController#0" />
+                <element signature="method#clean#0;class#UserController#0" />
+                <element signature="method#showResource#0;class#UserController#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/ResourceService.java">
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Resource.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="154" column="1" lean-forward="true" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
+            <state relative-caret-position="435">
+              <caret line="150" column="17" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -112,7 +114,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/muteService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/MuteService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/AdminService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -138,7 +139,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/controller/CommonController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/JS/signformchange.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/JS/personalHomepage.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/resource.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/ResourceService.java" />
@@ -147,6 +147,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/bean/Answer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/bean/Question.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -186,7 +188,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,12 +228,22 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="qasite" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QAPlatform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QAPlatform" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qasite" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -626,7 +637,8 @@
       <workItem from="1532309456165" duration="8029000" />
       <workItem from="1532319042510" duration="603000" />
       <workItem from="1532320209608" duration="15918000" />
-      <workItem from="1532401459034" duration="538000" />
+      <workItem from="1532401459034" duration="1027000" />
+      <workItem from="1532422888475" duration="827000" />
     </task>
     <servers />
   </component>
@@ -663,7 +675,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223415000" />
+    <option name="totallyTimeSpent" value="224731000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -691,6 +703,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49319214" weight="0.55233496" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32850242" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.62178516" weight="0.57004833" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32850242" />
@@ -699,7 +712,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4871407" weight="0.14331724" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32850242" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32850242" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.30030257" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.30484116" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" sideWeight="0.5012407" side_tool="true" weight="0.290469" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -707,7 +720,6 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.62178516" weight="0.57004833" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
@@ -725,13 +737,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="134" column="30" lean-forward="true" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/MuteService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -998,11 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="74" column="61" selection-start-line="74" selection-start-column="61" selection-end-line="74" selection-end-column="61" />
-          <folding>
-            <element signature="method#search#0;class#CommonController#0" />
-            <element signature="method#resourceDetail#0;class#CommonController#0" />
-            <element signature="method#getUserRank#0;class#CommonController#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1017,26 +1017,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="131" column="33" lean-forward="true" selection-start-line="131" selection-start-column="33" selection-end-line="131" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="268" column="32" lean-forward="true" selection-start-line="268" selection-start-column="32" selection-end-line="268" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#userInfo#0;class#UserController#0" />
-            <element signature="method#changeInfo#0;class#UserController#0" />
-            <element signature="method#showQuestions#0;class#UserController#0" />
-            <element signature="method#showAnswers#0;class#UserController#0" />
-            <element signature="method#submitReply#0;class#UserController#0" />
-            <element signature="method#setBestAnswer#0;class#UserController#0" />
-            <element signature="method#download#0;class#UserController#0" />
-            <element signature="method#checkRight#0;class#UserController#0" />
-            <element signature="method#askQuestion#0;class#UserController#0" />
-            <element signature="method#showResource#0;class#UserController#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1076,6 +1056,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="154" column="1" lean-forward="true" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/ResourceService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
@@ -1083,10 +1070,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="154" column="1" lean-forward="true" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
+        <state relative-caret-position="435">
+          <caret line="150" column="17" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="220" column="21" selection-start-line="220" selection-start-column="21" selection-end-line="220" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#userInfo#0;class#UserController#0" />
+            <element signature="method#changeInfo#0;class#UserController#0" />
+            <element signature="method#showQuestions#0;class#UserController#0" />
+            <element signature="method#showAnswers#0;class#UserController#0" />
+            <element signature="method#submitReply#0;class#UserController#0" />
+            <element signature="method#setBestAnswer#0;class#UserController#0" />
+            <element signature="method#download#0;class#UserController#0" />
+            <element signature="method#checkRight#0;class#UserController#0" />
+            <element signature="method#upload#0;class#UserController#0" />
+            <element signature="method#clean#0;class#UserController#0" />
+            <element signature="method#showResource#0;class#UserController#0" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -216,12 +216,18 @@ public class UserController {
         question.setTitle(map.get("question"));
         question.setDescription(map.get("description"));
         question.setAriserId(Integer.parseInt(map.get("questioner_id")));
-        question.setPoints(Integer.parseInt(map.get("point")));
+        int point = Integer.parseInt(map.get("point"));
+        if (point < 0)
+            point = 0;
+        question.setPoints(point);
         question.setTime1(new Date());
         question.setAnswers(0);
         question.setStates(Question.STATUS_VALUE_OPEN);
-        userService.askQuestion(question);
-        return ResultCache.getDataOk(null);
+        int isallright = userService.askQuestion(question);
+        if (isallright==1)
+            return ResultCache.getDataOk(null);
+        else
+            return  ResultCache.getFailureDetail("积分不足，发布问题失败");
     }
 
 

@@ -1,9 +1,6 @@
 package com.qasite.service;
 
-import com.qasite.bean.Answer;
-import com.qasite.bean.AnswerExample;
-import com.qasite.bean.Question;
-import com.qasite.bean.User;
+import com.qasite.bean.*;
 import com.qasite.dao.AnswerMapper;
 import com.qasite.dao.QuestionMapper;
 import com.qasite.dao.UserMapper;
@@ -142,8 +139,16 @@ public class UserService {
     }
 
     //确认发布问题
-    public void askQuestion(Question qu){
+    public int askQuestion(Question qu){
+        UserExample example = new UserExample();
+        User a = userMapper.selectByPrimaryKey(qu.getAriserId());
+        if ((a.getCredit()-qu.getPoints())<0)
+            return 0;
+        a.setCredit(a.getCredit()-qu.getPoints());
+        example.createCriteria().andIdEqualTo(qu.getAriserId());
+        userMapper.updateByExample(a,example);
         questionMapper.insert(qu);
+        return 1;
     }
 
 }
