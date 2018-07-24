@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ResourceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ResourceMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jdbc.properties" pinned="false" current-in-tab="false">
+      <file leaf-file-name="jdbc.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
@@ -77,41 +77,17 @@
       <file leaf-file-name="CommonService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="187" column="31" selection-start-line="187" selection-start-column="31" selection-end-line="187" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SortResourceByDownload.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/sort/SortResourceByDownload.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
-              <caret line="187" column="29" lean-forward="true" selection-start-line="187" selection-start-column="29" selection-end-line="187" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResourceMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ResourceMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="319" column="37" lean-forward="true" selection-start-line="319" selection-start-column="37" selection-end-line="319" selection-end-column="37" />
-              <folding>
-                <element signature="n#sql#0;n#mapper#0;n#!!top" />
-                <element signature="n#sql#1;n#mapper#0;n#!!top" />
-                <element signature="n#sql#2;n#mapper#0;n#!!top" />
-                <element signature="n#select#0;n#mapper#0;n#!!top" />
-                <element signature="n#select#1;n#mapper#0;n#!!top" />
-                <element signature="n#delete#0;n#mapper#0;n#!!top" />
-                <element signature="n#delete#1;n#mapper#0;n#!!top" />
-                <element signature="n#insert#0;n#mapper#0;n#!!top" />
-                <element signature="n#insert#1;n#mapper#0;n#!!top" />
-                <element signature="n#select#2;n#mapper#0;n#!!top" />
-                <element signature="n#update#1;n#mapper#0;n#!!top" />
-                <element signature="n#update#2;n#mapper#0;n#!!top" />
-                <element signature="n#update#3;n#mapper#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuestionMapper.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="339" column="37" lean-forward="true" selection-start-line="339" selection-start-column="37" selection-end-line="339" selection-end-column="37" />
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -197,10 +173,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/bean/Resource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ResourceMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
       </list>
     </option>
   </component>
@@ -698,7 +674,7 @@
       <workItem from="1532401459034" duration="1027000" />
       <workItem from="1532422888475" duration="1013000" />
       <workItem from="1532440487676" duration="68000" />
-      <workItem from="1532442804984" duration="1830000" />
+      <workItem from="1532442804984" duration="2425000" />
     </task>
     <servers />
   </component>
@@ -735,7 +711,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226815000" />
+    <option name="totallyTimeSpent" value="227410000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -937,13 +913,6 @@
         <state relative-caret-position="-1982" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/sort/SortResourceByDownload.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/JS/publish.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -1111,13 +1080,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="187" column="29" lean-forward="true" selection-start-line="187" selection-start-column="29" selection-end-line="187" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/ResourceService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1132,16 +1094,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="629">
+          <caret line="339" column="37" lean-forward="true" selection-start-line="339" selection-start-column="37" selection-end-line="339" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ResourceMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
+        <state relative-caret-position="580">
           <caret line="319" column="37" lean-forward="true" selection-start-line="319" selection-start-column="37" selection-end-line="319" selection-end-column="37" />
           <folding>
             <element signature="n#sql#0;n#mapper#0;n#!!top" />
@@ -1161,10 +1123,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/sort/SortResourceByDownload.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="339" column="37" lean-forward="true" selection-start-line="339" selection-start-column="37" selection-end-line="339" selection-end-column="37" />
+        <state relative-caret-position="76">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/CommonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="187" column="31" selection-start-line="187" selection-start-column="31" selection-end-line="187" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>

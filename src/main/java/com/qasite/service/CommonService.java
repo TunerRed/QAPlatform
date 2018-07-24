@@ -178,14 +178,14 @@ public class CommonService {
         Collections.sort(selectResult,comparator);
 
         //debug
-        System.out.print("key_count : "+keys.size()+"; keys : ");
+        /*System.out.print("key_count : "+keys.size()+"; keys : ");
         for (int j = 0; j < keys.size(); j++)
             System.out.print(keys.get(j)+" ");
         System.out.print("search answers :");
         if(selectResult != null)
             for (int j = 0; j < selectResult.size(); j++)
                 System.out.print(" "+((Question)selectResult.get(j)).getAnswers());
-        System.out.println();
+        System.out.println();*/
 
         List<String> subKeys = keys;
         for (int i = 0; i < key_count-1; i++){
