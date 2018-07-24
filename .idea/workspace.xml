@@ -8,13 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0f687dc6-6014-4649-9e30-d642e009a66a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qasite/service/ResourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qasite/service/ResourceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/qasite/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qasite/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/qasite/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qasite/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/service/ResourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/QAPlatform-0.0.1-SNAPSHOT/WEB-INF/classes/com/qasite/service/ResourceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qasite/service/ResourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qasite/service/ResourceService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="220" column="21" selection-start-line="220" selection-start-column="21" selection-end-line="220" selection-end-column="21" />
+            <state relative-caret-position="205">
+              <caret line="250" column="26" lean-forward="true" selection-start-line="250" selection-start-column="26" selection-end-line="250" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#userInfo#0;class#UserController#0" />
@@ -54,9 +51,7 @@
                 <element signature="method#showAnswers#0;class#UserController#0" />
                 <element signature="method#submitReply#0;class#UserController#0" />
                 <element signature="method#setBestAnswer#0;class#UserController#0" />
-                <element signature="method#download#0;class#UserController#0" />
                 <element signature="method#checkRight#0;class#UserController#0" />
-                <element signature="method#upload#0;class#UserController#0" />
                 <element signature="method#clean#0;class#UserController#0" />
                 <element signature="method#showResource#0;class#UserController#0" />
               </folding>
@@ -64,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java">
+      <file leaf-file-name="ResourceService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/ResourceService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="150" column="17" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="17" />
+            <state relative-caret-position="150">
+              <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -187,7 +182,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,23 +223,14 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="qasite" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QAPlatform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QAPlatform" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qasite" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -638,7 +624,8 @@
       <workItem from="1532319042510" duration="603000" />
       <workItem from="1532320209608" duration="15918000" />
       <workItem from="1532401459034" duration="1027000" />
-      <workItem from="1532422888475" duration="827000" />
+      <workItem from="1532422888475" duration="1013000" />
+      <workItem from="1532440487676" duration="68000" />
     </task>
     <servers />
   </component>
@@ -675,7 +662,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224731000" />
+    <option name="totallyTimeSpent" value="224985000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -712,7 +699,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4871407" weight="0.14331724" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32850242" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32850242" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.30484116" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.30937973" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" sideWeight="0.5012407" side_tool="true" weight="0.290469" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -1063,13 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/ResourceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -1079,8 +1059,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="220" column="21" selection-start-line="220" selection-start-column="21" selection-end-line="220" selection-end-column="21" />
+        <state relative-caret-position="205">
+          <caret line="250" column="26" lean-forward="true" selection-start-line="250" selection-start-column="26" selection-end-line="250" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#userInfo#0;class#UserController#0" />
@@ -1089,12 +1069,17 @@
             <element signature="method#showAnswers#0;class#UserController#0" />
             <element signature="method#submitReply#0;class#UserController#0" />
             <element signature="method#setBestAnswer#0;class#UserController#0" />
-            <element signature="method#download#0;class#UserController#0" />
             <element signature="method#checkRight#0;class#UserController#0" />
-            <element signature="method#upload#0;class#UserController#0" />
             <element signature="method#clean#0;class#UserController#0" />
             <element signature="method#showResource#0;class#UserController#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qasite/service/ResourceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
         </state>
       </provider>
     </entry>

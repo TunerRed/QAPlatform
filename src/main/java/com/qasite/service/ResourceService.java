@@ -47,13 +47,15 @@ public class ResourceService {
         Resource resource = resourceMapper.selectByPrimaryKey(resource_id);
         if (resource == null)
             return -1;
-        String address = resource.getAddress();
+		//删除在数据库中的记录
+        resourceMapper.deleteByPrimaryKey(resource_id);
+		//删除实际的文件
+		String address = resource.getAddress();
         if (address != null){
             address = Resource.DEFAULT_PATH + address.substring(resource_base_path.length());
         }
         File file = new File(address);
         if (file.exists()){
-            resourceMapper.deleteByPrimaryKey(resource_id);
             file.delete();
             return 1;
         } else{
