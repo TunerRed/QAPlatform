@@ -316,7 +316,7 @@
         1
         <foreach collection="list" index="index" item="key" open="" separator=" " close="">
           <if test="key != null and key != ''">
-            AND description LIKE '%${key}%'
+            AND title LIKE '%${key}%'
           </if>
         </foreach>
       </where>
@@ -337,7 +337,7 @@
         </if >
         <foreach item="key" index="index" collection="keys" open="" separator=" " close="">
           <if test="key != null and key != ''">
-            AND description LIKE '%${key}%'
+            AND title LIKE '%${key}%'
           </if>
         </foreach>
       </where>
